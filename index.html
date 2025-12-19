@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guide complet des passages de grades judo - Résumé des techniques, katas et règlements pour 1er au 6ème dan.">
+    <meta name="keywords" content="passage grade judo, dan judo, ceinture noire judo, kata judo, techniques judo, règlement judo, 1er dan, examen judo">
+    <meta name="author" content="Guide des Grades Judo">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Guide des Grades Judo - Résumé 2025/2026">
+    <meta property="og:description" content="Résumé complet pour réussir votre passage de grade judo : techniques, katas, règlements.">
+    <meta property="og:url" content="https://votre-site-grades-judo.com">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Guide des Grades Judo - Résumé 2025/2026">
+    <meta name="twitter:description" content="Résumé complet pour réussir votre passage de grade judo.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+    
+    <title>Guide des Grades Judo - Résumé 2025/2026 | 1er au 6ème Dan</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="auth.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: #f8f9fa;
+            color: #333;
+            padding: 0 1rem;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            border-radius: 0 0 15px 15px;
+            margin-bottom: 2rem;
+        }
+        
+        nav {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+        
+        nav a {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        
+        nav a:hover, nav a.nav-active {
+            background: #e74c3c;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .news-item-small {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+            font-size: 0.9rem;
+        }
+
+        .news-item-small strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        .news-item-small p {
+            margin: 0;
+            color: #7f8c8d;
+            font-size: 0.85rem;
+        }
+
+        .grade-grid-compact {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+        }
+
+        .grade-btn {
+            display: block;
+            padding: 1rem 0.5rem;
+            background: #2ecc71;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .grade-btn:hover {
+            background: #27ae60;
+            text-decoration: none;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .admin-card {
+            background: #fff3cd;
+            border: 2px solid #ffeaa7;
+        }
+
+        .btn-admin {
+            background: #e74c3c;
+            width: 100%;
+            text-align: center;
+            padding: 1rem;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-top: 1rem;
+            transition: background 0.3s;
+        }
+
+        .btn-admin:hover {
+            background: #c0392b;
+            text-decoration: none;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 2rem;
+            background: #2c3e50;
+            color: white;
+            border-radius: 15px 15px 0 0;
+        }
+
+        @media (max-width: 768px) {
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .grade-grid-compact {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+            
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+            
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grade-grid-compact {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📊 Guide des Grades Judo</h1>
+        <p>Résumé des passages de grades 2025/2026</p>
+        
+        <nav>
+            <a href="index.html" class="nav-active">Accueil</a>
+            <a href="techniques.html">Techniques</a>
+            <a href="katas.html">Katas</a>
+            <a href="reglement.html">Règlement</a>
+            <a href="https://fabriceetchristiane-star.github.io/num-rique-judo/">Dojo Numérique</a>
+            <a href="admin.html">Admin</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Bienvenue dans le guide des grades 2025-2026</h2>
+            <p>Retrouvez toutes les informations pour réussir votre passage de grade</p>
+        </section>
+        
+        <div class="grid-container">
+            <!-- Carte Nouveautés -->
+            <div class="card">
+                <h3>🔄 NOUVEAUTÉS 2024-2025</h3>
+                <div class="news-grid">
+                    <div class="news-item-small">
+                        <strong>Fiches techniques supprimées</strong>
+                        <p>Juges imposent directement</p>
+                    </div>
+                    <div class="news-item-small">
+                        <strong>Kata non probatoire</strong>
+                        <p>UV1 avant UV2 supprimé</p>
+                    </div>
+                    <div class="news-item-small">
+                        <strong>Liste technique actualisée</strong>
+                        <p>Techniques réduites et mises à jour</p>
+                    </div>
+                    <div class="news-item-small">
+                        <strong>2 timbres de licence</strong>
+                        <p>Au lieu de 3 précédemment</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carte Accès par grade -->
+            <div class="card">
+                <h3>🎯 ACCÈS RAPIDE PAR GRADE</h3>
+                <div class="grade-grid-compact">
+                    <a href="1er-dan.html" class="grade-btn">1er Dan</a>
+                    <a href="2eme-dan.html" class="grade-btn">2ème Dan</a>
+                    <a href="3eme-dan.html" class="grade-btn">3ème Dan</a>
+                    <a href="4eme-dan.html" class="grade-btn">4ème Dan</a>
+                    <a href="5eme-dan.html" class="grade-btn">5ème Dan</a>
+                    <a href="6eme-dan.html" class="grade-btn">6ème Dan</a>
+                </div>
+            </div>
+
+          <!-- Carte Administration -->
+<div class="card admin-card">
+    <h3>⚙️ ESPACE PROFESSEUR</h3>
+    <p>Espace réservé aux modifications du contenu</p>
+    
+    <!-- Section connexion -->
+    <div id="login-section">
+        <input type="password" id="admin-password" placeholder="Mot de passe professeur" 
+               style="padding: 0.5rem; margin: 0.5rem 0; width: 100%; border: 1px solid #ddd; border-radius: 4px;">
+        <button onclick="verifierPassword()" class="btn btn-admin">Se connecter</button>
+    </div>
+    
+    <!-- Section admin (cachée au début) -->
+    <div id="admin-section" style="display: none;">
+        <a href="admin.html" class="btn btn-admin">🔐 Accéder à l'administration</a>
+        <button onclick="deconnexionAdmin()" class="btn" style="background: #dc3545; margin-top: 0.5rem;">
+            🚪 Se déconnecter
+        </button>
+    </div>
+</div>
+</div>
+</main>
+
+<footer>
+    <p>© 2025 Guide des Grades Judo - Résumé pour les passages de grades</p>
+    <p style="margin-top: 0.5rem;">
+        <a href="https://fabriceetchristiane-star.github.io/num-rique-judo/" style="color: white; text-decoration: underline;">Retour au Dojo Numérique</a>
+    </p>
+</footer>
+
+<script>
+    // ===== SYSTÈME DE CONNEXION ADMIN =====
+    function verifierPassword() {
+        console.log('🔑 Tentative de connexion...');
+        
+        // Vérifier que auth est disponible
+        if (typeof auth === 'undefined') {
+            alert('❌ Erreur : Système d\'authentification non chargé. Rafraîchissez la page.');
+            return;
+        }
+        
+        const password = document.getElementById('admin-password').value;
+        const loginSection = document.getElementById('login-section');
+        const adminSection = document.getElementById('admin-section');
+        
+        console.log('📝 Mot de passe entré:', password);
+        
+        if (auth.verifyPassword(password)) {
+            console.log('✅ Mot de passe correct ! Création session...');
+            auth.createSession();
+            console.log('🔍 Vérification session après création:', auth.checkSession());
+            loginSection.style.display = 'none';
+            adminSection.style.display = 'block';
+            console.log('✅ Interface admin affichée !');
+        } else {
+            console.log('❌ Mot de passe incorrect');
+            alert('❌ Mot de passe incorrect');
+            document.getElementById('admin-password').value = '';
+        }
+    }
+    
+    function deconnexionAdmin() {
+        if (typeof auth !== 'undefined') {
+            auth.clearSession();
+        }
+        location.reload();
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('📊 Page Grades Judo chargée');
+        
+        // Vérifier que auth est chargé
+        if (typeof auth !== 'undefined' && auth.checkSession()) {
+            document.getElementById('login-section').style.display = 'none';
+            document.getElementById('admin-section').style.display = 'block';
+        }
+        document.getElementById('admin-password').value = '';
+    });
+</script>
+</body>
+</html>

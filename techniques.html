@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techniques Judo - Ressources</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>💪 Techniques Judo</h1>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="techniques.html" class="nav-active">Techniques</a>
+            <a href="katas.html">Katas</a>
+            <a href="reglement.html">Règlement</a>
+            <a href="philosophie.html">Philosophie</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Référentiels Techniques par Grade</h2>
+        
+        <div class="card">
+            <h3>📚 Télécharger les référentiels techniques</h3>
+            <div class="pdf-grid">
+                <a href="docs/1er-dan-techniques.pdf" target="_blank" class="pdf-btn">
+                    <span>🥋</span>
+                    1er Dan
+                </a>
+                <a href="docs/2eme-dan-techniques.pdf" target="_blank" class="pdf-btn">
+                    <span>🥋</span>
+                    2ème Dan
+                </a>
+                <a href="docs/3eme-dan-techniques.pdf" target="_blank" class="pdf-btn">
+                    <span>🥋</span>
+                    3ème Dan
+                </a>
+                <a href="docs/4-5-6-dan-techniques.pdf" target="_blank" class="pdf-btn">
+                    <span>🎓</span>
+                    4-5-6 Dan
+                </a>
+                <a href="docs/20-attaques-defense.pdf" target="_blank" class="pdf-btn">
+                    <span>🥊</span>
+                    20 Attaques/Défense
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>🎓 Accès Direct par Grade</h3>
+            <div class="grade-links">
+                <a href="1er-dan.html" class="btn">1er Dan</a>
+                <a href="2eme-dan.html" class="btn">2ème Dan</a>
+                <a href="3eme-dan.html" class="btn">3ème Dan</a>
+                <a href="4eme-dan.html" class="btn">4ème Dan</a>
+                <a href="5eme-dan.html" class="btn">5ème Dan</a>
+                <a href="6eme-dan.html" class="btn">6ème Dan</a>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        .pdf-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .pdf-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.8rem 0.3rem;
+            background: #9b59b6;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid #8e44ad;
+            min-height: 60px;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        .pdf-btn:hover {
+            background: #8e44ad;
+            transform: translateY(-2px);
+            text-decoration: none;
+            color: white;
+        }
+
+        .pdf-btn span {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .grade-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .pdf-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .grade-links {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pdf-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>

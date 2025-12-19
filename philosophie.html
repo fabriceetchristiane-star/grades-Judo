@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philosophie - Ressources</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>🧠 Philosophie du Judo</h1>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="techniques.html">Techniques</a>
+            <a href="katas.html">Katas</a>
+            <a href="reglement.html">Règlement</a>
+            <a href="philosophie.html" class="nav-active">Philosophie</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Philosophie et Valeurs</h2>
+        
+        <div class="card">
+            <h3>📚 Documents Philosophiques</h3>
+            <div class="pdf-grid">
+                <a href="docs/valeurs-shin-gi-tai.pdf" target="_blank" class="pdf-btn">
+                    <span>🎓</span>
+                    Shin-Gi-Tai
+                </a>
+                <a href="docs/ethique-judo.pdf" target="_blank" class="pdf-btn">
+                    <span>⭐</span>
+                    Éthique du Judo
+                </a>
+                <a href="docs/principes-fondamentaux.pdf" target="_blank" class="pdf-btn">
+                    <span>📖</span>
+                    Principes Fondamentaux
+                </a>
+                <a href="docs/histoire-grades.pdf" target="_blank" class="pdf-btn">
+                    <span>📜</span>
+                    Histoire des Grades
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>💡 Citation de Jigoro Kano</h3>
+            <blockquote style="font-style: italic; color: #555; border-left: 4px solid #3498db; padding-left: 1rem; margin: 1rem 0;">
+                "Le but ultime du Judo est de perfectionner son caractère et de contribuer au bien-être de la société."
+            </blockquote>
+        </div>
+    </main>
+
+    <style>
+        .pdf-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .pdf-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.8rem 0.3rem;
+            background: #9b59b6;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid #8e44ad;
+            min-height: 60px;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        .pdf-btn:hover {
+            background: #8e44ad;
+            transform: translateY(-2px);
+            text-decoration: none;
+            color: white;
+        }
+
+        .pdf-btn span {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        @media (max-width: 768px) {
+            .pdf-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pdf-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>

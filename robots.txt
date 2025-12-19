@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /admin-grades.html
+Disallow: /uploads/
+
+# Sitemap
+Sitemap: https://votre-site-grades-judo.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10

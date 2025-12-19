@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>4ème Dan – Exigences</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .content-section {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        margin: 2rem 0;
+    }
+    
+    .pdf-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+        margin: 1rem 0;
+    }
+
+    .pdf-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.8rem 0.3rem;
+        background: #9b59b6;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        text-align: center;
+        transition: all 0.3s;
+        border: 2px solid #8e44ad;
+        min-height: 60px;
+        justify-content: center;
+        font-size: 0.9rem;
+    }
+
+    .pdf-btn:hover {
+        background: #8e44ad;
+        transform: translateY(-2px);
+        text-decoration: none;
+        color: white;
+    }
+
+    .pdf-btn span {
+        font-size: 1.2rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .kata-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin: 1rem 0;
+    }
+    
+    .kata-card {
+        background: #f8f9fa;
+        padding: 1.5rem;
+        border-radius: 8px;
+        border-left: 4px solid #3498db;
+    }
+    
+    .kata-card h4 {
+        color: #2c3e50;
+        margin-bottom: 0.5rem;
+    }
+    
+    @media (max-width: 768px) {
+        .pdf-grid, .kata-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .pdf-grid, .kata-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎓 4ème Dan</h1>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="3eme-dan.html">3ème Dan</a>
+      <a href="4eme-dan.html" class="nav-active">4ème Dan</a>
+      <a href="5eme-dan.html">5ème Dan</a>
+      <a href="6eme-dan.html">6ème Dan</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="content-section">
+        <h2>📋 Programme Technique du 4ème Dan</h2>
+        <div id="contenu-technique">
+            <!-- Le contenu sera chargé dynamiquement -->
+            <p><em>Le programme technique sera chargé ici depuis l'administration...</em></p>
+        </div>
+    </div>
+
+    <div class="content-section">
+      <h3>📝 UV1 – Katas</h3>
+      <div id="contenu-kata">
+        <p><strong>Le candidat présente 2 katas complets :</strong></p>
+        <div class="kata-grid">
+            <div class="kata-card">
+                <h4>⚡ Kime-no-kata</h4>
+                <p><strong>Obligatoire</strong></p>
+            </div>
+            <div class="kata-card">
+                <h4>+ 1 kata au choix parmi :</h4>
+                <ul>
+                  <li>Nage-no-kata</li>
+                  <li>Katame-no-kata</li>
+                  <li>Kodokan-goshin-jitsu</li>
+                  <li>Gonosen</li>
+                </ul>
+            </div>
+        </div>
+        <div class="pdf-grid" id="kata-pdfs">
+            <!-- Les PDF de kata seront chargés ici -->
+            <p><em>Les documents kata seront listés ici...</em></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <h3>💪 UV2 – Maîtrise technique</h3>
+      <div id="contenu-exigences">
+        <p><strong>Tokui-waza personnel (10 min maximum) :</strong></p>
+        <ul>
+          <li>Nage-waza (3 min minimum)</li>
+          <li>Ne-waza (2 min minimum)</li>
+          <li>Défense jujitsu (2 min minimum)</li>
+        </ul>
+        <p><em>Construction logique et cohérente requise</em></p>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <h3>📄 Documents PDF du 4ème Dan</h3>
+      <div id="contenu-pdf">
+        <p><em>Les documents PDF seront listés ici...</em></p>
+      </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 2rem;">
+        <a href="3eme-dan.html" class="btn">⬅️ 3ème Dan</a>
+        <a href="index.html" class="btn">🏠 Accueil</a>
+        <a href="5eme-dan.html" class="btn">➡️ 5ème Dan</a>
+        <a href="admin-grades.html" class="btn">⚙️ Admin</a>
+    </div>
+  </main>
+
+  <script>
+    // ===== CHARGER LE CONTENU DU 4ÈME DAN =====
+    function chargerContenuGrade() {
+        // Charger les techniques depuis le localStorage
+        const techniques = localStorage.getItem('grade-4eme-dan');
+        if (techniques && techniques.trim() !== '') {
+            document.getElementById('contenu-technique').innerHTML = techniques;
+        }
+        
+        // Charger les PDF spécifiques au 4ème Dan
+        chargerPDFsGrade();
+        
+        // Charger les katas
+        chargerKatas();
+    }
+    
+    // ===== CHARGER LES PDF DU GRADE =====
+    function chargerPDFsGrade() {
+        const pdfs = JSON.parse(localStorage.getItem('pdfs-grades') || '[]');
+        const conteneur = document.getElementById('contenu-pdf');
+        
+        // Filtrer les PDF pour le 4ème Dan
+        const pdfsGrade = pdfs.filter(pdf => 
+            pdf.grade === '4eme-dan' || pdf.grade === 'general' || pdf.grade === '4-5-6-dan'
+        );
+        
+        if (pdfsGrade.length === 0) {
+            conteneur.innerHTML = '<p>Aucun document PDF disponible pour le 4ème Dan.</p>';
+            return;
+        }
+        
+        conteneur.innerHTML = '<p>Téléchargez les documents du 4ème Dan :</p>' + 
+            '<div class="pdf-grid">' +
+            pdfsGrade.map(pdf => `
+                <a href="${pdf.data}" download="${pdf.nom}.pdf" class="pdf-btn">
+                    <span>📄</span>
+                    ${pdf.nom}
+                </a>
+            `).join('') + '</div>';
+    }
+    
+    // ===== CHARGER LES KATAS =====
+    function chargerKatas() {
+        const katas = JSON.parse(localStorage.getItem('katas-grades') || '[]');
+        const conteneur = document.getElementById('kata-pdfs');
+        
+        // Filtrer les katas pour le 4ème Dan
+        const katasGrade = katas.filter(kata => 
+            kata.grade === '4eme-dan' || kata.grade === 'general'
+        );
+        
+        if (katasGrade.length > 0) {
+            conteneur.innerHTML = katasGrade.map(kata => `
+                <a href="${kata.data}" download="${kata.nom}.pdf" class="pdf-btn">
+                    <span>⚡</span>
+                    ${kata.nom}
+                </a>
+            `).join('');
+        } else {
+            conteneur.innerHTML = `
+                <a href="#" class="pdf-btn">
+                    <span>⚡</span>
+                    Kime-no-kata
+                </a>
+                <a href="#" class="pdf-btn">
+                    <span>🌀</span>
+                    Nage-no-kata
+                </a>
+                <a href="#" class="pdf-btn">
+                    <span>🔄</span>
+                    Gonosen
+                </a>
+            `;
+        }
+    }
+    
+    // ===== INITIALISATION =====
+    document.addEventListener('DOMContentLoaded', function() {
+        chargerContenuGrade();
+    });
+  </script>
+</body>
+</html>

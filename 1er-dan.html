@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1er Dan - Guide des Grades Judo</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .content-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+        
+        .pdf-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .pdf-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.8rem 0.3rem;
+            background: #9b59b6;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid #8e44ad;
+            min-height: 60px;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        .pdf-btn:hover {
+            background: #8e44ad;
+            transform: translateY(-2px);
+            text-decoration: none;
+            color: white;
+        }
+
+        .pdf-btn span {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .technique-buttons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin: 1rem 0;
+        }
+        
+        .tech-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.8rem 0.3rem;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid #2980b9;
+            min-height: 60px;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+        
+        .tech-btn:hover {
+            background: #2980b9;
+            transform: translateY(-1px);
+            text-decoration: none;
+            color: white;
+        }
+        
+        .tech-btn span {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .full-width {
+            grid-column: 1 / -1;
+            background: #2ecc71;
+            border-color: #27ae60;
+        }
+        
+        .full-width:hover {
+            background: #27ae60;
+        }
+        
+        @media (max-width: 768px) {
+            .pdf-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .technique-buttons {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pdf-grid, .technique-buttons {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🥋 1er Dan - Techniques et Programme</h1>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="2eme-dan.html">2ème Dan</a>
+            <a href="techniques.html">Techniques</a>
+            <a href="katas.html">Katas</a>
+            <a href="../dojo-test/index.html">Dojo Numérique</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="content-section">
+            <h2>📋 Programme Technique du 1er Dan</h2>
+            <div id="contenu-technique">
+                <!-- Le contenu sera chargé dynamiquement -->
+                <p><em>Le programme technique sera chargé ici depuis l'administration...</em></p>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>📝 Kata Obligatoire</h2>
+            <div id="contenu-kata">
+                <p><strong>UV1 – Kata :</strong> Nage-no-kata complet (rôle Tori)</p>
+                <div class="pdf-grid" id="kata-pdfs">
+                    <!-- Les PDF de kata seront chargés ici -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>💪 Techniques à Présenter</h2>
+            <div id="contenu-exigences">
+                <p><strong>UV2 – Technique (6 techniques) :</strong></p>
+                <ul>
+                    <li>2 techniques Nage-waza imposées (2 familles différentes)</li>
+                    <li>2 techniques Ne-waza imposées (2 familles différentes)</li>
+                    <li>2 techniques de défense au choix (série B)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>📄 Documents PDF du 1er Dan</h2>
+            <div id="contenu-pdf">
+                <p><em>Les documents PDF seront listés ici...</em></p>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="index.html" class="btn">🏠 Retour à l'accueil</a>
+            <a href="2eme-dan.html" class="btn">➡️ 2ème Dan</a>
+            <a href="admin-grades.html" class="btn">⚙️ Admin</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Guide des Grades Judo - 1er Dan</p>
+    </footer>
+
+    <script>
+        // ===== CHARGER LE CONTENU DU 1ER DAN =====
+        function chargerContenuGrade() {
+            // Charger les techniques depuis le localStorage
+            const techniques = localStorage.getItem('grade-1er-dan');
+            if (techniques && techniques.trim() !== '') {
+                document.getElementById('contenu-technique').innerHTML = techniques;
+            }
+            
+            // Charger les PDF spécifiques au 1er Dan
+            chargerPDFsGrade();
+            
+            // Charger les katas
+            chargerKatas();
+        }
+        
+        // ===== CHARGER LES PDF DU GRADE =====
+        function chargerPDFsGrade() {
+            const pdfs = JSON.parse(localStorage.getItem('pdfs-grades') || '[]');
+            const conteneur = document.getElementById('contenu-pdf');
+            
+            // Filtrer les PDF pour le 1er Dan
+            const pdfsGrade = pdfs.filter(pdf => 
+                pdf.grade === '1er-dan' || pdf.grade === 'general'
+            );
+            
+            if (pdfsGrade.length === 0) {
+                conteneur.innerHTML = '<p>Aucun document PDF disponible pour le 1er Dan.</p>';
+                return;
+            }
+            
+            conteneur.innerHTML = '<p>Téléchargez les documents du 1er Dan :</p>' + 
+                '<div class="pdf-grid">' +
+                pdfsGrade.map(pdf => `
+                    <a href="${pdf.data}" download="${pdf.nom}.pdf" class="pdf-btn">
+                        <span>📄</span>
+                        ${pdf.nom}
+                    </a>
+                `).join('') + '</div>';
+        }
+        
+        // ===== CHARGER LES KATAS =====
+        function chargerKatas() {
+            const katas = JSON.parse(localStorage.getItem('katas-grades') || '[]');
+            const conteneur = document.getElementById('kata-pdfs');
+            
+            // Filtrer les katas pour le 1er Dan
+            const katasGrade = katas.filter(kata => 
+                kata.grade === '1er-dan' || kata.grade === 'general'
+            );
+            
+            if (katasGrade.length > 0) {
+                conteneur.innerHTML = katasGrade.map(kata => `
+                    <a href="${kata.data}" download="${kata.nom}.pdf" class="pdf-btn">
+                        <span>🌀</span>
+                        ${kata.nom}
+                    </a>
+                `).join('');
+            }
+        }
+        
+        // ===== INITIALISATION =====
+        document.addEventListener('DOMContentLoaded', function() {
+            chargerContenuGrade();
+        });
+    </script>
+</body>
+</html>

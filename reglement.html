@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Règlement - Ressources</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>📝 Règlement des Grades</h1>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="techniques.html">Techniques</a>
+            <a href="katas.html">Katas</a>
+            <a href="reglement.html" class="nav-active">Règlement</a>
+            <a href="philosophie.html">Philosophie</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Règlement Officiel</h2>
+        
+        <div class="card">
+            <h3>📚 Documents Règlementaires</h3>
+            <div class="pdf-grid">
+                <a href="docs/reglement-general.pdf" target="_blank" class="pdf-btn">
+                    <span>📋</span>
+                    Règlement Général
+                </a>
+                <a href="docs/guide-juges.pdf" target="_blank" class="pdf-btn">
+                    <span>⚖️</span>
+                    Guide des Juges
+                </a>
+                <a href="docs/procedure-examen.pdf" target="_blank" class="pdf-btn">
+                    <span>🎯</span>
+                    Procédure Examen
+                </a>
+                <a href="docs/criteres-evaluation.pdf" target="_blank" class="pdf-btn">
+                    <span>📊</span>
+                    Critères d'Évaluation
+                </a>
+                <a href="docs/nouveautes-2024.pdf" target="_blank" class="pdf-btn">
+                    <span>🔄</span>
+                    Nouveautés 2024
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        .pdf-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .pdf-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.8rem 0.3rem;
+            background: #9b59b6;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid #8e44ad;
+            min-height: 60px;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        .pdf-btn:hover {
+            background: #8e44ad;
+            transform: translateY(-2px);
+            text-decoration: none;
+            color: white;
+        }
+
+        .pdf-btn span {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        @media (max-width: 768px) {
+            .pdf-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pdf-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>
