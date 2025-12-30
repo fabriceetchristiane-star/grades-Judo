@@ -5,62 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Katas Judo - Ressources</title>
     <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>🥋 Tous les Katas</h1>
-        <nav>
-            <a href="index.html">Accueil</a>
-            <a href="techniques.html">Techniques</a>
-            <a href="katas.html" class="nav-active">Katas</a>
-            <a href="reglement.html">Règlement</a>
-            <a href="philosophie.html">Philosophie</a>
-        </nav>
-    </header>
-
-    <main>
-        <h2>Katas Officiels - Référence Complète</h2>
-        
-        <div class="card">
-            <h3>📚 Tous les Katas Disponibles</h3>
-            <div class="pdf-grid">
-                <a href="docs/nage-no-kata.pdf" target="_blank" class="pdf-btn">
-                    <span>🌀</span>
-                    Nage-no-kata
-                </a>
-                <a href="docs/katame-no-kata.pdf" target="_blank" class="pdf-btn">
-                    <span>🔒</span>
-                    Katame-no-kata
-                </a>
-                <a href="docs/kime-no-kata.pdf" target="_blank" class="pdf-btn">
-                    <span>⚡</span>
-                    Kime-no-kata
-                </a>
-                <a href="docs/kodokan-goshin-jitsu.pdf" target="_blank" class="pdf-btn">
-                    <span>🛡️</span>
-                    Kodokan Goshin-jitsu
-                </a>
-                <a href="docs/ju-no-kata.pdf" target="_blank" class="pdf-btn">
-                    <span>💫</span>
-                    Ju-no-kata
-                </a>
-                <a href="docs/itsutsu-no-kata.pdf" target="_blank" class="pdf-btn">
-                    <span>🌊</span>
-                    Itsutsu-no-kata
-                </a>
-                <a href="docs/koshiki-no-kata.pdf" target="_blank" class="pdf-btn">
-                    <span>⚔️</span>
-                    Koshiki-no-kata
-                </a>
-                <a href="docs/gonosen.pdf" target="_blank" class="pdf-btn">
-                    <span>🎯</span>
-                    Gonosen
-                </a>
-            </div>
-        </div>
-    </main>
-
     <style>
+        .content-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .content-text {
+            line-height: 1.8;
+            color: #555;
+            white-space: pre-wrap;
+            margin: 1rem 0;
+        }
+
         .pdf-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -109,5 +69,121 @@
             }
         }
     </style>
+</head>
+<body>
+    <header>
+        <h1>🥋 Tous les Katas</h1>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="techniques.html">Techniques</a>
+            <a href="katas.html" class="nav-active">Katas</a>
+            <a href="reglement.html">Règlement</a>
+            <a href="philosophie.html">Philosophie</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Katas Officiels - Référence Complète</h2>
+        
+        <!-- Nage-no-kata -->
+        <div class="content-section">
+            <h3>🌀 Nage-no-kata</h3>
+            <div id="contenu-nage-no-kata" class="content-text"></div>
+            <div id="pdfs-nage-no-kata"></div>
+        </div>
+
+        <!-- Katame-no-kata -->
+        <div class="content-section">
+            <h3>🔒 Katame-no-kata</h3>
+            <div id="contenu-katame-no-kata" class="content-text"></div>
+            <div id="pdfs-katame-no-kata"></div>
+        </div>
+
+        <!-- Kime-no-kata -->
+        <div class="content-section">
+            <h3>⚡ Kime-no-kata</h3>
+            <div id="contenu-kime-no-kata" class="content-text"></div>
+            <div id="pdfs-kime-no-kata"></div>
+        </div>
+
+        <!-- Kodokan Goshin-jitsu -->
+        <div class="content-section">
+            <h3>🛡️ Kodokan Goshin-jitsu</h3>
+            <div id="contenu-goshin-jitsu" class="content-text"></div>
+            <div id="pdfs-goshin-jitsu"></div>
+        </div>
+
+        <!-- Ju-no-kata -->
+        <div class="content-section">
+            <h3>💫 Ju-no-kata</h3>
+            <div id="contenu-ju-no-kata" class="content-text"></div>
+            <div id="pdfs-ju-no-kata"></div>
+        </div>
+
+        <!-- Itsutsu-no-kata -->
+        <div class="content-section">
+            <h3>🌊 Itsutsu-no-kata</h3>
+            <div id="contenu-itsutsu-no-kata" class="content-text"></div>
+            <div id="pdfs-itsutsu-no-kata"></div>
+        </div>
+
+        <!-- Koshiki-no-kata -->
+        <div class="content-section">
+            <h3>⚔️ Koshiki-no-kata</h3>
+            <div id="contenu-koshiki-no-kata" class="content-text"></div>
+            <div id="pdfs-koshiki-no-kata"></div>
+        </div>
+
+        <!-- Gonosen -->
+        <div class="content-section">
+            <h3>🎯 Gonosen</h3>
+            <div id="contenu-gonosen" class="content-text"></div>
+            <div id="pdfs-gonosen"></div>
+        </div>
+    </main>
+
+    <footer style="margin-top: 3rem; padding: 2rem; text-align: center; background: #2c3e50; color: white;">
+        <p>© 2025 Guide des Grades Judo</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            chargerKata('nage-no-kata');
+            chargerKata('katame-no-kata');
+            chargerKata('kime-no-kata');
+            chargerKata('goshin-jitsu');
+            chargerKata('ju-no-kata');
+            chargerKata('itsutsu-no-kata');
+            chargerKata('koshiki-no-kata');
+            chargerKata('gonosen');
+        });
+
+        function chargerKata(kata) {
+            // Charger le contenu texte
+            const contenu = localStorage.getItem('kata-' + kata);
+            const contenuDiv = document.getElementById('contenu-' + kata);
+            
+            if (contenu && contenu.trim()) {
+                contenuDiv.innerHTML = contenu;
+            } else {
+                contenuDiv.innerHTML = '<p style="color: #999; font-style: italic;">Contenu en cours de rédaction...</p>';
+            }
+            
+            // Charger les PDFs
+            const pdfs = JSON.parse(localStorage.getItem('pdfs-katas') || '[]');
+            const filtered = pdfs.filter(p => p.section === kata);
+            const pdfsDiv = document.getElementById('pdfs-' + kata);
+            
+            if (filtered.length > 0) {
+                pdfsDiv.innerHTML = '<h4 style="margin-top: 1rem;">📄 Documents disponibles :</h4><div class="pdf-grid">' +
+                    filtered.map(pdf => `
+                        <a href="${pdf.data}" download="${pdf.nom}" class="pdf-btn">
+                            <span>📥</span>
+                            ${pdf.nom.replace('.pdf', '')}
+                        </a>
+                    `).join('') + '</div>';
+            }
+        }
+    </script>
 </body>
 </html>

@@ -1,0 +1,21 @@
+# Archives et backups
+_archive/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Fichiers temporaires
+*.tmp
+*.temp
+~*
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo

@@ -5,7 +5,7 @@ console.log('🔐 Chargement auth.js...');
 
 const auth = {
   SESSION_KEY: 'grades_judo_session',
-  SESSION_DURATION: 24 * 60 * 60 * 1000, // 24 heures
+  SESSION_DURATION: 2 * 60 * 60 * 1000, // 2 heures
 
   // Vérifier le mot de passe
   verifyPassword(password) {

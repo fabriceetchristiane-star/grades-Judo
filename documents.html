@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documents et Règlements - Grades Judo</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styles pour la page documents */
+        .documents-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .documents-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .documents-header h1 {
+            color: #c41e3a;
+            margin-bottom: 1rem;
+        }
+
+        .documents-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* Navigation par onglets */
+        .tabs-nav {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #e0e0e0;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            padding: 1rem 1.5rem;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-size: 1rem;
+            color: #666;
+            transition: all 0.3s;
+        }
+
+        .tab-button:hover {
+            color: #c41e3a;
+            background: rgba(196, 30, 58, 0.05);
+        }
+
+        .tab-button.active {
+            color: #c41e3a;
+            border-bottom-color: #c41e3a;
+            font-weight: 600;
+        }
+
+        /* Contenu des onglets */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Cartes de documents */
+        .documents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .document-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .document-card:hover {
+            box-shadow: 0 4px 12px rgba(196, 30, 58, 0.1);
+            border-color: #c41e3a;
+            transform: translateY(-2px);
+        }
+
+        .document-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #c41e3a 0%, #8b1528 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .document-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .document-description {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .document-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #999;
+            padding-top: 1rem;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .document-type {
+            background: #f5f5f5;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+
+        .document-date {
+            font-style: italic;
+        }
+
+        /* Message vide */
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #999;
+        }
+
+        .empty-state-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.3;
+        }
+
+        .empty-state h3 {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .empty-state p {
+            color: #999;
+        }
+
+        /* Actions rapides */
+        .quick-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .quick-action-btn {
+            padding: 0.75rem 1.5rem;
+            background: white;
+            border: 2px solid #c41e3a;
+            color: #c41e3a;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .quick-action-btn:hover {
+            background: #c41e3a;
+            color: white;
+        }
+
+        /* Recherche */
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #c41e3a;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .tabs-nav {
+                overflow-x: auto;
+                scrollbar-width: thin;
+            }
+
+            .tab-button {
+                white-space: nowrap;
+            }
+
+            .documents-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/logo-grades.png" alt="Logo Judo" class="logo-img">
+                <span class="logo-text">Grades Judo</span>
+            </div>
+            <button class="nav-toggle" id="navToggle">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="techniques.html">Techniques</a></li>
+                <li><a href="katas.html">Katas</a></li>
+                <li><a href="philosophie.html">Philosophie</a></li>
+                <li><a href="documents.html" class="active">Documents</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="documents-container">
+        <div class="documents-header">
+            <h1>📚 Documents et Règlements</h1>
+            <p>Consultez tous les documents officiels organisés par catégorie</p>
+        </div>
+
+        <!-- Barre de recherche -->
+        <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchInput" placeholder="Rechercher un document...">
+        </div>
+
+        <!-- Navigation par onglets -->
+        <div class="tabs-nav" id="tabsNav">
+            <button class="tab-button active" data-category="tous">📋 Tous</button>
+            <button class="tab-button" data-category="reglement-general">📜 Règlement Général</button>
+            <button class="tab-button" data-category="juges-arbitres">👔 Juges & Arbitres</button>
+            <button class="tab-button" data-category="criteres-notation">✅ Critères de Notation</button>
+            <button class="tab-button" data-category="procedures">⚙️ Procédures</button>
+            <button class="tab-button" data-category="nouveautes">⭐ Nouveautés</button>
+            <button class="tab-button" data-category="autres">📁 Autres</button>
+        </div>
+
+        <!-- Contenu des onglets -->
+        <div id="tabsContent">
+            <!-- Le contenu sera généré dynamiquement par JavaScript -->
+        </div>
+
+        <!-- Actions rapides -->
+        <div class="quick-actions">
+            <a href="admin.html#documents" class="quick-action-btn">
+                ➕ Ajouter un document
+            </a>
+            <button class="quick-action-btn" onclick="window.print()">
+                🖨️ Imprimer la page
+            </button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Grades Judo. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // Gestion de la navigation mobile
+        document.getElementById('navToggle').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+
+        // Catégories disponibles
+        const categories = {
+            'tous': { name: 'Tous les documents', icon: '📋' },
+            'reglement-general': { name: 'Règlement Général', icon: '📜' },
+            'juges-arbitres': { name: 'Juges & Arbitres', icon: '👔' },
+            'criteres-notation': { name: 'Critères de Notation', icon: '✅' },
+            'procedures': { name: 'Procédures', icon: '⚙️' },
+            'nouveautes': { name: 'Nouveautés', icon: '⭐' },
+            'autres': { name: 'Autres Documents', icon: '📁' }
+        };
+
+        // Charger les documents depuis localStorage
+        function loadDocuments() {
+            const stored = localStorage.getItem('documentsData');
+            return stored ? JSON.parse(stored) : [];
+        }
+
+        // Obtenir l'icône selon le type de fichier
+        function getFileIcon(filename) {
+            const ext = filename.split('.').pop().toLowerCase();
+            const icons = {
+                'pdf': '📄',
+                'doc': '📝',
+                'docx': '📝',
+                'xls': '📊',
+                'xlsx': '📊',
+                'ppt': '📽️',
+                'pptx': '📽️',
+                'txt': '📃',
+                'jpg': '🖼️',
+                'jpeg': '🖼️',
+                'png': '🖼️',
+                'gif': '🖼️'
+            };
+            return icons[ext] || '📄';
+        }
+
+        // Formater la taille du fichier
+        function formatFileSize(bytes) {
+            if (!bytes) return 'N/A';
+            if (bytes < 1024) return bytes + ' B';
+            if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+            return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+        }
+
+        // Formater la date
+        function formatDate(dateString) {
+            if (!dateString) return 'Date inconnue';
+            const date = new Date(dateString);
+            return date.toLocaleDateString('fr-FR', { 
+                day: 'numeric', 
+                month: 'long', 
+                year: 'numeric' 
+            });
+        }
+
+        // Créer une carte de document
+        function createDocumentCard(doc) {
+            return `
+                <div class="document-card" onclick="openDocument('${doc.filename}', '${doc.category}')">
+                    <div class="document-icon">${getFileIcon(doc.filename)}</div>
+                    <div class="document-title">${doc.title || doc.filename}</div>
+                    <div class="document-description">${doc.description || 'Aucune description disponible'}</div>
+                    <div class="document-meta">
+                        <span class="document-type">${doc.filename.split('.').pop().toUpperCase()}</span>
+                        <span class="document-date">${formatDate(doc.uploadDate)}</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Afficher les documents par catégorie
+        function displayDocuments(filterCategory = 'tous', searchTerm = '') {
+            const documents = loadDocuments();
+            const content = document.getElementById('tabsContent');
+            
+            // Filtrer par catégorie
+            let filtered = filterCategory === 'tous' 
+                ? documents 
+                : documents.filter(doc => doc.category === filterCategory);
+            
+            // Filtrer par recherche
+            if (searchTerm) {
+                const term = searchTerm.toLowerCase();
+                filtered = filtered.filter(doc => 
+                    (doc.title && doc.title.toLowerCase().includes(term)) ||
+                    (doc.description && doc.description.toLowerCase().includes(term)) ||
+                    doc.filename.toLowerCase().includes(term)
+                );
+            }
+
+            if (filtered.length === 0) {
+                content.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">📭</div>
+                        <h3>Aucun document trouvé</h3>
+                        <p>${searchTerm ? 'Essayez une autre recherche' : 'Commencez par ajouter des documents depuis l\'administration'}</p>
+                    </div>
+                `;
+            } else {
+                content.innerHTML = `<div class="documents-grid">${filtered.map(createDocumentCard).join('')}</div>`;
+            }
+        }
+
+        // Ouvrir un document
+        function openDocument(filename, category) {
+            // Construction du chemin selon la catégorie
+            const categoryPath = getCategoryPath(category);
+            const path = `uploads/${categoryPath}/${filename}`;
+            
+            // Ouvrir dans un nouvel onglet
+            window.open(path, '_blank');
+        }
+
+        // Obtenir le chemin du dossier selon la catégorie
+        function getCategoryPath(category) {
+            const paths = {
+                'reglement-general': 'Gestion du Règlement',
+                'juges-arbitres': 'Gestion du Règlement',
+                'criteres-notation': 'Gestion du Règlement',
+                'procedures': 'Gestion du Règlement',
+                'nouveautes': 'Gestion du Règlement',
+                'autres': 'Gestion du Règlement'
+            };
+            return paths[category] || 'Gestion du Règlement';
+        }
+
+        // Gestion des onglets
+        document.getElementById('tabsNav').addEventListener('click', function(e) {
+            if (e.target.classList.contains('tab-button')) {
+                // Retirer l'état actif de tous les boutons
+                document.querySelectorAll('.tab-button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Activer le bouton cliqué
+                e.target.classList.add('active');
+                
+                // Afficher les documents de cette catégorie
+                const category = e.target.dataset.category;
+                displayDocuments(category);
+            }
+        });
+
+        // Recherche en temps réel
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value;
+            const activeCategory = document.querySelector('.tab-button.active').dataset.category;
+            displayDocuments(activeCategory, searchTerm);
+        });
+
+        // Charger les documents au chargement de la page
+        window.addEventListener('DOMContentLoaded', function() {
+            displayDocuments('tous');
+        });
+    </script>
+</body>
+</html>

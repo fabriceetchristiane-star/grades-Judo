@@ -4,511 +4,709 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Grades Judo</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            background: #f8f9fa;
-            color: #333;
-            padding: 20px;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #2c3e50, #3498db);
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-        }
-        
-        .admin-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        .section {
-            background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .onglets {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .onglet {
-            padding: 1rem 2rem;
-            background: #3498db;
-            color: white;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        
-        .onglet.active {
-            background: #e74c3c;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #2c3e50;
-        }
-        
-        .form-group textarea {
-            width: 100%;
-            min-height: 300px;
-            padding: 1rem;
-            border: 2px solid #e9ecef;
-            border-radius: 6px;
-            font-family: inherit;
-            font-size: 1rem;
-            resize: vertical;
-        }
-        
-        .btn {
-            background: #3498db;
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background 0.3s;
-            margin: 5px;
-        }
-        
-        .btn:hover {
-            background: #2980b9;
-        }
-        
-        .btn-success {
-            background: #27ae60;
-        }
-        
-        .btn-success:hover {
-            background: #219a52;
-        }
-        
-        .btn-danger {
-            background: #e74c3c;
-        }
-        
-        .btn-danger:hover {
-            background: #c0392b;
-        }
-        
-        .message {
-            padding: 1rem;
-            border-radius: 6px;
-            margin: 1rem 0;
-            display: none;
-        }
-        
-        .message.success {
-            background: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-        
-        .message.error {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-        
-        .contenu-onglet {
-            display: none;
-        }
-        
-        .contenu-onglet.active {
-            display: block;
-        }
-        
-        .grade-selector {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 1rem;
-            margin: 1rem 0;
-        }
-        
-        .grade-selector-btn {
-            padding: 1rem;
-            background: #3498db;
-            color: white;
-            border-radius: 6px;
-            text-align: center;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        
-        .grade-selector-btn.active {
-            background: #e74c3c;
-        }
-        
-        /* Style pour les PDF */
-        .pdf-section {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 1rem 0;
-            border: 2px dashed #3498db;
-        }
-        
-        .pdf-list {
-            margin-top: 1rem;
-        }
-        
-        .pdf-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.8rem;
-            background: white;
-            margin: 0.5rem 0;
-            border-radius: 6px;
-            border-left: 4px solid #2ecc71;
-        }
-    </style>
+    <script src="auth.js"></script>
 </head>
 <body>
-    <header>
-        <h1>🥋 Administration des Grades Judo</h1>
-        <p>Gestion du contenu technique pour chaque dan</p>
-    </header>
-
-    <div class="admin-container">
-        <!-- Messages -->
-        <div id="message" class="message"></div>
+    <h1>🥋 Administration Grades Judo</h1>
+    
+    <div id="message" style="position: fixed; top: 20px; right: 20px; padding: 1rem; border-radius: 8px; display: none; z-index: 1000;"></div>
+    
+    <div class="onglets">
+        <button class="onglet active" onclick="afficherOnglet('grades')">🥋 Grades</button>
+        <button class="onglet" onclick="afficherOnglet('techniques')">💪 Techniques</button>
+        <button class="onglet" onclick="afficherOnglet('katas')">📿 Katas</button>
+        <button class="onglet" onclick="afficherOnglet('philosophie')">🧠 Philosophie</button>
+        <button class="onglet" onclick="afficherOnglet('reglement')">📝 Règlement</button>
+        <button class="onglet" onclick="afficherOnglet('nouveautes')">🔄 Nouveautés</button>
+        <button class="onglet" onclick="afficherOnglet('pdf')">📄 Documents PDF</button>
+        <button class="onglet" onclick="afficherOnglet('sauvegarde')" style="background: #e67e22;">💾 Sauvegarde</button>
+    </div>
+    
+    <!-- GRADES -->
+    <div id="onglet-grades" class="contenu-onglet active">
+        <h2>Gestion des Grades</h2>
+        <div id="grade-selector"></div>
+        <textarea id="content-grade" rows="10"></textarea>
+        <button onclick="sauvegarderGrade()">💾 Sauvegarder</button>
+    </div>
+    
+    <!-- TECHNIQUES -->
+    <div id="onglet-techniques" class="contenu-onglet">
+        <h2>Gestion des Techniques</h2>
+        <button onclick="afficherTechnique('1er-dan')">1er Dan</button>
+        <button onclick="afficherTechnique('2eme-dan')">2ème Dan</button>
+        <button onclick="afficherTechnique('3eme-dan')">3ème Dan</button>
+        <button onclick="afficherTechnique('4-5-6-dan')">4-5-6 Dan</button>
+        <button onclick="afficherTechnique('20-attaques')">20 Attaques</button>
+        <textarea id="technique-text" rows="10"></textarea>
+        <button onclick="sauvegarderTechnique()">💾 Sauvegarder</button>
+    </div>
+    
+    <!-- KATAS -->
+    <div id="onglet-katas" class="contenu-onglet">
+        <h2>Gestion des Katas</h2>
+        <button onclick="afficherKata('nage-no-kata')">Nage-no-kata</button>
+        <button onclick="afficherKata('katame-no-kata')">Katame-no-kata</button>
+        <button onclick="afficherKata('kime-no-kata')">Kime-no-kata</button>
+        <button onclick="afficherKata('goshin-jitsu')">Goshin-jitsu</button>
+        <button onclick="afficherKata('ju-no-kata')">Ju-no-kata</button>
+        <button onclick="afficherKata('itsutsu-no-kata')">Itsutsu-no-kata</button>
+        <button onclick="afficherKata('koshiki-no-kata')">Koshiki-no-kata</button>
+        <button onclick="afficherKata('gonosen')">Gonosen</button>
+        <textarea id="kata-text" rows="10"></textarea>
+        <button onclick="sauvegarderKata()">💾 Sauvegarder</button>
+    </div>
+    
+    <!-- PHILOSOPHIE -->
+    <div id="onglet-philosophie" class="contenu-onglet">
+        <h2>Gestion Philosophie</h2>
+        <button onclick="afficherPhilo('shin-gi-tai')">Shin-Gi-Tai</button>
+        <button onclick="afficherPhilo('ethique')">Éthique</button>
+        <button onclick="afficherPhilo('principes')">Principes</button>
+        <button onclick="afficherPhilo('histoire')">Histoire</button>
+        <textarea id="philo-text" rows="10"></textarea>
+        <button onclick="sauvegarderPhilo()">💾 Sauvegarder</button>
+    </div>
+    
+    <!-- REGLEMENT -->
+    <div id="onglet-reglement" class="contenu-onglet">
+        <h2>Règlement Général</h2>
+        <textarea id="reglement-general" rows="5"></textarea>
+        <button onclick="sauvegarderReglementSection('general')">💾 Sauvegarder</button>
         
-        <!-- Onglets -->
-        <div class="onglets">
-            <div class="onglet active" onclick="afficherOnglet('grades')">🥋 Techniques par Grade</div>
-            <div class="onglet" onclick="afficherOnglet('nouveautes')">🔄 Nouveautés</div>
-            <div class="onglet" onclick="afficherOnglet('pdf')">📄 Documents PDF</div>
-            <div class="onglet" onclick="afficherOnglet('reglement')">📝 Règlement</div>
+        <h2>Guide des Juges</h2>
+        <textarea id="reglement-juges" rows="5"></textarea>
+        <button onclick="sauvegarderReglementSection('juges')">💾 Sauvegarder</button>
+        
+        <h2>Critères Évaluation</h2>
+        <textarea id="reglement-criteres" rows="5"></textarea>
+        <button onclick="sauvegarderReglementSection('criteres')">💾 Sauvegarder</button>
+        
+        <h2>Procédure Examen</h2>
+        <textarea id="reglement-procedure" rows="5"></textarea>
+        <button onclick="sauvegarderReglementSection('procedure')">💾 Sauvegarder</button>
+        
+        <h2>Nouveautés</h2>
+        <textarea id="reglement-nouveautes" rows="5"></textarea>
+        <button onclick="sauvegarderReglementSection('nouveautes')">💾 Sauvegarder</button>
+    </div>
+    
+    <!-- NOUVEAUTES -->
+    <div id="onglet-nouveautes" class="contenu-onglet">
+        <h2>Nouveautés</h2>
+        <input type="text" id="nouveaute-1" placeholder="Titre 1">
+        <textarea id="description-1" rows="3"></textarea>
+        <input type="text" id="nouveaute-2" placeholder="Titre 2">
+        <textarea id="description-2" rows="3"></textarea>
+        <button onclick="sauvegarderNouveautes()">💾 Sauvegarder</button>
+    </div>
+    
+    <!-- PDF (CORRIGÉ!) -->
+    <div id="onglet-pdf" class="contenu-onglet">
+        <h2>📄 Gestion des Documents PDF</h2>
+        <p style="color: #666;">Uploadez des PDF qui seront visibles sur la page Documents</p>
+        
+        <div style="border: 2px dashed #3498db; padding: 2rem; margin: 1rem 0; border-radius: 8px; background: #f8f9fa;">
+            <h3 style="margin-top: 0;">📤 Ajouter un nouveau document</h3>
+            
+            <label style="display: block; margin-top: 1rem; font-weight: bold;">📄 Fichier PDF :</label>
+            <input type="file" id="pdf-upload" accept=".pdf" style="margin: 0.5rem 0; padding: 0.5rem;">
+            
+            <label style="display: block; margin-top: 1rem; font-weight: bold;">📝 Titre du document :</label>
+            <input type="text" id="pdf-titre" placeholder="Ex: Règlement 2025" 
+                   style="width: 100%; padding: 0.75rem; margin: 0.5rem 0; border: 2px solid #ddd; border-radius: 6px;">
+            
+            <label style="display: block; margin-top: 1rem; font-weight: bold;">📋 Description :</label>
+            <textarea id="pdf-description" placeholder="Description du document..." rows="3"
+                      style="width: 100%; padding: 0.75rem; margin: 0.5rem 0; border: 2px solid #ddd; border-radius: 6px;"></textarea>
+            
+            <label style="display: block; margin-top: 1rem; font-weight: bold;">🗂️ Catégorie :</label>
+            <select id="pdf-categorie" style="width: 100%; padding: 0.75rem; margin: 0.5rem 0; border: 2px solid #ddd; border-radius: 6px;">
+                <option value="reglement-general">📜 Règlement Général</option>
+                <option value="juges-arbitres">👔 Juges & Arbitres</option>
+                <option value="criteres-notation">✅ Critères de Notation</option>
+                <option value="procedures">⚙️ Procédures</option>
+                <option value="nouveautes">⭐ Nouveautés</option>
+                <option value="autres">📁 Autres</option>
+            </select>
+            
+            <button onclick="uploaderPDF()" style="background: #27ae60; margin-top: 1rem; padding: 1rem 2rem; font-size: 1.1rem;">
+                📤 Uploader le Document
+            </button>
         </div>
         
-        <!-- Onglet Grades -->
-        <div id="onglet-grades" class="contenu-onglet active">
-            <div class="section">
-                <h2>📊 Gestion des Techniques par Grade</h2>
-                
-                <div class="grade-selector" id="grade-selector">
-                    <!-- Les boutons de grades seront générés ici -->
-                </div>
-                
-                <div class="form-group">
-                    <label for="content-grade">Contenu technique du grade :</label>
-                    <textarea id="content-grade" placeholder="Entrez le contenu technique..."></textarea>
-                    <button onclick="sauvegarderGrade()" class="btn btn-success">💾 Sauvegarder</button>
-                </div>
-            </div>
+        <div id="liste-pdf" style="margin-top: 2rem;"></div>
+    </div>
+    
+    <!-- SAUVEGARDE (NOUVEAU!) -->
+    <div id="onglet-sauvegarde" class="contenu-onglet">
+        <h2>💾 Sauvegarde et Restauration</h2>
+        <p style="color: #666; margin-bottom: 2rem;">Protégez vos données en créant des sauvegardes complètes</p>
+        
+        <!-- Export -->
+        <div style="background: #d4edda; border: 2px solid #c3e6cb; padding: 2rem; margin-bottom: 2rem; border-radius: 8px;">
+            <h3 style="color: #155724; margin-top: 0;">📤 Exporter toutes les données</h3>
+            <p style="color: #155724;">Téléchargez un fichier contenant :</p>
+            <ul style="color: #155724;">
+                <li>✅ Tous les textes des grades (1er au 6ème Dan)</li>
+                <li>✅ Tous les textes des techniques</li>
+                <li>✅ Tous les textes des katas</li>
+                <li>✅ Tous les textes de philosophie</li>
+                <li>✅ Toutes les sections du règlement</li>
+                <li>✅ Toutes les nouveautés</li>
+                <li>✅ Tous les documents PDF uploadés</li>
+            </ul>
+            <button onclick="exporterTout()" style="background: #28a745; padding: 1rem 2rem; font-size: 1.1rem;">
+                📥 Télécharger la sauvegarde complète
+            </button>
+            <p style="color: #666; margin-top: 1rem; font-size: 0.9rem;">Le fichier sera nommé : grades-judo-backup-AAAA-MM-JJ.json</p>
         </div>
         
-        <!-- Onglet Nouveautés -->
-        <div id="onglet-nouveautes" class="contenu-onglet">
-            <div class="section">
-                <h2>🔄 Gestion des Nouveautés</h2>
-                
-                <div class="form-group">
-                    <label for="nouveaute-1">Nouveauté 1 :</label>
-                    <input type="text" id="nouveaute-1" style="width: 100%; padding: 0.75rem; border: 2px solid #e9ecef; border-radius: 6px;">
-                </div>
-                
-                <div class="form-group">
-                    <label for="description-1">Description :</label>
-                    <textarea id="description-1" rows="3" placeholder="Description..."></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label for="nouveaute-2">Nouveauté 2 :</label>
-                    <input type="text" id="nouveaute-2" style="width: 100%; padding: 0.75rem; border: 2px solid #e9ecef; border-radius: 6px;">
-                </div>
-                
-                <div class="form-group">
-                    <label for="description-2">Description :</label>
-                    <textarea id="description-2" rows="3" placeholder="Description..."></textarea>
-                </div>
-                
-                <button onclick="sauvegarderNouveautes()" class="btn btn-success">💾 Sauvegarder toutes les nouveautés</button>
-            </div>
+        <!-- Import -->
+        <div style="background: #fff3cd; border: 2px solid #ffeaa7; padding: 2rem; border-radius: 8px;">
+            <h3 style="color: #856404; margin-top: 0;">📂 Restaurer une sauvegarde</h3>
+            <p style="color: #856404;">⚠️ <strong>Attention :</strong> Ceci remplacera toutes vos données actuelles par celles de la sauvegarde !</p>
+            <input type="file" id="import-file" accept=".json" style="margin: 1rem 0; padding: 0.5rem;">
+            <br>
+            <button onclick="importerTout()" style="background: #ffc107; color: #000; padding: 1rem 2rem; font-size: 1.1rem;">
+                📤 Restaurer depuis un fichier
+            </button>
         </div>
         
-        <!-- Onglet PDF -->
-        <div id="onglet-pdf" class="contenu-onglet">
-            <div class="section">
-                <h2>📄 Gestion des Documents PDF</h2>
-                <p style="color: #666; margin-bottom: 1rem;">Les PDF seront accessibles sur les pages des grades</p>
-                
-                <div class="pdf-section">
-                    <h3>📎 Uploader un PDF</h3>
-                    <div class="form-group">
-                        <label for="pdf-file">Sélectionner un fichier PDF :</label>
-                        <input type="file" id="pdf-file" accept=".pdf" style="margin-bottom: 1rem;">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="pdf-name">Nom du document :</label>
-                        <input type="text" id="pdf-name" placeholder="Ex: Techniques 1er Dan" style="width: 100%; padding: 0.75rem; border: 2px solid #e9ecef; border-radius: 6px;">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="pdf-grade">Grade associé :</label>
-                        <select id="pdf-grade" style="width: 100%; padding: 0.75rem; border: 2px solid #e9ecef; border-radius: 6px;">
-                            <option value="1er-dan">1er Dan</option>
-                            <option value="2eme-dan">2ème Dan</option>
-                            <option value="3eme-dan">3ème Dan</option>
-                            <option value="4eme-dan">4ème Dan</option>
-                            <option value="5eme-dan">5ème Dan</option>
-                            <option value="6eme-dan">6ème Dan</option>
-                            <option value="general">Général</option>
-                        </select>
-                    </div>
-                    
-                    <button onclick="uploaderPDF()" class="btn btn-success">📄 Uploader le PDF</button>
-                </div>
-                
-                <div class="pdf-list" id="liste-pdf">
-                    <h3>📋 Documents disponibles :</h3>
-                    <p id="pdf-vide">Aucun PDF disponible.</p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Onglet Règlement -->
-        <div id="onglet-reglement" class="contenu-onglet">
-            <div class="section">
-                <h2>📝 Gestion du Règlement</h2>
-                
-                <div class="form-group">
-                    <label for="content-reglement">Contenu du règlement :</label>
-                    <textarea id="content-reglement" placeholder="Règlement des passages de grade..."></textarea>
-                    <button onclick="sauvegarderReglement()" class="btn btn-success">💾 Sauvegarder</button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Navigation -->
-        <div style="text-align: center; margin-top: 3rem;">
-            <a href="index.html" class="btn">🏠 Retour à l'accueil</a>
-            <a href="https://fabriceetchristiane-star.github.io/num-rique-judo/" class="btn">🥋 Dojo Numérique</a>
+        <!-- Informations -->
+        <div style="background: #d1ecf1; border: 2px solid #bee5eb; padding: 1.5rem; margin-top: 2rem; border-radius: 8px;">
+            <h3 style="color: #0c5460; margin-top: 0;">ℹ️ Informations</h3>
+            <div id="info-sauvegarde" style="color: #0c5460;">Chargement...</div>
         </div>
     </div>
+    
+    <div style="margin-top: 2rem; padding: 1rem; border-top: 2px solid #eee;">
+        <a href="index.html" style="margin-right: 1rem;">🏠 Accueil</a>
+        <a href="documents.html" style="margin-right: 1rem;">📚 Voir les Documents</a>
+        <button onclick="location.reload()">🔄 Rafraîchir</button>
+    </div>
 
-    <script>
-        // ===== CONFIGURATION =====
-        const GRADES = [
-            { id: '1er-dan', name: '1er Dan' },
-            { id: '2eme-dan', name: '2ème Dan' },
-            { id: '3eme-dan', name: '3ème Dan' },
-            { id: '4eme-dan', name: '4ème Dan' },
-            { id: '5eme-dan', name: '5ème Dan' },
-            { id: '6eme-dan', name: '6ème Dan' }
-        ];
-        
-        let gradeActuel = '1er-dan';
-        
-        // ===== INITIALISATION =====
-        document.addEventListener('DOMContentLoaded', function() {
-            initialiserGrades();
-            chargerContenuGrade();
-            chargerNouveautes();
-            chargerReglement();
-            afficherPDFs();
-        });
-        
-        // ===== GESTION DES ONGLETS =====
-        function afficherOnglet(onglet) {
-            document.querySelectorAll('.contenu-onglet').forEach(o => o.classList.remove('active'));
-            document.querySelectorAll('.onglet').forEach(o => o.classList.remove('active'));
+<style>
+body { font-family: Arial, sans-serif; padding: 2rem; max-width: 1200px; margin: 0 auto; background: #f5f5f5; }
+h1 { color: #2c3e50; margin-bottom: 2rem; }
+h2 { color: #2c3e50; margin-top: 2rem; }
+h3 { color: #34495e; }
+.onglets { display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+.onglet { padding: 0.75rem 1.5rem; background: #3498db; color: white; border: none; border-radius: 6px; cursor: pointer; transition: all 0.3s; }
+.onglet:hover { background: #2980b9; }
+.onglet.active { background: #e74c3c; }
+.contenu-onglet { display: none; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+.contenu-onglet.active { display: block; }
+textarea, input[type="text"] { width: 100%; padding: 0.75rem; margin: 0.5rem 0; border: 2px solid #ddd; border-radius: 6px; font-family: inherit; font-size: 1rem; }
+textarea:focus, input[type="text"]:focus, select:focus { outline: none; border-color: #3498db; }
+button { padding: 0.75rem 1.5rem; background: #27ae60; color: white; border: none; border-radius: 6px; cursor: pointer; margin: 0.5rem; font-size: 1rem; transition: all 0.3s; }
+button:hover { background: #219a52; transform: translateY(-1px); }
+#message { box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-weight: bold; }
+#message.success { background: #d4edda; color: #155724; border: 2px solid #c3e6cb; }
+#message.error { background: #f8d7da; color: #721c24; border: 2px solid #f5c6cb; }
+.pdf-item { 
+    background: white; 
+    padding: 1.5rem; 
+    margin: 1rem 0; 
+    border-radius: 8px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    border-left: 5px solid #27ae60;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+.pdf-item:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transform: translateX(5px);
+}
+.pdf-info { flex: 1; }
+.pdf-title { font-size: 1.2rem; font-weight: bold; color: #2c3e50; margin-bottom: 0.5rem; }
+.pdf-meta { color: #7f8c8d; font-size: 0.9rem; margin-top: 0.5rem; }
+.pdf-category { 
+    display: inline-block;
+    background: #3498db; 
+    color: white; 
+    padding: 0.25rem 0.75rem; 
+    border-radius: 12px; 
+    font-size: 0.85rem;
+    margin-right: 0.5rem;
+}
+.pdf-actions { display: flex; gap: 0.5rem; align-items: center; }
+label { color: #34495e; font-size: 0.95rem; }
+select { font-size: 1rem; }
+a { color: #3498db; text-decoration: none; padding: 0.5rem 1rem; }
+a:hover { text-decoration: underline; }
+</style>
+
+<script>
+if (!auth || !auth.checkSession()) {
+    alert('⛔ Accès refusé');
+    window.location.href = 'index.html';
+}
+
+const GRADES = ['1er-dan', '2eme-dan', '3eme-dan', '4eme-dan', '5eme-dan', '6eme-dan'];
+let gradeActuel = '1er-dan';
+let techniqueActuelle = '1er-dan';
+let kataActuel = 'nage-no-kata';
+let philoActuelle = 'shin-gi-tai';
+
+document.addEventListener('DOMContentLoaded', function() {
+    initialiserGrades();
+    chargerContenuGrade();
+    chargerNouveautes();
+    chargerToutReglement();
+    chargerTechnique();
+    chargerKata();
+    chargerPhilo();
+    afficherPDFs();
+});
+
+function afficherOnglet(onglet) {
+    document.querySelectorAll('.contenu-onglet').forEach(o => o.classList.remove('active'));
+    document.querySelectorAll('.onglet').forEach(o => o.classList.remove('active'));
+    document.getElementById('onglet-' + onglet).classList.add('active');
+    event.target.classList.add('active');
+    if (onglet === 'pdf') afficherPDFs();
+    if (onglet === 'sauvegarde') afficherInfoSauvegarde();
+}
+
+function initialiserGrades() {
+    const container = document.getElementById('grade-selector');
+    GRADES.forEach(grade => {
+        const btn = document.createElement('button');
+        btn.textContent = grade;
+        btn.onclick = () => { gradeActuel = grade; chargerContenuGrade(); };
+        container.appendChild(btn);
+    });
+}
+
+function chargerContenuGrade() {
+    document.getElementById('content-grade').value = localStorage.getItem('grade-' + gradeActuel) || '';
+}
+
+function sauvegarderGrade() {
+    const contenu = document.getElementById('content-grade').value;
+    localStorage.setItem('grade-' + gradeActuel, contenu);
+    afficherMessage('✅ Grade sauvegardé !');
+}
+
+function afficherTechnique(tech) {
+    techniqueActuelle = tech;
+    chargerTechnique();
+}
+
+function chargerTechnique() {
+    document.getElementById('technique-text').value = localStorage.getItem('technique-' + techniqueActuelle) || '';
+}
+
+function sauvegarderTechnique() {
+    const contenu = document.getElementById('technique-text').value;
+    localStorage.setItem('technique-' + techniqueActuelle, contenu);
+    afficherMessage('✅ Technique sauvegardée !');
+}
+
+function afficherKata(kata) {
+    kataActuel = kata;
+    chargerKata();
+}
+
+function chargerKata() {
+    document.getElementById('kata-text').value = localStorage.getItem('kata-' + kataActuel) || '';
+}
+
+function sauvegarderKata() {
+    const contenu = document.getElementById('kata-text').value;
+    localStorage.setItem('kata-' + kataActuel, contenu);
+    afficherMessage('✅ Kata sauvegardé !');
+}
+
+function afficherPhilo(philo) {
+    philoActuelle = philo;
+    chargerPhilo();
+}
+
+function chargerPhilo() {
+    document.getElementById('philo-text').value = localStorage.getItem('philo-' + philoActuelle) || '';
+}
+
+function sauvegarderPhilo() {
+    const contenu = document.getElementById('philo-text').value;
+    localStorage.setItem('philo-' + philoActuelle, contenu);
+    afficherMessage('✅ Philosophie sauvegardée !');
+}
+
+function chargerNouveautes() {
+    document.getElementById('nouveaute-1').value = localStorage.getItem('nouveaute-1-titre') || '';
+    document.getElementById('description-1').value = localStorage.getItem('nouveaute-1-desc') || '';
+    document.getElementById('nouveaute-2').value = localStorage.getItem('nouveaute-2-titre') || '';
+    document.getElementById('description-2').value = localStorage.getItem('nouveaute-2-desc') || '';
+}
+
+function sauvegarderNouveautes() {
+    localStorage.setItem('nouveaute-1-titre', document.getElementById('nouveaute-1').value);
+    localStorage.setItem('nouveaute-1-desc', document.getElementById('description-1').value);
+    localStorage.setItem('nouveaute-2-titre', document.getElementById('nouveaute-2').value);
+    localStorage.setItem('nouveaute-2-desc', document.getElementById('description-2').value);
+    afficherMessage('✅ Nouveautés sauvegardées !');
+}
+
+function chargerToutReglement() {
+    document.getElementById('reglement-general').value = localStorage.getItem('reglement-general') || '';
+    document.getElementById('reglement-juges').value = localStorage.getItem('reglement-juges') || '';
+    document.getElementById('reglement-criteres').value = localStorage.getItem('reglement-criteres') || '';
+    document.getElementById('reglement-procedure').value = localStorage.getItem('reglement-procedure') || '';
+    document.getElementById('reglement-nouveautes').value = localStorage.getItem('reglement-nouveautes') || '';
+}
+
+function sauvegarderReglementSection(section) {
+    const contenu = document.getElementById('reglement-' + section).value;
+    localStorage.setItem('reglement-' + section, contenu);
+    afficherMessage('✅ Section sauvegardée !');
+}
+
+// ===== GESTION DES PDF - VERSION CORRIGÉE =====
+function uploaderPDF() {
+    const fileInput = document.getElementById('pdf-upload');
+    const titreInput = document.getElementById('pdf-titre');
+    const descriptionInput = document.getElementById('pdf-description');
+    const categorieSelect = document.getElementById('pdf-categorie');
+    const file = fileInput.files[0];
+    
+    console.log('📄 Début upload PDF...');
+    
+    // Validations
+    if (!file) {
+        afficherMessage('❌ Veuillez sélectionner un fichier PDF', 'error');
+        return;
+    }
+    if (file.type !== 'application/pdf') {
+        afficherMessage('❌ Le fichier doit être un PDF', 'error');
+        return;
+    }
+    if (!titreInput.value.trim()) {
+        afficherMessage('❌ Veuillez donner un titre au document', 'error');
+        return;
+    }
+    
+    console.log('📄 Fichier valide:', file.name, file.size, 'bytes');
+    
+    const reader = new FileReader();
+    reader.onerror = function(error) {
+        console.error('❌ Erreur lecture fichier:', error);
+        afficherMessage('❌ Erreur lors de la lecture du fichier', 'error');
+    };
+    
+    reader.onload = function(e) {
+        try {
+            console.log('📄 Lecture terminée, sauvegarde...');
             
-            document.getElementById('onglet-' + onglet).classList.add('active');
-            event.target.classList.add('active');
-        }
-        
-        // ===== GESTION DES GRADES =====
-        function initialiserGrades() {
-            const container = document.getElementById('grade-selector');
-            container.innerHTML = '';
+            // Charger les documents existants avec la BONNE clé
+            const documents = JSON.parse(localStorage.getItem('documentsData') || '[]');
+            console.log('📄 Documents existants:', documents.length);
             
-            GRADES.forEach(grade => {
-                const btn = document.createElement('div');
-                btn.className = 'grade-selector-btn';
-                btn.textContent = grade.name;
-                btn.onclick = () => selectionnerGrade(grade.id);
-                
-                if (grade.id === gradeActuel) {
-                    btn.classList.add('active');
-                }
-                
-                container.appendChild(btn);
-            });
-        }
-        
-        function selectionnerGrade(grade) {
-            gradeActuel = grade;
-            
-            document.querySelectorAll('.grade-selector-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-            
-            chargerContenuGrade();
-        }
-        
-        function chargerContenuGrade() {
-            const contenu = localStorage.getItem('grade-' + gradeActuel) || '';
-            document.getElementById('content-grade').value = contenu;
-        }
-        
-        function sauvegarderGrade() {
-            const contenu = document.getElementById('content-grade').value;
-            
-            if (!contenu.trim()) {
-                afficherMessage('❌ Le contenu ne peut pas être vide', 'error');
-                return;
-            }
-            
-            localStorage.setItem('grade-' + gradeActuel, contenu);
-            afficherMessage(`✅ Grade ${gradeActuel} sauvegardé !`);
-        }
-        
-        // ===== GESTION DES NOUVEAUTÉS =====
-        function chargerNouveautes() {
-            document.getElementById('nouveaute-1').value = localStorage.getItem('nouveaute-1-titre') || 'Fiches techniques supprimées';
-            document.getElementById('description-1').value = localStorage.getItem('nouveaute-1-desc') || 'Juges imposent directement';
-            
-            document.getElementById('nouveaute-2').value = localStorage.getItem('nouveaute-2-titre') || 'Kata non probatoire';
-            document.getElementById('description-2').value = localStorage.getItem('nouveaute-2-desc') || 'UV1 avant UV2 supprimé';
-        }
-        
-        function sauvegarderNouveautes() {
-            localStorage.setItem('nouveaute-1-titre', document.getElementById('nouveaute-1').value);
-            localStorage.setItem('nouveaute-1-desc', document.getElementById('description-1').value);
-            localStorage.setItem('nouveaute-2-titre', document.getElementById('nouveaute-2').value);
-            localStorage.setItem('nouveaute-2-desc', document.getElementById('description-2').value);
-            
-            afficherMessage('✅ Nouveautés sauvegardées !');
-        }
-        
-        // ===== GESTION DES PDF =====
-        function uploaderPDF() {
-            const fileInput = document.getElementById('pdf-file');
-            const nomInput = document.getElementById('pdf-name');
-            const gradeSelect = document.getElementById('pdf-grade');
-            const file = fileInput.files[0];
-            
-            if (!file) {
-                afficherMessage('❌ Veuillez sélectionner un fichier PDF', 'error');
-                return;
-            }
-            
-            if (file.type !== 'application/pdf') {
-                afficherMessage('❌ Le fichier doit être un PDF', 'error');
-                return;
-            }
-            
-            if (!nomInput.value.trim()) {
-                afficherMessage('❌ Veuillez donner un nom au document', 'error');
-                return;
-            }
-            
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const pdfs = JSON.parse(localStorage.getItem('pdfs-grades') || '[]');
-                pdfs.push({
-                    nom: nomInput.value,
-                    data: e.target.result,
-                    grade: gradeSelect.value,
-                    date: new Date().toLocaleDateString('fr-FR'),
-                    taille: (file.size / 1024 / 1024).toFixed(2) + ' Mo'
-                });
-                localStorage.setItem('pdfs-grades', JSON.stringify(pdfs));
-                afficherMessage('✅ PDF uploadé avec succès !');
-                afficherPDFs();
-                fileInput.value = '';
-                nomInput.value = '';
+            // Créer le nouveau document avec la structure CORRECTE
+            const nouveauDocument = {
+                title: titreInput.value.trim(),
+                filename: file.name,
+                description: descriptionInput.value.trim() || 'Aucune description',
+                category: categorieSelect.value,
+                uploadDate: new Date().toISOString(),
+                fileData: e.target.result, // Données base64 du PDF
+                fileSize: file.size
             };
-            reader.readAsDataURL(file);
+            
+            documents.push(nouveauDocument);
+            
+            // Sauvegarder avec la BONNE clé : documentsData
+            localStorage.setItem('documentsData', JSON.stringify(documents));
+            
+            console.log('✅ Document sauvegardé ! Total:', documents.length);
+            console.log('✅ Données sauvegardées sous la clé: documentsData');
+            
+            afficherMessage('✅ Document uploadé avec succès ! Visible sur la page Documents.');
+            
+            // Réinitialiser le formulaire
+            fileInput.value = '';
+            titreInput.value = '';
+            descriptionInput.value = '';
+            categorieSelect.value = 'reglement-general';
+            
+            // Rafraîchir l'affichage
+            afficherPDFs();
+            
+        } catch (error) {
+            console.error('❌ Erreur sauvegarde:', error);
+            afficherMessage('❌ Erreur lors de la sauvegarde: ' + error.message, 'error');
         }
+    };
+    
+    reader.readAsDataURL(file);
+}
+
+function afficherPDFs() {
+    console.log('🔄 Affichage des documents...');
+    
+    // Charger avec la BONNE clé
+    const documents = JSON.parse(localStorage.getItem('documentsData') || '[]');
+    console.log('📄 Nombre de documents trouvés:', documents.length);
+    
+    const liste = document.getElementById('liste-pdf');
+    
+    if (documents.length === 0) {
+        liste.innerHTML = `
+            <div style="padding: 2rem; text-align: center; background: #f8f9fa; border-radius: 8px; border: 2px dashed #ddd;">
+                <p style="font-size: 1.2rem; color: #999; margin: 0;">📭 Aucun document disponible</p>
+                <p style="color: #999; margin-top: 0.5rem;">Uploadez votre premier document ci-dessus</p>
+            </div>
+        `;
+        console.log('⚠️ Aucun document à afficher');
+    } else {
+        console.log('✅ Affichage de', documents.length, 'document(s)');
         
-        function afficherPDFs() {
-            const pdfs = JSON.parse(localStorage.getItem('pdfs-grades') || '[]');
-            const liste = document.getElementById('liste-pdf');
-            const videMsg = document.getElementById('pdf-vide');
-            
-            if (pdfs.length === 0) {
-                liste.innerHTML = '<h3>📋 Documents disponibles :</h3><p id="pdf-vide">Aucun PDF disponible.</p>';
-                return;
-            }
-            
-            videMsg.style.display = 'none';
-            liste.innerHTML = '<h3>📋 Documents disponibles :</h3>' + 
-                pdfs.map((pdf, index) => `
-                    <div class="pdf-item">
-                        <div>
-                            <strong>${pdf.nom}</strong><br>
-                            <small>Grade: ${pdf.grade} • Ajouté le ${pdf.date} • ${pdf.taille}</small>
-                        </div>
-                        <div>
-                            <a href="${pdf.data}" download="${pdf.nom}.pdf" class="btn" style="padding: 0.4rem 0.8rem; margin-right: 0.5rem;">📥 Télécharger</a>
-                            <button onclick="supprimerPDF(${index})" class="btn btn-danger" style="padding: 0.4rem 0.8rem;">🗑️</button>
+        const categorieLabels = {
+            'reglement-general': '📜 Règlement Général',
+            'juges-arbitres': '👔 Juges & Arbitres',
+            'criteres-notation': '✅ Critères de Notation',
+            'procedures': '⚙️ Procédures',
+            'nouveautes': '⭐ Nouveautés',
+            'autres': '📁 Autres'
+        };
+        
+        liste.innerHTML = '<h3 style="margin-bottom: 1rem;">📋 Documents disponibles :</h3>' + 
+            documents.map((doc, index) => {
+                console.log(`  - Document ${index + 1}: ${doc.title}`);
+                const categorieLabel = categorieLabels[doc.category] || doc.category;
+                const dateObj = new Date(doc.uploadDate);
+                const dateFormatee = dateObj.toLocaleDateString('fr-FR');
+                const tailleFormatee = (doc.fileSize / 1024 / 1024).toFixed(2) + ' Mo';
+                
+                return `
+                <div class="pdf-item">
+                    <div class="pdf-info">
+                        <div class="pdf-title">📄 ${doc.title}</div>
+                        <div style="color: #555; margin: 0.5rem 0;">${doc.description}</div>
+                        <div class="pdf-meta">
+                            <span class="pdf-category">${categorieLabel}</span>
+                            <span>📅 ${dateFormatee}</span>
+                            <span style="margin-left: 1rem;">💾 ${tailleFormatee}</span>
                         </div>
                     </div>
-                `).join('');
+                    <div class="pdf-actions">
+                        <a href="${doc.fileData}" download="${doc.filename}" 
+                           style="background: #3498db; color: white; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none;">
+                            📥 Télécharger
+                        </a>
+                        <button onclick="supprimerDocument(${index})" 
+                                style="background: #e74c3c; padding: 0.5rem 1rem; font-size: 0.9rem;">
+                            🗑️ Supprimer
+                        </button>
+                    </div>
+                </div>
+            `}).join('');
+    }
+}
+
+function supprimerDocument(index) {
+    if (confirm("⚠️ Supprimer définitivement ce document ?")) {
+        const documents = JSON.parse(localStorage.getItem('documentsData') || '[]');
+        const docSupprime = documents[index];
+        documents.splice(index, 1);
+        localStorage.setItem('documentsData', JSON.stringify(documents));
+        console.log('🗑️ Document supprimé:', docSupprime.title);
+        afficherPDFs();
+        afficherMessage('✅ Document supprimé.');
+    }
+}
+
+function afficherMessage(message, type = 'success') {
+    const msgElement = document.getElementById('message');
+    msgElement.textContent = message;
+    msgElement.className = type;
+    msgElement.style.display = 'block';
+    setTimeout(() => { msgElement.style.display = 'none'; }, 4000);
+}
+
+// ===== SYSTÈME EXPORT/IMPORT =====
+
+// Afficher les informations sur les données
+function afficherInfoSauvegarde() {
+    const info = document.getElementById('info-sauvegarde');
+    
+    // Compter les éléments
+    let nbGrades = 0;
+    let nbTechniques = 0;
+    let nbKatas = 0;
+    let nbPhilo = 0;
+    let nbDocuments = 0;
+    
+    GRADES.forEach(grade => {
+        if (localStorage.getItem('grade-' + grade)) nbGrades++;
+    });
+    
+    ['1er-dan', '2eme-dan', '3eme-dan', '4-5-6-dan', '20-attaques'].forEach(tech => {
+        if (localStorage.getItem('technique-' + tech)) nbTechniques++;
+    });
+    
+    ['nage-no-kata', 'katame-no-kata', 'kime-no-kata', 'goshin-jitsu', 'ju-no-kata', 'itsutsu-no-kata', 'koshiki-no-kata', 'gonosen'].forEach(kata => {
+        if (localStorage.getItem('kata-' + kata)) nbKatas++;
+    });
+    
+    ['shin-gi-tai', 'ethique', 'principes', 'histoire'].forEach(philo => {
+        if (localStorage.getItem('philo-' + philo)) nbPhilo++;
+    });
+    
+    const documents = JSON.parse(localStorage.getItem('documentsData') || '[]');
+    nbDocuments = documents.length;
+    
+    // Calculer la taille totale
+    let tailleTotal = 0;
+    for (let key in localStorage) {
+        if (localStorage.hasOwnProperty(key)) {
+            tailleTotal += localStorage[key].length + key.length;
         }
+    }
+    const tailleMo = (tailleTotal / 1024 / 1024).toFixed(2);
+    
+    info.innerHTML = `
+        <p><strong>📊 Statistiques actuelles :</strong></p>
+        <ul>
+            <li>🥋 Grades : ${nbGrades} / 6</li>
+            <li>💪 Techniques : ${nbTechniques} / 5</li>
+            <li>📿 Katas : ${nbKatas} / 8</li>
+            <li>🧠 Philosophie : ${nbPhilo} / 4</li>
+            <li>📝 Sections règlement : ${localStorage.getItem('reglement-general') ? '✅' : '❌'}</li>
+            <li>📄 Documents PDF : ${nbDocuments}</li>
+        </ul>
+        <p><strong>💾 Taille totale des données :</strong> ${tailleMo} Mo</p>
+        <p style="margin-top: 1rem; padding: 1rem; background: #fff; border-radius: 6px;">
+            <strong>💡 Conseil :</strong> Faites une sauvegarde avant toute modification importante !
+        </p>
+    `;
+}
+
+// Exporter toutes les données
+function exporterTout() {
+    console.log('📤 Début de l\'export...');
+    
+    try {
+        const sauvegarde = {
+            version: '1.0',
+            date: new Date().toISOString(),
+            site: 'grades-judo',
+            donnees: {}
+        };
         
-        function supprimerPDF(index) {
-            if (confirm("Supprimer ce PDF ?")) {
-                const pdfs = JSON.parse(localStorage.getItem('pdfs-grades') || '[]');
-                pdfs.splice(index, 1);
-                localStorage.setItem('pdfs-grades', JSON.stringify(pdfs));
-                afficherPDFs();
-                afficherMessage('✅ PDF supprimé.');
+        // Exporter TOUTES les clés du localStorage
+        for (let key in localStorage) {
+            if (localStorage.hasOwnProperty(key)) {
+                // Ignorer la session
+                if (key !== 'grades_judo_session') {
+                    sauvegarde.donnees[key] = localStorage[key];
+                }
             }
         }
         
-        // ===== GESTION DU RÈGLEMENT =====
-        function chargerReglement() {
-            document.getElementById('content-reglement').value = localStorage.getItem('reglement-grades') || '';
-        }
+        // Créer le fichier
+        const json = JSON.stringify(sauvegarde, null, 2);
+        const blob = new Blob([json], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
         
-        function sauvegarderReglement() {
-            const contenu = document.getElementById('content-reglement').value;
-            localStorage.setItem('reglement-grades', contenu);
-            afficherMessage('✅ Règlement sauvegardé !');
-        }
+        // Nom du fichier avec date
+        const date = new Date();
+        const nomFichier = `grades-judo-backup-${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}.json`;
         
-        // ===== UTILITAIRES =====
-        function afficherMessage(message, type = 'success') {
-            const msgElement = document.getElementById('message');
-            msgElement.textContent = message;
-            msgElement.className = 'message ' + type;
-            msgElement.style.display = 'block';
+        // Télécharger
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = nomFichier;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        
+        console.log('✅ Export réussi !');
+        afficherMessage('✅ Sauvegarde téléchargée avec succès ! Fichier : ' + nomFichier);
+        
+    } catch (error) {
+        console.error('❌ Erreur export:', error);
+        afficherMessage('❌ Erreur lors de l\'export : ' + error.message, 'error');
+    }
+}
+
+// Importer une sauvegarde
+function importerTout() {
+    const fileInput = document.getElementById('import-file');
+    const file = fileInput.files[0];
+    
+    if (!file) {
+        afficherMessage('❌ Veuillez sélectionner un fichier de sauvegarde', 'error');
+        return;
+    }
+    
+    if (!file.name.endsWith('.json')) {
+        afficherMessage('❌ Le fichier doit être au format .json', 'error');
+        return;
+    }
+    
+    if (!confirm('⚠️ ATTENTION !\n\nCette opération va REMPLACER toutes vos données actuelles par celles de la sauvegarde.\n\nVoulez-vous continuer ?')) {
+        return;
+    }
+    
+    console.log('📥 Début de l\'import...');
+    
+    const reader = new FileReader();
+    
+    reader.onerror = function() {
+        console.error('❌ Erreur lecture fichier');
+        afficherMessage('❌ Erreur lors de la lecture du fichier', 'error');
+    };
+    
+    reader.onload = function(e) {
+        try {
+            const sauvegarde = JSON.parse(e.target.result);
             
+            // Vérifier la structure
+            if (!sauvegarde.donnees) {
+                throw new Error('Format de sauvegarde invalide');
+            }
+            
+            console.log('📦 Sauvegarde du', sauvegarde.date);
+            console.log('📊 Nombre de clés:', Object.keys(sauvegarde.donnees).length);
+            
+            // Supprimer toutes les anciennes données (sauf session)
+            const keysToRemove = [];
+            for (let key in localStorage) {
+                if (localStorage.hasOwnProperty(key) && key !== 'grades_judo_session') {
+                    keysToRemove.push(key);
+                }
+            }
+            keysToRemove.forEach(key => localStorage.removeItem(key));
+            
+            // Importer les nouvelles données
+            let compteur = 0;
+            for (let key in sauvegarde.donnees) {
+                localStorage.setItem(key, sauvegarde.donnees[key]);
+                compteur++;
+            }
+            
+            console.log('✅ Import terminé :', compteur, 'clés restaurées');
+            
+            afficherMessage('✅ Sauvegarde restaurée avec succès ! ' + compteur + ' éléments importés.');
+            
+            // Rafraîchir l'affichage
             setTimeout(() => {
-                msgElement.style.display = 'none';
-            }, 4000);
+                location.reload();
+            }, 2000);
+            
+        } catch (error) {
+            console.error('❌ Erreur import:', error);
+            afficherMessage('❌ Erreur lors de l\'import : ' + error.message, 'error');
         }
-    </script>
+    };
+    
+    reader.readAsText(file);
+}
+</script>
 </body>
 </html>

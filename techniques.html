@@ -5,62 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Techniques Judo - Ressources</title>
     <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>💪 Techniques Judo</h1>
-        <nav>
-            <a href="index.html">Accueil</a>
-            <a href="techniques.html" class="nav-active">Techniques</a>
-            <a href="katas.html">Katas</a>
-            <a href="reglement.html">Règlement</a>
-            <a href="philosophie.html">Philosophie</a>
-        </nav>
-    </header>
-
-    <main>
-        <h2>Référentiels Techniques par Grade</h2>
-        
-        <div class="card">
-            <h3>📚 Télécharger les référentiels techniques</h3>
-            <div class="pdf-grid">
-                <a href="docs/1er-dan-techniques.pdf" target="_blank" class="pdf-btn">
-                    <span>🥋</span>
-                    1er Dan
-                </a>
-                <a href="docs/2eme-dan-techniques.pdf" target="_blank" class="pdf-btn">
-                    <span>🥋</span>
-                    2ème Dan
-                </a>
-                <a href="docs/3eme-dan-techniques.pdf" target="_blank" class="pdf-btn">
-                    <span>🥋</span>
-                    3ème Dan
-                </a>
-                <a href="docs/4-5-6-dan-techniques.pdf" target="_blank" class="pdf-btn">
-                    <span>🎓</span>
-                    4-5-6 Dan
-                </a>
-                <a href="docs/20-attaques-defense.pdf" target="_blank" class="pdf-btn">
-                    <span>🥊</span>
-                    20 Attaques/Défense
-                </a>
-            </div>
-        </div>
-
-        <div class="card">
-            <h3>🎓 Accès Direct par Grade</h3>
-            <div class="grade-links">
-                <a href="1er-dan.html" class="btn">1er Dan</a>
-                <a href="2eme-dan.html" class="btn">2ème Dan</a>
-                <a href="3eme-dan.html" class="btn">3ème Dan</a>
-                <a href="4eme-dan.html" class="btn">4ème Dan</a>
-                <a href="5eme-dan.html" class="btn">5ème Dan</a>
-                <a href="6eme-dan.html" class="btn">6ème Dan</a>
-            </div>
-        </div>
-    </main>
-
     <style>
+        .content-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .content-text {
+            line-height: 1.8;
+            color: #555;
+            white-space: pre-wrap;
+            margin: 1rem 0;
+        }
+
         .pdf-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -120,5 +80,109 @@
             }
         }
     </style>
+</head>
+<body>
+    <header>
+        <h1>💪 Techniques Judo</h1>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="techniques.html" class="nav-active">Techniques</a>
+            <a href="katas.html">Katas</a>
+            <a href="reglement.html">Règlement</a>
+            <a href="philosophie.html">Philosophie</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Référentiels Techniques par Grade</h2>
+        
+        <!-- 1er Dan -->
+        <div class="content-section">
+            <h3>🥋 1er Dan</h3>
+            <div id="contenu-1er-dan" class="content-text"></div>
+            <div id="pdfs-1er-dan"></div>
+        </div>
+
+        <!-- 2ème Dan -->
+        <div class="content-section">
+            <h3>🥋 2ème Dan</h3>
+            <div id="contenu-2eme-dan" class="content-text"></div>
+            <div id="pdfs-2eme-dan"></div>
+        </div>
+
+        <!-- 3ème Dan -->
+        <div class="content-section">
+            <h3>🥋 3ème Dan</h3>
+            <div id="contenu-3eme-dan" class="content-text"></div>
+            <div id="pdfs-3eme-dan"></div>
+        </div>
+
+        <!-- 4-5-6 Dan -->
+        <div class="content-section">
+            <h3>🎓 4-5-6 Dan</h3>
+            <div id="contenu-4-5-6-dan" class="content-text"></div>
+            <div id="pdfs-4-5-6-dan"></div>
+        </div>
+
+        <!-- 20 Attaques/Défenses -->
+        <div class="content-section">
+            <h3>🥊 20 Attaques/Défenses</h3>
+            <div id="contenu-20-attaques" class="content-text"></div>
+            <div id="pdfs-20-attaques"></div>
+        </div>
+
+        <div class="card">
+            <h3>🎓 Accès Direct par Grade</h3>
+            <div class="grade-links">
+                <a href="1er-dan.html" class="btn">1er Dan</a>
+                <a href="2eme-dan.html" class="btn">2ème Dan</a>
+                <a href="3eme-dan.html" class="btn">3ème Dan</a>
+                <a href="4eme-dan.html" class="btn">4ème Dan</a>
+                <a href="5eme-dan.html" class="btn">5ème Dan</a>
+                <a href="6eme-dan.html" class="btn">6ème Dan</a>
+            </div>
+        </div>
+    </main>
+
+    <footer style="margin-top: 3rem; padding: 2rem; text-align: center; background: #2c3e50; color: white;">
+        <p>© 2025 Guide des Grades Judo</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            chargerSection('1er-dan');
+            chargerSection('2eme-dan');
+            chargerSection('3eme-dan');
+            chargerSection('4-5-6-dan');
+            chargerSection('20-attaques');
+        });
+
+        function chargerSection(section) {
+            // Charger le contenu texte
+            const contenu = localStorage.getItem('technique-' + section);
+            const contenuDiv = document.getElementById('contenu-' + section);
+            
+            if (contenu && contenu.trim()) {
+                contenuDiv.innerHTML = contenu;
+            } else {
+                contenuDiv.innerHTML = '<p style="color: #999; font-style: italic;">Contenu en cours de rédaction...</p>';
+            }
+            
+            // Charger les PDFs
+            const pdfs = JSON.parse(localStorage.getItem('pdfs-techniques') || '[]');
+            const filtered = pdfs.filter(p => p.section === section);
+            const pdfsDiv = document.getElementById('pdfs-' + section);
+            
+            if (filtered.length > 0) {
+                pdfsDiv.innerHTML = '<h4 style="margin-top: 1rem;">📄 Documents disponibles :</h4><div class="pdf-grid">' +
+                    filtered.map(pdf => `
+                        <a href="${pdf.data}" download="${pdf.nom}" class="pdf-btn">
+                            <span>📥</span>
+                            ${pdf.nom.replace('.pdf', '')}
+                        </a>
+                    `).join('') + '</div>';
+            }
+        }
+    </script>
 </body>
 </html>

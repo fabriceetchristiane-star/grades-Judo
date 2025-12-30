@@ -187,6 +187,9 @@
             display: block;
             margin-top: 1rem;
             transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
         }
 
         .btn-admin:hover {
@@ -245,7 +248,6 @@
             <a href="katas.html">Katas</a>
             <a href="reglement.html">Règlement</a>
             <a href="https://fabriceetchristiane-star.github.io/num-rique-judo/">Dojo Numérique</a>
-            <a href="admin.html">Admin</a>
         </nav>
     </header>
 
@@ -258,7 +260,7 @@
         <div class="grid-container">
             <!-- Carte Nouveautés -->
             <div class="card">
-                <h3>🔄 NOUVEAUTÉS 2024-2025</h3>
+                <h3>🔄 NOUVEAUTÉS</h3>
                 <div class="news-grid">
                     <div class="news-item-small">
                         <strong>Fiches techniques supprimées</strong>
@@ -291,36 +293,35 @@
                     <a href="6eme-dan.html" class="grade-btn">6ème Dan</a>
                 </div>
             </div>
+        </div>
+    </main>
 
-          <!-- Carte Administration -->
-<div class="card admin-card">
-    <h3>⚙️ ESPACE PROFESSEUR</h3>
-    <p>Espace réservé aux modifications du contenu</p>
-    
-    <!-- Section connexion -->
-    <div id="login-section">
-        <input type="password" id="admin-password" placeholder="Mot de passe professeur" 
-               style="padding: 0.5rem; margin: 0.5rem 0; width: 100%; border: 1px solid #ddd; border-radius: 4px;">
-        <button onclick="verifierPassword()" class="btn btn-admin">Se connecter</button>
-    </div>
-    
-    <!-- Section admin (cachée au début) -->
-    <div id="admin-section" style="display: none;">
-        <a href="admin.html" class="btn btn-admin">🔐 Accéder à l'administration</a>
-        <button onclick="deconnexionAdmin()" class="btn" style="background: #dc3545; margin-top: 0.5rem;">
-            🚪 Se déconnecter
-        </button>
-    </div>
-</div>
-</div>
-</main>
+    <footer>
+        <!-- Section connexion professeur en bas de page -->
+        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+            <h3 style="margin-bottom: 1rem;">⚙️ ESPACE PROFESSEUR</h3>
+            
+            <!-- Section connexion -->
+            <div id="login-section">
+                <input type="password" id="admin-password" placeholder="Mot de passe professeur" 
+                       style="padding: 0.75rem; margin: 0.5rem 0; width: 100%; border: 1px solid #ddd; border-radius: 6px; font-size: 1rem;">
+                <button onclick="verifierPassword()" class="btn-admin">Se connecter</button>
+            </div>
+            
+            <!-- Section admin (cachée au début) -->
+            <div id="admin-section" style="display: none;">
+                <a href="admin.html" class="btn-admin">🔐 Accéder à l'administration</a>
+                <button onclick="deconnexionAdmin()" class="btn-admin" style="background: #95a5a6; margin-top: 0.5rem;">
+                    🚪 Se déconnecter
+                </button>
+            </div>
+        </div>
 
-<footer>
-    <p>© 2025 Guide des Grades Judo - Résumé pour les passages de grades</p>
-    <p style="margin-top: 0.5rem;">
-        <a href="https://fabriceetchristiane-star.github.io/num-rique-judo/" style="color: white; text-decoration: underline;">Retour au Dojo Numérique</a>
-    </p>
-</footer>
+        <p>© 2025 Guide des Grades Judo - Résumé pour les passages de grades</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="https://fabriceetchristiane-star.github.io/num-rique-judo/" style="color: white; text-decoration: underline;">Retour au Dojo Numérique</a>
+        </p>
+    </footer>
 
 <script>
     // ===== SYSTÈME DE CONNEXION ADMIN =====
@@ -360,6 +361,7 @@
         location.reload();
     }
     
+    // Permettre la connexion avec la touche Entrée
     document.addEventListener('DOMContentLoaded', function() {
         console.log('📊 Page Grades Judo chargée');
         
@@ -368,6 +370,17 @@
             document.getElementById('login-section').style.display = 'none';
             document.getElementById('admin-section').style.display = 'block';
         }
+        
+        // Permettre l'entrée avec Enter
+        const passwordInput = document.getElementById('admin-password');
+        if (passwordInput) {
+            passwordInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    verifierPassword();
+                }
+            });
+        }
+        
         document.getElementById('admin-password').value = '';
     });
 </script>
