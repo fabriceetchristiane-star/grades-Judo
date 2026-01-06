@@ -15,12 +15,60 @@
         }
 
         .content-text {
-            line-height: 1.8;
-            color: #555;
-            white-space: pre-wrap;
-            margin: 1rem 0;
-        }
+    line-height: 1.8;
+    color: #555;
+    margin: 1rem 0;
+}
 
+.content-text h3, .content-text h4 {
+    color: #2c3e50;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.content-text h3 {
+    font-size: 1.3rem;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.3rem;
+}
+
+.content-text h4 {
+    font-size: 1.1rem;
+    color: #3498db;
+}
+
+.content-text ul, .content-text ol {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.content-text li {
+    margin-bottom: 0.5rem;
+}
+
+.content-text a {
+    color: #3498db;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.content-text a:hover {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+.content-text strong {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.content-text em {
+    color: #666;
+}
+
+.content-text p {
+    margin-bottom: 1rem;
+}
         .pdf-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -158,32 +206,44 @@
             chargerSection('20-attaques');
         });
 
-        function chargerSection(section) {
-            // Charger le contenu texte
-            const contenu = localStorage.getItem('technique-' + section);
-            const contenuDiv = document.getElementById('contenu-' + section);
-            
-            if (contenu && contenu.trim()) {
-                contenuDiv.innerHTML = contenu;
-            } else {
-                contenuDiv.innerHTML = '<p style="color: #999; font-style: italic;">Contenu en cours de rédaction...</p>';
-            }
-            
-            // Charger les PDFs
-            const pdfs = JSON.parse(localStorage.getItem('pdfs-techniques') || '[]');
-            const filtered = pdfs.filter(p => p.section === section);
-            const pdfsDiv = document.getElementById('pdfs-' + section);
-            
-            if (filtered.length > 0) {
-                pdfsDiv.innerHTML = '<h4 style="margin-top: 1rem;">📄 Documents disponibles :</h4><div class="pdf-grid">' +
-                    filtered.map(pdf => `
-                        <a href="${pdf.data}" download="${pdf.nom}" class="pdf-btn">
-                            <span>📥</span>
-                            ${pdf.nom.replace('.pdf', '')}
-                        </a>
-                    `).join('') + '</div>';
-            }
-        }
+        function formaterTexte(texte) {
+    if (!texte || texte.trim() === '') return '';
+    
+    if (texte.includes('<p>') || texte.includes('<h3>') || texte.includes('<ul>')) {
+        return texte;
+    }
+    
+    return texte
+        .split('\n\n')
+        .filter(p => p.trim())
+        .map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`)
+        .join('');
+}
+
+function chargerSection(section) {
+    const contenu = localStorage.getItem('technique-' + section);
+    const contenuDiv = document.getElementById('contenu-' + section);
+    
+    if (contenu && contenu.trim()) {
+        contenuDiv.innerHTML = formaterTexte(contenu);
+    } else {
+        contenuDiv.innerHTML = '<p style="color: #999; font-style: italic;">Contenu en cours de rédaction...</p>';
+    }
+    
+    const pdfs = JSON.parse(localStorage.getItem('pdfs-techniques') || '[]');
+    const filtered = pdfs.filter(p => p.section === section);
+    const pdfsDiv = document.getElementById('pdfs-' + section);
+    
+    if (filtered.length > 0) {
+        pdfsDiv.innerHTML = '<h4 style="margin-top: 1rem;">📄 Documents disponibles :</h4><div class="pdf-grid">' +
+            filtered.map(pdf => `
+                <a href="${pdf.data}" download="${pdf.nom}" class="pdf-btn">
+                    <span>📥</span>
+                    ${pdf.nom.replace('.pdf', '')}
+                </a>
+            `).join('') + '</div>';
+    }
+}
     </script>
 </body>
 </html>
