@@ -178,21 +178,48 @@
     </footer>
 
     <script>
-        // ===== CHARGER LE CONTENU DU 1ER DAN =====
-        function chargerContenuGrade() {
-            // Charger les techniques depuis le localStorage
-            const techniques = localStorage.getItem('grade-1er-dan');
-            if (techniques && techniques.trim() !== '') {
-                document.getElementById('contenu-technique').innerHTML = techniques;
-            }
-            
-            // Charger les PDF spécifiques au 1er Dan
-            chargerPDFsGrade();
-            
-            // Charger les katas
-            chargerKatas();
-        }
         
+        // ===== FONCTION POUR FORMATER LE TEXTE =====
+function formaterTexte(texte) {
+    if (!texte || texte.trim() === '') return '';
+    
+    // Si le texte contient déjà des balises HTML, le retourner tel quel
+    if (texte.includes('<p>') || texte.includes('<h3>') || texte.includes('<ul>')) {
+        return texte;
+    }
+    
+    // Sinon, convertir les sauts de ligne en paragraphes
+    return texte
+        .split('\n\n')
+        .filter(p => p.trim())
+        .map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`)
+        .join('');
+}
+
+// ===== CHARGER LE CONTENU DU 1ER DAN =====
+function chargerContenuGrade() {
+    // Charger depuis la NOUVELLE clé créée dans l'admin
+    const data = JSON.parse(localStorage.getItem('grade-page-1er-dan') || '{}');
+    const conteneur = document.getElementById('contenu-technique');
+    
+    if (data.contenu && data.contenu.trim() !== '') {
+        // Afficher le titre si disponible
+        let html = '';
+        if (data.titre && data.titre.trim() !== '') {
+            html += `<h3>${data.titre}</h3>`;
+        }
+        html += formaterTexte(data.contenu);
+        conteneur.innerHTML = html;
+    } else {
+        conteneur.innerHTML = '<p><em>Le programme technique sera chargé ici depuis l\'administration...</em></p>';
+    }
+    
+    // Charger les PDF spécifiques au 1er Dan
+    chargerPDFsGrade();
+    
+    // Charger les katas
+    chargerKatas();
+}
         // ===== CHARGER LES PDF DU GRADE =====
         function chargerPDFsGrade() {
             const pdfs = JSON.parse(localStorage.getItem('pdfs-grades') || '[]');
