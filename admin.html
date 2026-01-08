@@ -22,13 +22,32 @@
         <button class="onglet" onclick="afficherOnglet('sauvegarde')" style="background: #e67e22;">💾 Sauvegarde</button>
     </div>
     
-    <!-- GRADES -->
-    <div id="onglet-grades" class="contenu-onglet active">
-        <h2>Gestion des Grades</h2>
-        <div id="grade-selector"></div>
-        <textarea id="content-grade" rows="10"></textarea>
-        <button onclick="sauvegarderGrade()">💾 Sauvegarder</button>
+<!-- GRADES -->
+<div id="onglet-grades" class="contenu-onglet active">
+    <h2>🥋 Gestion des Pages de Grades</h2>
+    <p style="color: #666; margin-bottom: 1rem;">Modifiez le contenu de chaque page de grade individuellement</p>
+    
+    <div style="margin-bottom: 1.5rem;">
+        <label style="display: block; font-weight: bold; margin-bottom: 0.5rem;">📋 Sélectionner une page :</label>
+        <div id="grade-selector" style="display: flex; gap: 0.5rem; flex-wrap: wrap;"></div>
     </div>
+
+    <div style="margin-bottom: 1.5rem;">
+        <label for="grade-titre" style="display: block; font-weight: bold; margin-bottom: 0.5rem;">📌 Titre de la section :</label>
+        <input type="text" id="grade-titre" placeholder="Ex: Techniques à Présenter">
+    </div>
+    
+    <div style="margin-bottom: 1.5rem;">
+        <label for="content-grade" style="display: block; font-weight: bold; margin-bottom: 0.5rem;">📝 Contenu :</label>
+        <textarea id="content-grade" rows="15" placeholder="Entrez le contenu... Les sauts de ligne seront automatiquement formatés !"></textarea>
+        <p style="color: #666; font-size: 0.9rem; margin-top: 0.5rem;">
+            💡 Copiez-collez votre texte normalement ou utilisez du HTML : &lt;h3&gt;Titre&lt;/h3&gt; &lt;ul&gt;&lt;li&gt;Point&lt;/li&gt;&lt;/ul&gt;
+        </p>
+    </div>
+    
+    <button onclick="sauvegarderGrade()" style="padding: 1rem 2rem; font-size: 1.1rem;">💾 Sauvegarder</button>
+</div>
+  
     
     <!-- TECHNIQUES -->
     <div id="onglet-techniques" class="contenu-onglet">
@@ -271,26 +290,59 @@ function afficherOnglet(onglet) {
     if (onglet === 'sauvegarde') afficherInfoSauvegarde();
 }
 
+
 function initialiserGrades() {
     const container = document.getElementById('grade-selector');
+    const labels = {
+        '1er-dan': '🥋 1er Dan',
+        '2eme-dan': '🥋 2ème Dan',
+        '3eme-dan': '🥋 3ème Dan',
+        '4eme-dan': '🎓 4ème Dan',
+        '5eme-dan': '🎓 5ème Dan',
+        '6eme-dan': '🎓 6ème Dan'
+    };
+    
     GRADES.forEach(grade => {
         const btn = document.createElement('button');
-        btn.textContent = grade;
-        btn.onclick = () => { gradeActuel = grade; chargerContenuGrade(); };
+        btn.textContent = labels[grade] || grade;
+        btn.onclick = () => { 
+            gradeActuel = grade; 
+            chargerContenuGrade();
+            // Mettre en surbrillance le bouton actif
+            container.querySelectorAll('button').forEach(b => b.style.background = '#27ae60');
+            btn.style.background = '#e74c3c';
+        };
         container.appendChild(btn);
     });
+    
+    // Mettre le premier en rouge
+    container.querySelector('button').style.background = '#e74c3c';
 }
 
 function chargerContenuGrade() {
-    document.getElementById('content-grade').value = localStorage.getItem('grade-' + gradeActuel) || '';
+    const data = JSON.parse(localStorage.getItem('grade-page-' + gradeActuel) || '{}');
+    document.getElementById('grade-titre').value = data.titre || '';
+    document.getElementById('content-grade').value = data.contenu || '';
 }
 
 function sauvegarderGrade() {
+    const titre = document.getElementById('grade-titre').value;
     const contenu = document.getElementById('content-grade').value;
-    localStorage.setItem('grade-' + gradeActuel, contenu);
-    afficherMessage('✅ Grade sauvegardé !');
+    
+    if (!contenu.trim()) {
+        afficherMessage('❌ Le contenu ne peut pas être vide', 'error');
+        return;
+    }
+    
+    const data = {
+        titre: titre,
+        contenu: contenu,
+        date: new Date().toLocaleDateString('fr-FR')
+    };
+    
+    localStorage.setItem('grade-page-' + gradeActuel, JSON.stringify(data));
+    afficherMessage(`✅ Contenu du ${gradeActuel} sauvegardé !`);
 }
-
 function afficherTechnique(tech) {
     techniqueActuelle = tech;
     chargerTechnique();
