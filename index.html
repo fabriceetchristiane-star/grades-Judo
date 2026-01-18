@@ -382,7 +382,35 @@
         }
         
         document.getElementById('admin-password').value = '';
-    });
+    });function afficherOnglet(nom) {
+        const sections = document.querySelectorAll('.contenu-onglet');
+        sections.forEach(section => {
+            section.style.display = 'none';
+            section.classList.remove('active');
+        });
+
+        const boutons = document.querySelectorAll('.onglet');
+        boutons.forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        const sectionCible = document.getElementById('onglet-' + nom);
+        if (sectionCible) {
+            sectionCible.style.display = 'block';
+            sectionCible.classList.add('active');
+        }
+
+        const boutonActif = Array.from(boutons).find(btn => 
+            btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(nom)
+        );
+        if (boutonActif) {
+            boutonActif.classList.add('active');
+        }
+    }
+
+    if (typeof auth !== 'undefined' && auth.checkSession()) {
+        setTimeout(() => { afficherOnglet('grades'); }, 100);
+    }
 </script>
 </body>
 </html>

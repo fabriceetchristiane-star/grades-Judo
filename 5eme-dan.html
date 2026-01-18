@@ -1,234 +1,196 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>5ème Dan – Exigences</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    .content-section {
-        background: white;
-        padding: 2rem;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        margin: 2rem 0;
-    }
-    
-    .pdf-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 1rem;
-        margin: 1rem 0;
-    }
-
-    .pdf-btn {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0.8rem 0.3rem;
-        background: #9b59b6;
-        color: white;
-        text-decoration: none;
-        border-radius: 8px;
-        text-align: center;
-        transition: all 0.3s;
-        border: 2px solid #8e44ad;
-        min-height: 60px;
-        justify-content: center;
-        font-size: 0.9rem;
-    }
-
-    .pdf-btn:hover {
-        background: #8e44ad;
-        transform: translateY(-2px);
-        text-decoration: none;
-        color: white;
-    }
-
-    .pdf-btn span {
-        font-size: 1.2rem;
-        margin-bottom: 0.3rem;
-    }
-    
-    .uv-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
-        margin: 1.5rem 0;
-    }
-    
-    .uv-card {
-        background: #f8f9fa;
-        padding: 1.5rem;
-        border-radius: 8px;
-        border-left: 4px solid #e74c3c;
-    }
-    
-    .uv-card h4 {
-        color: #2c3e50;
-        margin-bottom: 0.5rem;
-    }
-    
-    @media (max-width: 768px) {
-        .pdf-grid, .uv-grid {
-            grid-template-columns: repeat(2, 1fr);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5ème Dan - Guide des Grades Judo</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .content-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 2rem 0;
         }
-    }
-
-    @media (max-width: 480px) {
-        .pdf-grid, .uv-grid {
-            grid-template-columns: 1fr;
+        
+        .section-detail {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            border-left: 4px solid #e74c3c;
         }
-    }
-  </style>
+        
+        .section-detail h3 {
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        
+        .empty-section {
+            color: #999;
+            font-style: italic;
+            padding: 1rem;
+            text-align: center;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+        
+        .pdf-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .pdf-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.8rem 0.3rem;
+            background: #9b59b6;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s;
+            min-height: 60px;
+            justify-content: center;
+        }
+
+        .pdf-btn:hover {
+            background: #8e44ad;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .pdf-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>🏆 5ème Dan</h1>
-    <nav>
-      <a href="index.html">Accueil</a>
-      <a href="4eme-dan.html">4ème Dan</a>
-      <a href="5eme-dan.html" class="nav-active">5ème Dan</a>
-      <a href="6eme-dan.html">6ème Dan</a>
-    </nav>
-  </header>
+    <header>
+        <h1>🏆 5ème Dan - Techniques et Programme</h1>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="4eme-dan.html">4ème Dan</a>
+            <a href="6eme-dan.html">6ème Dan</a>
+            <a href="techniques.html">Techniques</a>
+        </nav>
+    </header>
 
-  <main>
-    <div class="content-section">
-        <h2>📋 Programme Technique du 5ème Dan</h2>
-        <div id="contenu-technique">
-            <!-- Le contenu sera chargé dynamiquement -->
-            <p><em>Le programme technique sera chargé ici depuis l'administration...</em></p>
+    <main>
+        <div class="content-section">
+            <h2>📚 Programme Technique du 5ème Dan</h2>
+            <div id="section-programme">
+                <div class="empty-section">Le programme technique sera chargé ici...</div>
+            </div>
         </div>
-    </div>
+        
+        <div class="content-section">
+            <h2>📖 Kata Obligatoire (Ju-no-kata)</h2>
+            <div id="section-kata">
+                <div class="empty-section">Les informations sur le kata seront chargées ici...</div>
+            </div>
+            <div class="pdf-grid" id="kata-pdfs"></div>
+        </div>
+        
+        <div class="content-section">
+            <h2>💪 Système Personnel (UV2)</h2>
+            <div id="section-techniques">
+                <div class="empty-section">Les détails du système personnel seront chargés ici...</div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>ℹ️ Informations Complémentaires</h2>
+            <div id="section-infos">
+                <div class="empty-section">Informations complémentaires à venir...</div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>📄 Documents PDF du 5ème Dan</h2>
+            <div id="contenu-pdf">
+                <div class="empty-section">Les documents PDF seront listés ici...</div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="4eme-dan.html" class="btn">⬅️ 4ème Dan</a>
+            <a href="index.html" class="btn">🏠 Accueil</a>
+            <a href="6eme-dan.html" class="btn">➡️ 6ème Dan</a>
+        </div>
+    </main>
 
-    <div class="content-section">
-      <h3>🎯 Prestation de 25 minutes</h3>
-      
-      <div class="uv-grid">
-          <div class="uv-card">
-              <h4>📝 UV1 – Ju-no-kata</h4>
-              <p><strong>Présentation complète</strong></p>
-              <p>Rôle de Tori - Expression de la souplesse</p>
-          </div>
-          
-          <div class="uv-card">
-              <h4>💪 UV2 – Système personnel</h4>
-              <p><strong>Judo Debout et Sol (10 min min)</strong></p>
-              <ul>
-                <li>Système d'attaque personnel</li>
-                <li>Système de défense</li>
-                <li>Plan clair et précis</li>
-              </ul>
-          </div>
-          
-          <div class="uv-card">
-              <h4>🛡️ UV3 – Jujitsu</h4>
-              <p><strong>5 minutes minimum</strong></p>
-              <ul>
-                <li>Expression personnelle</li>
-                <li>Défense fondamentale</li>
-                <li>Ripostes adaptées</li>
-              </ul>
-          </div>
-      </div>
-      
-      <div class="pdf-grid" id="kata-pdfs">
-          <!-- Les PDF de kata seront chargés ici -->
-          <p><em>Les documents kata seront listés ici...</em></p>
-      </div>
-    </div>
+    <footer>
+        <p>© 2025 Guide des Grades Judo - 5ème Dan</p>
+    </footer>
 
-    <div class="content-section">
-      <h3>📄 Documents PDF du 5ème Dan</h3>
-      <div id="contenu-pdf">
-        <p><em>Les documents PDF seront listés ici...</em></p>
-      </div>
-    </div>
-    
-    <div style="text-align: center; margin-top: 2rem;">
-        <a href="4eme-dan.html" class="btn">⬅️ 4ème Dan</a>
-        <a href="index.html" class="btn">🏠 Accueil</a>
-        <a href="6eme-dan.html" class="btn">➡️ 6ème Dan</a>
-        <a href="admin-grades.html" class="btn">⚙️ Admin</a>
-    </div>
-  </main>
+    <script>
+        function formaterTexte(texte) {
+            if (!texte || texte.trim() === '') return '';
+            if (texte.includes('<p>') || texte.includes('<h3>') || texte.includes('<ul>')) {
+                return texte;
+            }
+            return texte.split('\n\n').filter(p => p.trim()).map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`).join('');
+        }
 
-  <script>
-    // ===== CHARGER LE CONTENU DU 5ÈME DAN =====
-    function chargerContenuGrade() {
-        // Charger les techniques depuis le localStorage
-        const techniques = localStorage.getItem('grade-5eme-dan');
-        if (techniques && techniques.trim() !== '') {
-            document.getElementById('contenu-technique').innerHTML = techniques;
+        function chargerContenuGrade() {
+            const data = JSON.parse(localStorage.getItem('grade-complet-5eme-dan') || '{}');
+            
+            const sectionProgramme = document.getElementById('section-programme');
+            if (data.programme && data.programme.trim() !== '') {
+                sectionProgramme.innerHTML = `<div class="section-detail">${formaterTexte(data.programme)}</div>`;
+            }
+            
+            const sectionKata = document.getElementById('section-kata');
+            if (data.kata && data.kata.trim() !== '') {
+                sectionKata.innerHTML = `<div class="section-detail">${formaterTexte(data.kata)}</div>`;
+            }
+            
+            const sectionTechniques = document.getElementById('section-techniques');
+            if (data.techniques && data.techniques.trim() !== '') {
+                sectionTechniques.innerHTML = `<div class="section-detail">${formaterTexte(data.techniques)}</div>`;
+            }
+            
+            const sectionInfos = document.getElementById('section-infos');
+            if (data.infos && data.infos.trim() !== '') {
+                sectionInfos.innerHTML = `<div class="section-detail">${formaterTexte(data.infos)}</div>`;
+            }
+            
+            chargerPDFsGrade();
+            chargerKatas();
         }
         
-        // Charger les PDF spécifiques au 5ème Dan
-        chargerPDFsGrade();
-        
-        // Charger les katas
-        chargerKatas();
-    }
-    
-    // ===== CHARGER LES PDF DU GRADE =====
-    function chargerPDFsGrade() {
-        const pdfs = JSON.parse(localStorage.getItem('pdfs-grades') || '[]');
-        const conteneur = document.getElementById('contenu-pdf');
-        
-        // Filtrer les PDF pour le 5ème Dan
-        const pdfsGrade = pdfs.filter(pdf => 
-            pdf.grade === '5eme-dan' || pdf.grade === 'general' || pdf.grade === '4-5-6-dan'
-        );
-        
-        if (pdfsGrade.length === 0) {
-            conteneur.innerHTML = '<p>Aucun document PDF disponible pour le 5ème Dan.</p>';
-            return;
+        function chargerPDFsGrade() {
+            const pdfs = JSON.parse(localStorage.getItem('pdfs-grades') || '[]');
+            const conteneur = document.getElementById('contenu-pdf');
+            const pdfsGrade = pdfs.filter(pdf => pdf.grade === '5eme-dan' || pdf.grade === 'general' || pdf.grade === '4-5-6-dan');
+            
+            if (pdfsGrade.length === 0) {
+                conteneur.innerHTML = '<div class="empty-section">Aucun document PDF disponible.</div>';
+                return;
+            }
+            
+            conteneur.innerHTML = '<div class="pdf-grid">' +
+                pdfsGrade.map(pdf => `<a href="${pdf.data}" download="${pdf.nom}.pdf" class="pdf-btn"><span>📄</span>${pdf.nom}</a>`).join('') + '</div>';
         }
         
-        conteneur.innerHTML = '<p>Téléchargez les documents du 5ème Dan :</p>' + 
-            '<div class="pdf-grid">' +
-            pdfsGrade.map(pdf => `
-                <a href="${pdf.data}" download="${pdf.nom}.pdf" class="pdf-btn">
-                    <span>📄</span>
-                    ${pdf.nom}
-                </a>
-            `).join('') + '</div>';
-    }
-    
-    // ===== CHARGER LES KATAS =====
-    function chargerKatas() {
-        const katas = JSON.parse(localStorage.getItem('katas-grades') || '[]');
-        const conteneur = document.getElementById('kata-pdfs');
-        
-        // Filtrer les katas pour le 5ème Dan
-        const katasGrade = katas.filter(kata => 
-            kata.grade === '5eme-dan' || kata.grade === 'general'
-        );
-        
-        if (katasGrade.length > 0) {
-            conteneur.innerHTML = katasGrade.map(kata => `
-                <a href="${kata.data}" download="${kata.nom}.pdf" class="pdf-btn">
-                    <span>🔄</span>
-                    ${kata.nom}
-                </a>
-            `).join('');
-        } else {
-            conteneur.innerHTML = `
-                <a href="#" class="pdf-btn">
-                    <span>🔄</span>
-                    Ju-no-kata
-                </a>
-                <a href="#" class="pdf-btn">
-                    <span>📄</span>
-                    Guide 4-5-6 Dan
-                </a>
-            `;
+        function chargerKatas() {
+            const katas = JSON.parse(localStorage.getItem('katas-grades') || '[]');
+            const conteneur = document.getElementById('kata-pdfs');
+            const katasGrade = katas.filter(kata => kata.grade === '5eme-dan' || kata.grade === 'general');
+            
+            if (katasGrade.length > 0) {
+                conteneur.innerHTML = katasGrade.map(kata => `<a href="${kata.data}" download="${kata.nom}.pdf" class="pdf-btn"><span>📿</span>${kata.nom}</a>`).join('');
+            }
         }
-    }
-    
-    // ===== INITIALISATION =====
-    document.addEventListener('DOMContentLoaded', function() {
-        chargerContenuGrade();
-    });
-  </script>
+        
+        document.addEventListener('DOMContentLoaded', chargerContenuGrade);
+    </script>
 </body>
 </html>

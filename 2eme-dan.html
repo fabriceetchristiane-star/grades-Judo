@@ -1,251 +1,190 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>2ème Dan – Exigences</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    .content-section {
-        background: white;
-        padding: 2rem;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        margin: 2rem 0;
-    }
-    
-    .technique-buttons {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.8rem;
-      margin: 1rem 0;
-    }
-    
-    .tech-btn {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 0.8rem 0.3rem;
-      background: #3498db;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      text-align: center;
-      transition: all 0.3s;
-      border: 2px solid #2980b9;
-      min-height: 60px;
-      justify-content: center;
-      font-size: 0.9rem;
-    }
-    
-    .tech-btn:hover {
-      background: #2980b9;
-      transform: translateY(-1px);
-      text-decoration: none;
-      color: white;
-    }
-    
-    .tech-btn span {
-      font-size: 1.2rem;
-      margin-bottom: 0.3rem;
-    }
-    
-    .full-width {
-      grid-column: 1 / -1;
-      background: #2ecc71;
-      border-color: #27ae60;
-    }
-    
-    .full-width:hover {
-      background: #27ae60;
-    }
-    
-    .pdf-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 1rem;
-        margin: 1rem 0;
-    }
-
-    .pdf-btn {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0.8rem 0.3rem;
-        background: #9b59b6;
-        color: white;
-        text-decoration: none;
-        border-radius: 8px;
-        text-align: center;
-        transition: all 0.3s;
-        border: 2px solid #8e44ad;
-        min-height: 60px;
-        justify-content: center;
-        font-size: 0.9rem;
-    }
-
-    .pdf-btn:hover {
-        background: #8e44ad;
-        transform: translateY(-2px);
-        text-decoration: none;
-        color: white;
-    }
-
-    .pdf-btn span {
-        font-size: 1.2rem;
-        margin-bottom: 0.3rem;
-    }
-    
-    @media (max-width: 768px) {
-        .technique-buttons, .pdf-grid {
-            grid-template-columns: repeat(2, 1fr);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2ème Dan - Guide des Grades Judo</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .content-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 2rem 0;
         }
-    }
-
-    @media (max-width: 480px) {
-        .technique-buttons, .pdf-grid {
-            grid-template-columns: 1fr;
+        
+        .section-detail {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
         }
-    }
-  </style>
+        
+        .section-detail h3 {
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        
+        .empty-section {
+            color: #999;
+            font-style: italic;
+            padding: 1rem;
+            text-align: center;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+        
+        .pdf-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .pdf-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.8rem 0.3rem;
+            background: #9b59b6;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s;
+            min-height: 60px;
+            justify-content: center;
+        }
+
+        .pdf-btn:hover {
+            background: #8e44ad;
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>🥋 2ème Dan</h1>
-    <nav>
-      <a href="index.html">Accueil</a>
-      <a href="1er-dan.html">1er Dan</a>
-      <a href="2eme-dan.html" class="nav-active">2ème Dan</a>
-      <a href="3eme-dan.html">3ème Dan</a>
-      <a href="4eme-dan.html">4ème Dan</a>
-      <a href="5eme-dan.html">5ème Dan</a>
-      <a href="6eme-dan.html">6ème Dan</a>
-    </nav>
-  </header>
+    <header>
+        <h1>🥋 2ème Dan - Techniques et Programme</h1>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="1er-dan.html">1er Dan</a>
+            <a href="3eme-dan.html">3ème Dan</a>
+            <a href="techniques.html">Techniques</a>
+        </nav>
+    </header>
 
-  <main>
-    <div class="content-section">
-        <h2>📋 Programme Technique du 2ème Dan</h2>
-        <div id="contenu-technique">
-            <!-- Le contenu sera chargé dynamiquement -->
-            <p><em>Le programme technique sera chargé ici depuis l'administration...</em></p>
+    <main>
+        <div class="content-section">
+            <h2>📚 Programme Technique du 2ème Dan</h2>
+            <div id="section-programme">
+                <div class="empty-section">Le programme technique sera chargé ici...</div>
+            </div>
         </div>
-    </div>
-
-    <div class="content-section">
-      <h3>📝 UV1 – Kata</h3>
-      <div id="contenu-kata">
-        <p><strong>Dominante Compétition :</strong> Nage-no-kata complet (rôle Tori)</p>
-        <p><strong>Dominante Technique :</strong> Nage-no-kata ou Kodokan Goshin-jitsu complet</p>
-        <div class="pdf-grid" id="kata-pdfs">
-            <!-- Les PDF de kata seront chargés ici -->
-            <p><em>Les documents kata seront listés ici...</em></p>
+        
+        <div class="content-section">
+            <h2>📖 Kata Obligatoire</h2>
+            <div id="section-kata">
+                <div class="empty-section">Les informations sur le kata seront chargées ici...</div>
+            </div>
+            <div class="pdf-grid" id="kata-pdfs"></div>
         </div>
-      </div>
-    </div>
+        
+        <div class="content-section">
+            <h2>💪 Techniques à Présenter</h2>
+            <div id="section-techniques">
+                <div class="empty-section">Les techniques à présenter seront chargées ici...</div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>ℹ️ Informations Complémentaires</h2>
+            <div id="section-infos">
+                <div class="empty-section">Informations complémentaires à venir...</div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>📄 Documents PDF du 2ème Dan</h2>
+            <div id="contenu-pdf">
+                <div class="empty-section">Les documents PDF seront listés ici...</div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="1er-dan.html" class="btn">⬅️ 1er Dan</a>
+            <a href="index.html" class="btn">🏠 Accueil</a>
+            <a href="3eme-dan.html" class="btn">➡️ 3ème Dan</a>
+        </div>
+    </main>
 
-    <div class="content-section">
-      <h3>💪 UV2 – Technique</h3>
-      <div id="contenu-exigences">
-        <p><strong>6 techniques à présenter :</strong></p>
-        <ul>
-          <li>2 techniques Nage-waza imposées (2 familles différentes)</li>
-          <li>2 techniques Ne-waza imposées (2 familles différentes)</li>
-          <li>2 techniques de défense au choix (série C)</li>
-        </ul>
-      </div>
-    </div>
+    <footer>
+        <p>© 2025 Guide des Grades Judo - 2ème Dan</p>
+    </footer>
 
-    <div class="content-section">
-      <h3>📄 Documents PDF du 2ème Dan</h3>
-      <div id="contenu-pdf">
-        <p><em>Les documents PDF seront listés ici...</em></p>
-      </div>
-    </div>
-    
-    <div style="text-align: center; margin-top: 2rem;">
-        <a href="1er-dan.html" class="btn">⬅️ 1er Dan</a>
-        <a href="index.html" class="btn">🏠 Accueil</a>
-        <a href="3eme-dan.html" class="btn">➡️ 3ème Dan</a>
-        <a href="admin-grades.html" class="btn">⚙️ Admin</a>
-    </div>
-  </main>
+    <script>
+        function formaterTexte(texte) {
+            if (!texte || texte.trim() === '') return '';
+            if (texte.includes('<p>') || texte.includes('<h3>') || texte.includes('<ul>')) {
+                return texte;
+            }
+            return texte.split('\n\n').filter(p => p.trim()).map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`).join('');
+        }
 
-  <script>
-    // ===== CHARGER LE CONTENU DU 2ÈME DAN =====
-    function chargerContenuGrade() {
-        // Charger les techniques depuis le localStorage
-        const techniques = localStorage.getItem('grade-2eme-dan');
-        if (techniques && techniques.trim() !== '') {
-            document.getElementById('contenu-technique').innerHTML = techniques;
+        function chargerContenuGrade() {
+            const data = JSON.parse(localStorage.getItem('grade-complet-2eme-dan') || '{}');
+            
+            const sectionProgramme = document.getElementById('section-programme');
+            if (data.programme && data.programme.trim() !== '') {
+                sectionProgramme.innerHTML = `<div class="section-detail">${formaterTexte(data.programme)}</div>`;
+            }
+            
+            const sectionKata = document.getElementById('section-kata');
+            if (data.kata && data.kata.trim() !== '') {
+                sectionKata.innerHTML = `<div class="section-detail">${formaterTexte(data.kata)}</div>`;
+            }
+            
+            const sectionTechniques = document.getElementById('section-techniques');
+            if (data.techniques && data.techniques.trim() !== '') {
+                sectionTechniques.innerHTML = `<div class="section-detail">${formaterTexte(data.techniques)}</div>`;
+            }
+            
+            const sectionInfos = document.getElementById('section-infos');
+            if (data.infos && data.infos.trim() !== '') {
+                sectionInfos.innerHTML = `<div class="section-detail">${formaterTexte(data.infos)}</div>`;
+            }
+            
+            chargerPDFsGrade();
+            chargerKatas();
         }
         
-        // Charger les PDF spécifiques au 2ème Dan
-        chargerPDFsGrade();
-        
-        // Charger les katas
-        chargerKatas();
-    }
-    
-    // ===== CHARGER LES PDF DU GRADE =====
-    function chargerPDFsGrade() {
-        const pdfs = JSON.parse(localStorage.getItem('pdfs-grades') || '[]');
-        const conteneur = document.getElementById('contenu-pdf');
-        
-        // Filtrer les PDF pour le 2ème Dan
-        const pdfsGrade = pdfs.filter(pdf => 
-            pdf.grade === '2eme-dan' || pdf.grade === 'general'
-        );
-        
-        if (pdfsGrade.length === 0) {
-            conteneur.innerHTML = '<p>Aucun document PDF disponible pour le 2ème Dan.</p>';
-            return;
+        function chargerPDFsGrade() {
+            const pdfs = JSON.parse(localStorage.getItem('pdfs-grades') || '[]');
+            const conteneur = document.getElementById('contenu-pdf');
+            const pdfsGrade = pdfs.filter(pdf => pdf.grade === '2eme-dan' || pdf.grade === 'general');
+            
+            if (pdfsGrade.length === 0) {
+                conteneur.innerHTML = '<div class="empty-section">Aucun document PDF disponible.</div>';
+                return;
+            }
+            
+            conteneur.innerHTML = '<div class="pdf-grid">' +
+                pdfsGrade.map(pdf => `<a href="${pdf.data}" download="${pdf.nom}.pdf" class="pdf-btn"><span>📄</span>${pdf.nom}</a>`).join('') + '</div>';
         }
         
-        conteneur.innerHTML = '<p>Téléchargez les documents du 2ème Dan :</p>' + 
-            '<div class="pdf-grid">' +
-            pdfsGrade.map(pdf => `
-                <a href="${pdf.data}" download="${pdf.nom}.pdf" class="pdf-btn">
-                    <span>📄</span>
-                    ${pdf.nom}
-                </a>
-            `).join('') + '</div>';
-    }
-    
-    // ===== CHARGER LES KATAS =====
-    function chargerKatas() {
-        const katas = JSON.parse(localStorage.getItem('katas-grades') || '[]');
-        const conteneur = document.getElementById('kata-pdfs');
-        
-        // Filtrer les katas pour le 2ème Dan
-        const katasGrade = katas.filter(kata => 
-            kata.grade === '2eme-dan' || kata.grade === 'general'
-        );
-        
-        if (katasGrade.length > 0) {
-            conteneur.innerHTML = katasGrade.map(kata => `
-                <a href="${kata.data}" download="${kata.nom}.pdf" class="pdf-btn">
-                    <span>🌀</span>
-                    ${kata.nom}
-                </a>
-            `).join('');
-        } else {
-            conteneur.innerHTML = `
-                <a href="#" class="pdf-btn">
-                    <span>🌀</span>
-                    Nage-no-kata
-                </a>
-                <a href="#" class="pdf-btn">
-                    <span>🛡️</span>
-                    Kodokan Goshin-jitsu
-                </a>
-            `;
+        function chargerKatas() {
+            const katas = JSON.parse(localStorage.getItem('katas-grades') || '[]');
+            const conteneur = document.getElementById('kata-pdfs');
+            const katasGrade = katas.filter(kata => kata.grade === '2eme-dan' || kata.grade === 'general');
+            
+            if (katasGrade.length > 0) {
+                conteneur.innerHTML = katasGrade.map(kata => `<a href="${kata.data}" download="${kata.nom}.pdf" class="pdf-btn"><span>🌀</span>${kata.nom}</a>`).join('');
+            }
         }
-    }
-    
-    // ===== INITIALISATION =====
-    document.addEventListener('DOMContentLoaded', function() {
-        chargerContenuGrade();
-    });
-  </script>
+        
+        document.addEventListener('DOMContentLoaded', chargerContenuGrade);
+    </script>
 </body>
 </html>

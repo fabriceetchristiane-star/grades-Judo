@@ -14,6 +14,34 @@
             margin: 2rem 0;
         }
         
+        .section-detail {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .section-detail h3 {
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        
+        .section-detail p {
+            margin: 0.5rem 0;
+            line-height: 1.6;
+        }
+        
+        .empty-section {
+            color: #999;
+            font-style: italic;
+            padding: 1rem;
+            text-align: center;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+        
         .pdf-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -49,65 +77,15 @@
             font-size: 1.2rem;
             margin-bottom: 0.3rem;
         }
-
-        .technique-buttons {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.8rem;
-            margin: 1rem 0;
-        }
-        
-        .tech-btn {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 0.8rem 0.3rem;
-            background: #3498db;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            text-align: center;
-            transition: all 0.3s;
-            border: 2px solid #2980b9;
-            min-height: 60px;
-            justify-content: center;
-            font-size: 0.9rem;
-        }
-        
-        .tech-btn:hover {
-            background: #2980b9;
-            transform: translateY(-1px);
-            text-decoration: none;
-            color: white;
-        }
-        
-        .tech-btn span {
-            font-size: 1.2rem;
-            margin-bottom: 0.3rem;
-        }
-        
-        .full-width {
-            grid-column: 1 / -1;
-            background: #2ecc71;
-            border-color: #27ae60;
-        }
-        
-        .full-width:hover {
-            background: #27ae60;
-        }
         
         @media (max-width: 768px) {
             .pdf-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
-            .technique-buttons {
-                grid-template-columns: 1fr;
-            }
         }
 
         @media (max-width: 480px) {
-            .pdf-grid, .technique-buttons {
+            .pdf-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -121,55 +99,56 @@
             <a href="2eme-dan.html">2ème Dan</a>
             <a href="techniques.html">Techniques</a>
             <a href="katas.html">Katas</a>
-            <a href="../dojo-test/index.html">Dojo Numérique</a>
         </nav>
     </header>
 
     <main>
+        <!-- Section Programme Technique -->
         <div class="content-section">
-            <h2>📋 Programme Technique du 1er Dan</h2>
-            <div id="contenu-technique">
-                <!-- Le contenu sera chargé dynamiquement -->
-                <p><em>Le programme technique sera chargé ici depuis l'administration...</em></p>
+            <h2>📚 Programme Technique du 1er Dan</h2>
+            <div id="section-programme">
+                <div class="empty-section">Le programme technique sera chargé ici depuis l'administration...</div>
             </div>
         </div>
         
+        <!-- Section Kata -->
         <div class="content-section">
-            <h2>📝 Kata Obligatoire</h2>
-            <div id="contenu-kata">
-                <p><strong>UV1 – Kata :</strong> Nage-no-kata Voie Compétition  : 
-                : 3 premières séries du Nage-no-kata (rôle tori, et uke si né après 1976).
-                Voie Technique (nés en 2008 ou avant)
-                 : Nage-no-kata ou Kodokan-goshin-jitsu en entier (tori, et uke si né après 1976). </p>
-                <div class="pdf-grid" id="kata-pdfs">
-                    <!-- Les PDF de kata seront chargés ici -->
-                </div>
+            <h2>📖 Kata Obligatoire</h2>
+            <div id="section-kata">
+                <div class="empty-section">Les informations sur le kata seront chargées ici...</div>
+            </div>
+            <div class="pdf-grid" id="kata-pdfs">
+                <!-- Les PDF de kata seront chargés ici -->
             </div>
         </div>
         
+        <!-- Section Techniques -->
         <div class="content-section">
             <h2>💪 Techniques à Présenter</h2>
-            <div id="contenu-exigences">
-                <p><strong>UV2 – Technique (12 techniques imposées):</strong></p>
-                <ul>
-                    <li>6 techniques Nage-waza imposées </li>
-                    <li>4 techniques Ne-waza imposées </li>
-                    <li>2 techniques de défense au choix (série B)</li>
-                </ul>
+            <div id="section-techniques">
+                <div class="empty-section">Les techniques à présenter seront chargées ici...</div>
             </div>
         </div>
         
+        <!-- Section Informations Complémentaires -->
+        <div class="content-section">
+            <h2>ℹ️ Informations Complémentaires</h2>
+            <div id="section-infos">
+                <div class="empty-section">Informations complémentaires à venir...</div>
+            </div>
+        </div>
+        
+        <!-- Section Documents PDF -->
         <div class="content-section">
             <h2>📄 Documents PDF du 1er Dan</h2>
             <div id="contenu-pdf">
-                <p><em>Les documents PDF seront listés ici...</em></p>
+                <div class="empty-section">Les documents PDF seront listés ici...</div>
             </div>
         </div>
         
         <div style="text-align: center; margin-top: 2rem;">
             <a href="index.html" class="btn">🏠 Retour à l'accueil</a>
             <a href="2eme-dan.html" class="btn">➡️ 2ème Dan</a>
-            <a href="admin-grades.html" class="btn">⚙️ Admin</a>
         </div>
     </main>
 
@@ -178,48 +157,73 @@
     </footer>
 
     <script>
-        
         // ===== FONCTION POUR FORMATER LE TEXTE =====
-function formaterTexte(texte) {
-    if (!texte || texte.trim() === '') return '';
-    
-    // Si le texte contient déjà des balises HTML, le retourner tel quel
-    if (texte.includes('<p>') || texte.includes('<h3>') || texte.includes('<ul>')) {
-        return texte;
-    }
-    
-    // Sinon, convertir les sauts de ligne en paragraphes
-    return texte
-        .split('\n\n')
-        .filter(p => p.trim())
-        .map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`)
-        .join('');
-}
-
-// ===== CHARGER LE CONTENU DU 1ER DAN =====
-function chargerContenuGrade() {
-    // Charger depuis la NOUVELLE clé créée dans l'admin
-    const data = JSON.parse(localStorage.getItem('grade-page-1er-dan') || '{}');
-    const conteneur = document.getElementById('contenu-technique');
-    
-    if (data.contenu && data.contenu.trim() !== '') {
-        // Afficher le titre si disponible
-        let html = '';
-        if (data.titre && data.titre.trim() !== '') {
-            html += `<h3>${data.titre}</h3>`;
+        function formaterTexte(texte) {
+            if (!texte || texte.trim() === '') return '';
+            
+            // Si le texte contient déjà des balises HTML, le retourner tel quel
+            if (texte.includes('<p>') || texte.includes('<h3>') || texte.includes('<ul>')) {
+                return texte;
+            }
+            
+            // Sinon, convertir les sauts de ligne en paragraphes
+            return texte
+                .split('\n\n')
+                .filter(p => p.trim())
+                .map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`)
+                .join('');
         }
-        html += formaterTexte(data.contenu);
-        conteneur.innerHTML = html;
-    } else {
-        conteneur.innerHTML = '<p><em>Le programme technique sera chargé ici depuis l\'administration...</em></p>';
-    }
-    
-    // Charger les PDF spécifiques au 1er Dan
-    chargerPDFsGrade();
-    
-    // Charger les katas
-    chargerKatas();
-}
+
+        // ===== CHARGER LE CONTENU DU 1ER DAN =====
+        function chargerContenuGrade() {
+            // Charger les données du grade depuis le localStorage
+            const data = JSON.parse(localStorage.getItem('grade-complet-1er-dan') || '{}');
+            
+            // Section Programme
+            const sectionProgramme = document.getElementById('section-programme');
+            if (data.programme && data.programme.trim() !== '') {
+                sectionProgramme.innerHTML = `
+                    <div class="section-detail">
+                        ${formaterTexte(data.programme)}
+                    </div>
+                `;
+            }
+            
+            // Section Kata
+            const sectionKata = document.getElementById('section-kata');
+            if (data.kata && data.kata.trim() !== '') {
+                sectionKata.innerHTML = `
+                    <div class="section-detail">
+                        ${formaterTexte(data.kata)}
+                    </div>
+                `;
+            }
+            
+            // Section Techniques
+            const sectionTechniques = document.getElementById('section-techniques');
+            if (data.techniques && data.techniques.trim() !== '') {
+                sectionTechniques.innerHTML = `
+                    <div class="section-detail">
+                        ${formaterTexte(data.techniques)}
+                    </div>
+                `;
+            }
+            
+            // Section Infos Complémentaires
+            const sectionInfos = document.getElementById('section-infos');
+            if (data.infos && data.infos.trim() !== '') {
+                sectionInfos.innerHTML = `
+                    <div class="section-detail">
+                        ${formaterTexte(data.infos)}
+                    </div>
+                `;
+            }
+            
+            // Charger les PDF
+            chargerPDFsGrade();
+            chargerKatas();
+        }
+        
         // ===== CHARGER LES PDF DU GRADE =====
         function chargerPDFsGrade() {
             const pdfs = JSON.parse(localStorage.getItem('pdfs-grades') || '[]');
@@ -231,12 +235,11 @@ function chargerContenuGrade() {
             );
             
             if (pdfsGrade.length === 0) {
-                conteneur.innerHTML = '<p>Aucun document PDF disponible pour le 1er Dan.</p>';
+                conteneur.innerHTML = '<div class="empty-section">Aucun document PDF disponible pour le 1er Dan.</div>';
                 return;
             }
             
-            conteneur.innerHTML = '<p>Téléchargez les documents du 1er Dan :</p>' + 
-                '<div class="pdf-grid">' +
+            conteneur.innerHTML = '<div class="pdf-grid">' +
                 pdfsGrade.map(pdf => `
                     <a href="${pdf.data}" download="${pdf.nom}.pdf" class="pdf-btn">
                         <span>📄</span>

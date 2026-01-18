@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Grades Judo</title>
-    <script src="auth.js"></script>
+    <title>Admin Grades Judo - Version Complète</title>
 </head>
 <body>
     <h1>🥋 Administration Grades Judo</h1>
@@ -16,54 +15,102 @@
         <button class="onglet" onclick="afficherOnglet('techniques')">💪 Techniques</button>
         <button class="onglet" onclick="afficherOnglet('katas')">📿 Katas</button>
         <button class="onglet" onclick="afficherOnglet('philosophie')">🧠 Philosophie</button>
-        <button class="onglet" onclick="afficherOnglet('reglement')">📝 Règlement</button>
+        <button class="onglet" onclick="afficherOnglet('reglement')">📋 Règlement</button>
         <button class="onglet" onclick="afficherOnglet('nouveautes')">🔄 Nouveautés</button>
         <button class="onglet" onclick="afficherOnglet('pdf')">📄 Documents PDF</button>
         <button class="onglet" onclick="afficherOnglet('sauvegarde')" style="background: #e67e22;">💾 Sauvegarde</button>
     </div>
     
-<!-- GRADES -->
+<!-- GRADES - VERSION AMÉLIORÉE -->
 <div id="onglet-grades" class="contenu-onglet active">
-    <h2>🥋 Gestion des Pages de Grades</h2>
-    <p style="color: #666; margin-bottom: 1rem;">Modifiez le contenu de chaque page de grade individuellement</p>
+    <h2>🥋 Gestion des Grades - Sections Détaillées</h2>
+    <p style="color: #666; margin-bottom: 1rem;">Modifiez chaque section de chaque grade individuellement</p>
     
     <div style="margin-bottom: 1.5rem;">
-        <label style="display: block; font-weight: bold; margin-bottom: 0.5rem;">📋 Sélectionner une page :</label>
+        <label style="display: block; font-weight: bold; margin-bottom: 0.5rem;">📋 Sélectionner un grade :</label>
         <div id="grade-selector" style="display: flex; gap: 0.5rem; flex-wrap: wrap;"></div>
     </div>
 
-    <div style="margin-bottom: 1.5rem;">
-        <label for="grade-titre" style="display: block; font-weight: bold; margin-bottom: 0.5rem;">📌 Titre de la section :</label>
-        <input type="text" id="grade-titre" placeholder="Ex: Techniques à Présenter">
+    <!-- Section Programme Technique -->
+    <div class="section-admin">
+        <h3>📚 Programme Technique</h3>
+        <label for="grade-programme">Décrivez le programme technique complet :</label>
+        <textarea id="grade-programme" rows="8" placeholder="Ex: UV1 - Kata : Nage-no-kata...&#10;UV2 - Technique : 12 techniques imposées..."></textarea>
+    </div>
+
+    <!-- Section Kata Obligatoire -->
+    <div class="section-admin">
+        <h3>📖 Kata Obligatoire</h3>
+        <label for="grade-kata">Détails sur le kata à présenter :</label>
+        <textarea id="grade-kata" rows="6" placeholder="Ex: Nage-no-kata complet (rôle Tori)&#10;Dominante Compétition : 3 premières séries..."></textarea>
+    </div>
+
+    <!-- Section Techniques à Présenter -->
+    <div class="section-admin">
+        <h3>💪 Techniques à Présenter</h3>
+        <label for="grade-techniques">Liste des techniques exigées :</label>
+        <textarea id="grade-techniques" rows="8" placeholder="Ex: 6 techniques Nage-waza imposées&#10;4 techniques Ne-waza imposées&#10;2 techniques de défense au choix..."></textarea>
+    </div>
+
+    <!-- Section Informations Complémentaires -->
+    <div class="section-admin">
+        <h3>ℹ️ Informations Complémentaires</h3>
+        <label for="grade-infos">Autres informations importantes :</label>
+        <textarea id="grade-infos" rows="5" placeholder="Conseils, durée, critères d'évaluation, âge minimum..."></textarea>
     </div>
     
-    <div style="margin-bottom: 1.5rem;">
-        <label for="content-grade" style="display: block; font-weight: bold; margin-bottom: 0.5rem;">📝 Contenu :</label>
-        <textarea id="content-grade" rows="15" placeholder="Entrez le contenu... Les sauts de ligne seront automatiquement formatés !"></textarea>
-        <p style="color: #666; font-size: 0.9rem; margin-top: 0.5rem;">
-            💡 Copiez-collez votre texte normalement ou utilisez du HTML : &lt;h3&gt;Titre&lt;/h3&gt; &lt;ul&gt;&lt;li&gt;Point&lt;/li&gt;&lt;/ul&gt;
-        </p>
-    </div>
-    
-    <button onclick="sauvegarderGrade()" style="padding: 1rem 2rem; font-size: 1.1rem;">💾 Sauvegarder</button>
+    <button onclick="sauvegarderGradeComplet()" class="btn-primary">💾 Sauvegarder tout le grade</button>
 </div>
-  
+ <!-- TECHNIQUES - VERSION AMÉLIORÉE -->
+<div id="onglet-techniques" class="contenu-onglet">
+    <h2>💪 Gestion des Techniques - Sections Détaillées</h2>
     
-    <!-- TECHNIQUES -->
-    <div id="onglet-techniques" class="contenu-onglet">
-        <h2>Gestion des Techniques</h2>
-        <button onclick="afficherTechnique('1er-dan')">1er Dan</button>
-        <button onclick="afficherTechnique('2eme-dan')">2ème Dan</button>
-        <button onclick="afficherTechnique('3eme-dan')">3ème Dan</button>
-        <button onclick="afficherTechnique('4-5-6-dan')">4-5-6 Dan</button>
-        <button onclick="afficherTechnique('20-attaques')">20 Attaques</button>
-        <textarea id="technique-text" rows="10"></textarea>
-        <button onclick="sauvegarderTechnique()">💾 Sauvegarder</button>
+    <div style="margin-bottom: 1.5rem;">
+        <label style="display: block; font-weight: bold; margin-bottom: 0.5rem;">🎯 Sélectionner une catégorie :</label>
+        <div id="technique-selector" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <button onclick="afficherTechnique('1er-dan')" style="background: #3498db;">1er Dan</button>
+            <button onclick="afficherTechnique('2eme-dan')" style="background: #3498db;">2ème Dan</button>
+            <button onclick="afficherTechnique('3eme-dan')" style="background: #3498db;">3ème Dan</button>
+            <button onclick="afficherTechnique('4-5-6-dan')" style="background: #3498db;">4-5-6 Dan</button>
+            <button onclick="afficherTechnique('20-attaques')" style="background: #e74c3c;">20 Attaques</button>
+        </div>
+    </div>
+
+    <!-- Section Nage-waza -->
+    <div class="section-admin">
+        <h3>🌀 Nage-waza (Techniques de projection)</h3>
+        <label for="tech-nage">Liste et description des techniques Nage-waza :</label>
+        <textarea id="tech-nage" rows="8" placeholder="Ex:&#10;TE-WAZA (Techniques de main)&#10;- Seoi-nage&#10;- Kata-guruma&#10;&#10;KOSHI-WAZA (Techniques de hanche)&#10;- O-goshi&#10;- Harai-goshi"></textarea>
+    </div>
+
+    <!-- Section Ne-waza -->
+    <div class="section-admin">
+        <h3>🔒 Ne-waza (Techniques au sol)</h3>
+        <label for="tech-ne">Liste et description des techniques Ne-waza :</label>
+        <textarea id="tech-ne" rows="8" placeholder="Ex:&#10;IMMOBILISATIONS&#10;- Kesa-gatame&#10;- Yoko-shiho-gatame&#10;&#10;ÉTRANGLEMENTS&#10;- Nami-juji-jime&#10;- Okuri-eri-jime"></textarea>
+    </div>
+
+    <!-- Section Défense/Jujitsu -->
+    <div class="section-admin">
+        <h3>🛡️ Défense et Jujitsu</h3>
+        <label for="tech-defense">Techniques de défense à présenter :</label>
+        <textarea id="tech-defense" rows="6" placeholder="Ex:&#10;Série B - 2 techniques au choix parmi:&#10;- Défense contre saisie de poignet&#10;- Défense contre coup de poing&#10;- Défense contre étranglement"></textarea>
+    </div>
+
+    <!-- Section Conseils -->
+    <div class="section-admin">
+        <h3>💡 Conseils et Remarques</h3>
+        <label for="tech-conseils">Conseils pour la présentation :</label>
+        <textarea id="tech-conseils" rows="5" placeholder="Points importants, erreurs à éviter, critères d'évaluation..."></textarea>
     </div>
     
-    <!-- KATAS -->
-    <div id="onglet-katas" class="contenu-onglet">
-        <h2>Gestion des Katas</h2>
+    <button onclick="sauvegarderTechniqueComplete()" class="btn-primary">💾 Sauvegarder toutes les sections</button>
+</div>
+    
+<!-- KATAS -->
+<div id="onglet-katas" class="contenu-onglet">
+    <h2>📿 Gestion des Katas</h2>
+    <div style="margin-bottom: 1rem;">
         <button onclick="afficherKata('nage-no-kata')">Nage-no-kata</button>
         <button onclick="afficherKata('katame-no-kata')">Katame-no-kata</button>
         <button onclick="afficherKata('kime-no-kata')">Kime-no-kata</button>
@@ -72,157 +119,288 @@
         <button onclick="afficherKata('itsutsu-no-kata')">Itsutsu-no-kata</button>
         <button onclick="afficherKata('koshiki-no-kata')">Koshiki-no-kata</button>
         <button onclick="afficherKata('gonosen')">Gonosen</button>
-        <textarea id="kata-text" rows="10"></textarea>
-        <button onclick="sauvegarderKata()">💾 Sauvegarder</button>
     </div>
+    <div class="section-admin">
+        <h3 id="kata-titre">Kata sélectionné</h3>
+        <textarea id="kata-text" rows="10" placeholder="Décrivez le kata, ses séries, ses techniques..."></textarea>
+    </div>
+    <button onclick="sauvegarderKata()">💾 Sauvegarder</button>
+</div>
     
-    <!-- PHILOSOPHIE -->
-    <div id="onglet-philosophie" class="contenu-onglet">
-        <h2>Gestion Philosophie</h2>
+<!-- PHILOSOPHIE -->
+<div id="onglet-philosophie" class="contenu-onglet">
+    <h2>🧠 Gestion Philosophie</h2>
+    <div style="margin-bottom: 1rem;">
         <button onclick="afficherPhilo('shin-gi-tai')">Shin-Gi-Tai</button>
         <button onclick="afficherPhilo('ethique')">Éthique</button>
         <button onclick="afficherPhilo('principes')">Principes</button>
         <button onclick="afficherPhilo('histoire')">Histoire</button>
-        <textarea id="philo-text" rows="10"></textarea>
-        <button onclick="sauvegarderPhilo()">💾 Sauvegarder</button>
+    </div>
+    <div class="section-admin">
+        <h3 id="philo-titre">Section sélectionnée</h3>
+        <textarea id="philo-text" rows="10" placeholder="Contenu philosophique..."></textarea>
+    </div>
+    <button onclick="sauvegarderPhilo()">💾 Sauvegarder</button>
+</div>
+    
+<!-- REGLEMENT -->
+<div id="onglet-reglement" class="contenu-onglet">
+    <h2>📋 Gestion du Règlement</h2>
+    
+    <div class="section-admin">
+        <h3>📜 Règlement Général</h3>
+        <textarea id="reglement-general" rows="5" placeholder="Règlement général des passages de grades..."></textarea>
+        <button onclick="sauvegarderReglementSection('general')">💾 Sauvegarder</button>
     </div>
     
-    <!-- REGLEMENT -->
-    <div id="onglet-reglement" class="contenu-onglet">
-        <h2>Règlement Général</h2>
-        <textarea id="reglement-general" rows="5"></textarea>
-        <button onclick="sauvegarderReglementSection('general')">💾 Sauvegarder</button>
-        
-        <h2>Guide des Juges</h2>
-        <textarea id="reglement-juges" rows="5"></textarea>
+    <div class="section-admin">
+        <h3>👔 Guide des Juges</h3>
+        <textarea id="reglement-juges" rows="5" placeholder="Instructions pour les juges et arbitres..."></textarea>
         <button onclick="sauvegarderReglementSection('juges')">💾 Sauvegarder</button>
-        
-        <h2>Critères Évaluation</h2>
-        <textarea id="reglement-criteres" rows="5"></textarea>
+    </div>
+    
+    <div class="section-admin">
+        <h3>✅ Critères d'Évaluation</h3>
+        <textarea id="reglement-criteres" rows="5" placeholder="Critères de notation et d'évaluation..."></textarea>
         <button onclick="sauvegarderReglementSection('criteres')">💾 Sauvegarder</button>
-        
-        <h2>Procédure Examen</h2>
-        <textarea id="reglement-procedure" rows="5"></textarea>
+    </div>
+    
+    <div class="section-admin">
+        <h3>⚙️ Procédure d'Examen</h3>
+        <textarea id="reglement-procedure" rows="5" placeholder="Déroulement de l'examen, procédures..."></textarea>
         <button onclick="sauvegarderReglementSection('procedure')">💾 Sauvegarder</button>
-        
-        <h2>Nouveautés</h2>
-        <textarea id="reglement-nouveautes" rows="5"></textarea>
+    </div>
+    
+    <div class="section-admin">
+        <h3>🔄 Nouveautés Règlement</h3>
+        <textarea id="reglement-nouveautes" rows="5" placeholder="Modifications récentes du règlement..."></textarea>
         <button onclick="sauvegarderReglementSection('nouveautes')">💾 Sauvegarder</button>
     </div>
+</div>
     
-    <!-- NOUVEAUTES -->
-    <div id="onglet-nouveautes" class="contenu-onglet">
-        <h2>Nouveautés</h2>
-        <input type="text" id="nouveaute-1" placeholder="Titre 1">
-        <textarea id="description-1" rows="3"></textarea>
-        <input type="text" id="nouveaute-2" placeholder="Titre 2">
-        <textarea id="description-2" rows="3"></textarea>
-        <button onclick="sauvegarderNouveautes()">💾 Sauvegarder</button>
+<!-- NOUVEAUTES -->
+<div id="onglet-nouveautes" class="contenu-onglet">
+    <h2>🔄 Nouveautés</h2>
+    
+    <div class="section-admin">
+        <h3>Nouveauté 1</h3>
+        <input type="text" id="nouveaute-1" placeholder="Titre de la nouveauté 1">
+        <textarea id="description-1" rows="3" placeholder="Description..."></textarea>
     </div>
     
-    <!-- PDF (CORRIGÉ!) -->
-    <div id="onglet-pdf" class="contenu-onglet">
-        <h2>📄 Gestion des Documents PDF</h2>
-        <p style="color: #666;">Uploadez des PDF qui seront visibles sur la page Documents</p>
-        
-        <div style="border: 2px dashed #3498db; padding: 2rem; margin: 1rem 0; border-radius: 8px; background: #f8f9fa;">
-            <h3 style="margin-top: 0;">📤 Ajouter un nouveau document</h3>
-            
-            <label style="display: block; margin-top: 1rem; font-weight: bold;">📄 Fichier PDF :</label>
-            <input type="file" id="pdf-upload" accept=".pdf" style="margin: 0.5rem 0; padding: 0.5rem;">
-            
-            <label style="display: block; margin-top: 1rem; font-weight: bold;">📝 Titre du document :</label>
-            <input type="text" id="pdf-titre" placeholder="Ex: Règlement 2025" 
-                   style="width: 100%; padding: 0.75rem; margin: 0.5rem 0; border: 2px solid #ddd; border-radius: 6px;">
-            
-            <label style="display: block; margin-top: 1rem; font-weight: bold;">📋 Description :</label>
-            <textarea id="pdf-description" placeholder="Description du document..." rows="3"
-                      style="width: 100%; padding: 0.75rem; margin: 0.5rem 0; border: 2px solid #ddd; border-radius: 6px;"></textarea>
-            
-            <label style="display: block; margin-top: 1rem; font-weight: bold;">🗂️ Catégorie :</label>
-            <select id="pdf-categorie" style="width: 100%; padding: 0.75rem; margin: 0.5rem 0; border: 2px solid #ddd; border-radius: 6px;">
-                <option value="reglement-general">📜 Règlement Général</option>
-                <option value="juges-arbitres">👔 Juges & Arbitres</option>
-                <option value="criteres-notation">✅ Critères de Notation</option>
-                <option value="procedures">⚙️ Procédures</option>
-                <option value="nouveautes">⭐ Nouveautés</option>
-                <option value="autres">📁 Autres</option>
-            </select>
-            
-            <button onclick="uploaderPDF()" style="background: #27ae60; margin-top: 1rem; padding: 1rem 2rem; font-size: 1.1rem;">
-                📤 Uploader le Document
-            </button>
-        </div>
-        
-        <div id="liste-pdf" style="margin-top: 2rem;"></div>
+    <div class="section-admin">
+        <h3>Nouveauté 2</h3>
+        <input type="text" id="nouveaute-2" placeholder="Titre de la nouveauté 2">
+        <textarea id="description-2" rows="3" placeholder="Description..."></textarea>
     </div>
     
-    <!-- SAUVEGARDE (NOUVEAU!) -->
-    <div id="onglet-sauvegarde" class="contenu-onglet">
-        <h2>💾 Sauvegarde et Restauration</h2>
-        <p style="color: #666; margin-bottom: 2rem;">Protégez vos données en créant des sauvegardes complètes</p>
+    <button onclick="sauvegarderNouveautes()">💾 Sauvegarder</button>
+</div>
+    
+<!-- PDF -->
+<div id="onglet-pdf" class="contenu-onglet">
+    <h2>📄 Gestion des Documents PDF</h2>
+    <p style="color: #666;">Uploadez des PDF qui seront visibles sur la page Documents</p>
+    
+    <div style="border: 2px dashed #3498db; padding: 2rem; margin: 1rem 0; border-radius: 8px; background: #f8f9fa;">
+        <h3 style="margin-top: 0;">📤 Ajouter un nouveau document</h3>
         
-        <!-- Export -->
-        <div style="background: #d4edda; border: 2px solid #c3e6cb; padding: 2rem; margin-bottom: 2rem; border-radius: 8px;">
-            <h3 style="color: #155724; margin-top: 0;">📤 Exporter toutes les données</h3>
-            <p style="color: #155724;">Téléchargez un fichier contenant :</p>
-            <ul style="color: #155724;">
-                <li>✅ Tous les textes des grades (1er au 6ème Dan)</li>
-                <li>✅ Tous les textes des techniques</li>
-                <li>✅ Tous les textes des katas</li>
-                <li>✅ Tous les textes de philosophie</li>
-                <li>✅ Toutes les sections du règlement</li>
-                <li>✅ Toutes les nouveautés</li>
-                <li>✅ Tous les documents PDF uploadés</li>
-            </ul>
-            <button onclick="exporterTout()" style="background: #28a745; padding: 1rem 2rem; font-size: 1.1rem;">
-                📥 Télécharger la sauvegarde complète
-            </button>
-            <p style="color: #666; margin-top: 1rem; font-size: 0.9rem;">Le fichier sera nommé : grades-judo-backup-AAAA-MM-JJ.json</p>
-        </div>
+        <label style="display: block; margin-top: 1rem; font-weight: bold;">📄 Fichier PDF :</label>
+        <input type="file" id="pdf-upload" accept=".pdf" style="margin: 0.5rem 0; padding: 0.5rem;">
         
-        <!-- Import -->
-        <div style="background: #fff3cd; border: 2px solid #ffeaa7; padding: 2rem; border-radius: 8px;">
-            <h3 style="color: #856404; margin-top: 0;">📂 Restaurer une sauvegarde</h3>
-            <p style="color: #856404;">⚠️ <strong>Attention :</strong> Ceci remplacera toutes vos données actuelles par celles de la sauvegarde !</p>
-            <input type="file" id="import-file" accept=".json" style="margin: 1rem 0; padding: 0.5rem;">
-            <br>
-            <button onclick="importerTout()" style="background: #ffc107; color: #000; padding: 1rem 2rem; font-size: 1.1rem;">
-                📤 Restaurer depuis un fichier
-            </button>
-        </div>
+        <label style="display: block; margin-top: 1rem; font-weight: bold;">📝 Titre du document :</label>
+        <input type="text" id="pdf-titre" placeholder="Ex: Règlement 2025" 
+               style="width: 100%; padding: 0.75rem; margin: 0.5rem 0; border: 2px solid #ddd; border-radius: 6px;">
         
-        <!-- Informations -->
-        <div style="background: #d1ecf1; border: 2px solid #bee5eb; padding: 1.5rem; margin-top: 2rem; border-radius: 8px;">
-            <h3 style="color: #0c5460; margin-top: 0;">ℹ️ Informations</h3>
-            <div id="info-sauvegarde" style="color: #0c5460;">Chargement...</div>
-        </div>
+        <label style="display: block; margin-top: 1rem; font-weight: bold;">📋 Description :</label>
+        <textarea id="pdf-description" placeholder="Description du document..." rows="3"
+                  style="width: 100%; padding: 0.75rem; margin: 0.5rem 0; border: 2px solid #ddd; border-radius: 6px;"></textarea>
+        
+        <label style="display: block; margin-top: 1rem; font-weight: bold;">🗂️ Catégorie :</label>
+        <select id="pdf-categorie" style="width: 100%; padding: 0.75rem; margin: 0.5rem 0; border: 2px solid #ddd; border-radius: 6px;">
+            <option value="reglement-general">📜 Règlement Général</option>
+            <option value="juges-arbitres">👔 Juges & Arbitres</option>
+            <option value="criteres-notation">✅ Critères de Notation</option>
+            <option value="procedures">⚙️ Procédures</option>
+            <option value="nouveautes">⭐ Nouveautés</option>
+            <option value="autres">📁 Autres</option>
+        </select>
+        
+        <button onclick="uploaderPDF()" style="background: #27ae60; margin-top: 1rem; padding: 1rem 2rem; font-size: 1.1rem;">
+            📤 Uploader le Document
+        </button>
     </div>
     
-    <div style="margin-top: 2rem; padding: 1rem; border-top: 2px solid #eee;">
-        <a href="index.html" style="margin-right: 1rem;">🏠 Accueil</a>
-        <a href="documents.html" style="margin-right: 1rem;">📚 Voir les Documents</a>
-        <button onclick="location.reload()">🔄 Rafraîchir</button>
+    <div id="liste-pdf" style="margin-top: 2rem;"></div>
+</div>
+    
+<!-- SAUVEGARDE -->
+<div id="onglet-sauvegarde" class="contenu-onglet">
+    <h2>💾 Sauvegarde et Restauration</h2>
+    <p style="color: #666; margin-bottom: 2rem;">Protégez vos données en créant des sauvegardes complètes</p>
+    
+    <div style="background: #d4edda; border: 2px solid #c3e6cb; padding: 2rem; margin-bottom: 2rem; border-radius: 8px;">
+        <h3 style="color: #155724; margin-top: 0;">📤 Exporter toutes les données</h3>
+        <p style="color: #155724;">Téléchargez un fichier contenant toutes vos données</p>
+        <button onclick="exporterTout()" style="background: #28a745; padding: 1rem 2rem; font-size: 1.1rem;">
+            📥 Télécharger la sauvegarde complète
+        </button>
     </div>
+    
+    <div style="background: #fff3cd; border: 2px solid #ffeaa7; padding: 2rem; border-radius: 8px;">
+        <h3 style="color: #856404; margin-top: 0;">📂 Restaurer une sauvegarde</h3>
+        <p style="color: #856404;">⚠️ <strong>Attention :</strong> Ceci remplacera toutes vos données actuelles !</p>
+        <input type="file" id="import-file" accept=".json" style="margin: 1rem 0; padding: 0.5rem;">
+        <br>
+        <button onclick="importerTout()" style="background: #ffc107; color: #000; padding: 1rem 2rem; font-size: 1.1rem;">
+            📤 Restaurer depuis un fichier
+        </button>
+    </div>
+    
+    <div style="background: #d1ecf1; border: 2px solid #bee5eb; padding: 1.5rem; margin-top: 2rem; border-radius: 8px;">
+        <h3 style="color: #0c5460; margin-top: 0;">ℹ️ Informations</h3>
+        <div id="info-sauvegarde" style="color: #0c5460;">
+            <p>Statistiques de vos données ici...</p>
+        </div>
+    </div>
+</div>
+    
+<div style="margin-top: 2rem; padding: 1rem; border-top: 2px solid #eee;">
+    <a href="index.html" style="margin-right: 1rem;">🏠 Accueil</a>
+    <button onclick="location.reload()">🔄 Rafraîchir</button>
+</div>
 
 <style>
-body { font-family: Arial, sans-serif; padding: 2rem; max-width: 1200px; margin: 0 auto; background: #f5f5f5; }
+body { 
+    font-family: Arial, sans-serif; 
+    padding: 2rem; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    background: #f5f5f5; 
+}
+
 h1 { color: #2c3e50; margin-bottom: 2rem; }
 h2 { color: #2c3e50; margin-top: 2rem; }
 h3 { color: #34495e; }
-.onglets { display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
-.onglet { padding: 0.75rem 1.5rem; background: #3498db; color: white; border: none; border-radius: 6px; cursor: pointer; transition: all 0.3s; }
+
+.onglets { 
+    display: flex; 
+    gap: 0.5rem; 
+    margin-bottom: 2rem; 
+    flex-wrap: wrap; 
+}
+
+.onglet { 
+    padding: 0.75rem 1.5rem; 
+    background: #3498db; 
+    color: white; 
+    border: none; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    transition: all 0.3s;
+    font-size: 0.95rem;
+}
+
 .onglet:hover { background: #2980b9; }
 .onglet.active { background: #e74c3c; }
-.contenu-onglet { display: none; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+
+.contenu-onglet { 
+    display: none; 
+    background: white; 
+    padding: 2rem; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+}
+
 .contenu-onglet.active { display: block; }
-textarea, input[type="text"] { width: 100%; padding: 0.75rem; margin: 0.5rem 0; border: 2px solid #ddd; border-radius: 6px; font-family: inherit; font-size: 1rem; }
-textarea:focus, input[type="text"]:focus, select:focus { outline: none; border-color: #3498db; }
-button { padding: 0.75rem 1.5rem; background: #27ae60; color: white; border: none; border-radius: 6px; cursor: pointer; margin: 0.5rem; font-size: 1rem; transition: all 0.3s; }
-button:hover { background: #219a52; transform: translateY(-1px); }
-#message { box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-weight: bold; }
-#message.success { background: #d4edda; color: #155724; border: 2px solid #c3e6cb; }
-#message.error { background: #f8d7da; color: #721c24; border: 2px solid #f5c6cb; }
+
+/* SECTIONS ADMIN */
+.section-admin {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
+}
+
+.section-admin h3 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.section-admin label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #34495e;
+    font-size: 0.95rem;
+}
+
+textarea, input[type="text"] { 
+    width: 100%; 
+    padding: 0.75rem; 
+    margin: 0.5rem 0; 
+    border: 2px solid #ddd; 
+    border-radius: 6px; 
+    font-family: inherit; 
+    font-size: 1rem; 
+    box-sizing: border-box;
+}
+
+textarea:focus, input[type="text"]:focus, select:focus { 
+    outline: none; 
+    border-color: #3498db; 
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1); 
+}
+
+button { 
+    padding: 0.75rem 1.5rem; 
+    background: #27ae60; 
+    color: white; 
+    border: none; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    margin: 0.5rem; 
+    font-size: 1rem; 
+    transition: all 0.3s; 
+}
+
+button:hover { 
+    background: #219a52; 
+    transform: translateY(-1px); 
+}
+
+.btn-primary {
+    background: #e74c3c;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+.btn-primary:hover {
+    background: #c0392b;
+}
+
+#message { 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+    font-weight: bold; 
+    padding: 1rem 1.5rem;
+}
+
+#message.success { 
+    background: #d4edda; 
+    color: #155724; 
+    border: 2px solid #c3e6cb; 
+}
+
+#message.error { 
+    background: #f8d7da; 
+    color: #721c24; 
+    border: 2px solid #f5c6cb; 
+}
+
 .pdf-item { 
     background: white; 
     padding: 1.5rem; 
@@ -233,64 +411,100 @@ button:hover { background: #219a52; transform: translateY(-1px); }
     align-items: center; 
     border-left: 5px solid #27ae60;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: all 0.3s;
 }
-.pdf-item:hover {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transform: translateX(5px);
-}
+
 .pdf-info { flex: 1; }
-.pdf-title { font-size: 1.2rem; font-weight: bold; color: #2c3e50; margin-bottom: 0.5rem; }
-.pdf-meta { color: #7f8c8d; font-size: 0.9rem; margin-top: 0.5rem; }
-.pdf-category { 
+
+.pdf-title { 
+    font-size: 1.2rem; 
+    font-weight: bold; 
+    color: #2c3e50; 
+    margin-bottom: 0.5rem; 
+}
+
+.pdf-meta {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.pdf-category {
     display: inline-block;
-    background: #3498db; 
-    color: white; 
-    padding: 0.25rem 0.75rem; 
-    border-radius: 12px; 
+    background: #3498db;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
     font-size: 0.85rem;
     margin-right: 0.5rem;
 }
-.pdf-actions { display: flex; gap: 0.5rem; align-items: center; }
-label { color: #34495e; font-size: 0.95rem; }
-select { font-size: 1rem; }
-a { color: #3498db; text-decoration: none; padding: 0.5rem 1rem; }
-a:hover { text-decoration: underline; }
-</style>
 
-<script>
-if (!auth || !auth.checkSession()) {
-    alert('⛔ Accès refusé');
-    window.location.href = 'index.html';
+.pdf-actions { 
+    display: flex; 
+    gap: 0.5rem; 
 }
 
+a { 
+    color: #3498db; 
+    text-decoration: none; 
+    padding: 0.5rem 1rem; 
+}
+
+a:hover { text-decoration: underline; }
+
+select {
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+    
+    .onglets {
+        flex-direction: column;
+    }
+    
+    .onglet {
+        width: 100%;
+    }
+}
+</style>
+
+sgElement.style.display = 'none'; }, 4000);
+}<script>
 const GRADES = ['1er-dan', '2eme-dan', '3eme-dan', '4eme-dan', '5eme-dan', '6eme-dan'];
+const TECHNIQUES = ['1er-dan', '2eme-dan', '3eme-dan', '4-5-6-dan', '20-attaques'];
+
 let gradeActuel = '1er-dan';
 let techniqueActuelle = '1er-dan';
 let kataActuel = 'nage-no-kata';
 let philoActuelle = 'shin-gi-tai';
 
+// ===== INITIALISATION =====
 document.addEventListener('DOMContentLoaded', function() {
     initialiserGrades();
-    chargerContenuGrade();
+    chargerGrade();
+    initialiserTechniques();
+    afficherTechnique('1er-dan');
     chargerNouveautes();
     chargerToutReglement();
-    chargerTechnique();
-    chargerKata();
-    chargerPhilo();
+    afficherKata('nage-no-kata');
+    afficherPhilo('shin-gi-tai');
     afficherPDFs();
 });
 
+// ===== GESTION DES ONGLETS =====
 function afficherOnglet(onglet) {
     document.querySelectorAll('.contenu-onglet').forEach(o => o.classList.remove('active'));
     document.querySelectorAll('.onglet').forEach(o => o.classList.remove('active'));
     document.getElementById('onglet-' + onglet).classList.add('active');
     event.target.classList.add('active');
+    
     if (onglet === 'pdf') afficherPDFs();
     if (onglet === 'sauvegarde') afficherInfoSauvegarde();
 }
 
-
+// ===== GRADES - NOUVELLE VERSION =====
 function initialiserGrades() {
     const container = document.getElementById('grade-selector');
     const labels = {
@@ -302,65 +516,88 @@ function initialiserGrades() {
         '6eme-dan': '🎓 6ème Dan'
     };
     
-    GRADES.forEach(grade => {
+    GRADES.forEach((grade, index) => {
         const btn = document.createElement('button');
         btn.textContent = labels[grade] || grade;
         btn.onclick = () => { 
             gradeActuel = grade; 
-            chargerContenuGrade();
-            // Mettre en surbrillance le bouton actif
+            chargerGrade();
             container.querySelectorAll('button').forEach(b => b.style.background = '#27ae60');
             btn.style.background = '#e74c3c';
         };
         container.appendChild(btn);
+        
+        if (index === 0) btn.style.background = '#e74c3c';
     });
-    
-    // Mettre le premier en rouge
-    container.querySelector('button').style.background = '#e74c3c';
 }
 
-function chargerContenuGrade() {
-    const data = JSON.parse(localStorage.getItem('grade-page-' + gradeActuel) || '{}');
-    document.getElementById('grade-titre').value = data.titre || '';
-    document.getElementById('content-grade').value = data.contenu || '';
+function chargerGrade() {
+    const data = JSON.parse(localStorage.getItem('grade-complet-' + gradeActuel) || '{}');
+    document.getElementById('grade-programme').value = data.programme || '';
+    document.getElementById('grade-kata').value = data.kata || '';
+    document.getElementById('grade-techniques').value = data.techniques || '';
+    document.getElementById('grade-infos').value = data.infos || '';
 }
 
-function sauvegarderGrade() {
-    const titre = document.getElementById('grade-titre').value;
-    const contenu = document.getElementById('content-grade').value;
-    
-    if (!contenu.trim()) {
-        afficherMessage('❌ Le contenu ne peut pas être vide', 'error');
-        return;
-    }
-    
+function sauvegarderGradeComplet() {
     const data = {
-        titre: titre,
-        contenu: contenu,
+        programme: document.getElementById('grade-programme').value,
+        kata: document.getElementById('grade-kata').value,
+        techniques: document.getElementById('grade-techniques').value,
+        infos: document.getElementById('grade-infos').value,
         date: new Date().toLocaleDateString('fr-FR')
     };
     
-    localStorage.setItem('grade-page-' + gradeActuel, JSON.stringify(data));
-    afficherMessage(`✅ Contenu du ${gradeActuel} sauvegardé !`);
+    localStorage.setItem('grade-complet-' + gradeActuel, JSON.stringify(data));
+    afficherMessage(`✅ Toutes les sections du ${gradeActuel} sauvegardées !`);
 }
+
+// ===== TECHNIQUES - NOUVELLE VERSION =====
+function initialiserTechniques() {
+    const container = document.getElementById('technique-selector');
+    const buttons = container.querySelectorAll('button');
+    
+    buttons.forEach((btn, index) => {
+        if (index === 0) btn.style.background = '#e74c3c';
+        
+        btn.addEventListener('click', function() {
+            buttons.forEach(b => b.style.background = index === 4 ? '#e74c3c' : '#3498db');
+            this.style.background = '#e74c3c';
+        });
+    });
+}
+
 function afficherTechnique(tech) {
     techniqueActuelle = tech;
     chargerTechnique();
 }
 
 function chargerTechnique() {
-    document.getElementById('technique-text').value = localStorage.getItem('technique-' + techniqueActuelle) || '';
+    const data = JSON.parse(localStorage.getItem('technique-complete-' + techniqueActuelle) || '{}');
+    document.getElementById('tech-nage').value = data.nage || '';
+    document.getElementById('tech-ne').value = data.ne || '';
+    document.getElementById('tech-defense').value = data.defense || '';
+    document.getElementById('tech-conseils').value = data.conseils || '';
 }
 
-function sauvegarderTechnique() {
-    const contenu = document.getElementById('technique-text').value;
-    localStorage.setItem('technique-' + techniqueActuelle, contenu);
-    afficherMessage('✅ Technique sauvegardée !');
+function sauvegarderTechniqueComplete() {
+    const data = {
+        nage: document.getElementById('tech-nage').value,
+        ne: document.getElementById('tech-ne').value,
+        defense: document.getElementById('tech-defense').value,
+        conseils: document.getElementById('tech-conseils').value,
+        date: new Date().toLocaleDateString('fr-FR')
+    };
+    
+    localStorage.setItem('technique-complete-' + techniqueActuelle, JSON.stringify(data));
+    afficherMessage(`✅ Toutes les sections de ${techniqueActuelle} sauvegardées !`);
 }
 
+// ===== KATAS =====
 function afficherKata(kata) {
     kataActuel = kata;
     chargerKata();
+    document.getElementById('kata-titre').textContent = '📿 ' + kata;
 }
 
 function chargerKata() {
@@ -370,12 +607,14 @@ function chargerKata() {
 function sauvegarderKata() {
     const contenu = document.getElementById('kata-text').value;
     localStorage.setItem('kata-' + kataActuel, contenu);
-    afficherMessage('✅ Kata sauvegardé !');
+    afficherMessage('✅ Kata ' + kataActuel + ' sauvegardé !');
 }
 
+// ===== PHILOSOPHIE =====
 function afficherPhilo(philo) {
     philoActuelle = philo;
     chargerPhilo();
+    document.getElementById('philo-titre').textContent = '🧠 ' + philo;
 }
 
 function chargerPhilo() {
@@ -385,9 +624,10 @@ function chargerPhilo() {
 function sauvegarderPhilo() {
     const contenu = document.getElementById('philo-text').value;
     localStorage.setItem('philo-' + philoActuelle, contenu);
-    afficherMessage('✅ Philosophie sauvegardée !');
+    afficherMessage('✅ Section ' + philoActuelle + ' sauvegardée !');
 }
 
+// ===== NOUVEAUTÉS =====
 function chargerNouveautes() {
     document.getElementById('nouveaute-1').value = localStorage.getItem('nouveaute-1-titre') || '';
     document.getElementById('description-1').value = localStorage.getItem('nouveaute-1-desc') || '';
@@ -403,6 +643,7 @@ function sauvegarderNouveautes() {
     afficherMessage('✅ Nouveautés sauvegardées !');
 }
 
+// ===== RÈGLEMENT =====
 function chargerToutReglement() {
     document.getElementById('reglement-general').value = localStorage.getItem('reglement-general') || '';
     document.getElementById('reglement-juges').value = localStorage.getItem('reglement-juges') || '';
@@ -414,10 +655,10 @@ function chargerToutReglement() {
 function sauvegarderReglementSection(section) {
     const contenu = document.getElementById('reglement-' + section).value;
     localStorage.setItem('reglement-' + section, contenu);
-    afficherMessage('✅ Section sauvegardée !');
+    afficherMessage('✅ Section règlement sauvegardée !');
 }
 
-// ===== GESTION DES PDF - VERSION CORRIGÉE =====
+// ===== PDF =====
 function uploaderPDF() {
     const fileInput = document.getElementById('pdf-upload');
     const titreInput = document.getElementById('pdf-titre');
@@ -425,9 +666,6 @@ function uploaderPDF() {
     const categorieSelect = document.getElementById('pdf-categorie');
     const file = fileInput.files[0];
     
-    console.log('📄 Début upload PDF...');
-    
-    // Validations
     if (!file) {
         afficherMessage('❌ Veuillez sélectionner un fichier PDF', 'error');
         return;
@@ -441,55 +679,33 @@ function uploaderPDF() {
         return;
     }
     
-    console.log('📄 Fichier valide:', file.name, file.size, 'bytes');
-    
     const reader = new FileReader();
-    reader.onerror = function(error) {
-        console.error('❌ Erreur lecture fichier:', error);
-        afficherMessage('❌ Erreur lors de la lecture du fichier', 'error');
-    };
-    
     reader.onload = function(e) {
         try {
-            console.log('📄 Lecture terminée, sauvegarde...');
-            
-            // Charger les documents existants avec la BONNE clé
             const documents = JSON.parse(localStorage.getItem('documentsData') || '[]');
-            console.log('📄 Documents existants:', documents.length);
             
-            // Créer le nouveau document avec la structure CORRECTE
-            const nouveauDocument = {
+            documents.push({
                 title: titreInput.value.trim(),
                 filename: file.name,
                 description: descriptionInput.value.trim() || 'Aucune description',
                 category: categorieSelect.value,
                 uploadDate: new Date().toISOString(),
-                fileData: e.target.result, // Données base64 du PDF
+                fileData: e.target.result,
                 fileSize: file.size
-            };
+            });
             
-            documents.push(nouveauDocument);
-            
-            // Sauvegarder avec la BONNE clé : documentsData
             localStorage.setItem('documentsData', JSON.stringify(documents));
             
-            console.log('✅ Document sauvegardé ! Total:', documents.length);
-            console.log('✅ Données sauvegardées sous la clé: documentsData');
+            afficherMessage('✅ Document uploadé avec succès !');
             
-            afficherMessage('✅ Document uploadé avec succès ! Visible sur la page Documents.');
-            
-            // Réinitialiser le formulaire
             fileInput.value = '';
             titreInput.value = '';
             descriptionInput.value = '';
             categorieSelect.value = 'reglement-general';
             
-            // Rafraîchir l'affichage
             afficherPDFs();
-            
         } catch (error) {
-            console.error('❌ Erreur sauvegarde:', error);
-            afficherMessage('❌ Erreur lors de la sauvegarde: ' + error.message, 'error');
+            afficherMessage('❌ Erreur: ' + error.message, 'error');
         }
     };
     
@@ -497,12 +713,7 @@ function uploaderPDF() {
 }
 
 function afficherPDFs() {
-    console.log('🔄 Affichage des documents...');
-    
-    // Charger avec la BONNE clé
     const documents = JSON.parse(localStorage.getItem('documentsData') || '[]');
-    console.log('📄 Nombre de documents trouvés:', documents.length);
-    
     const liste = document.getElementById('liste-pdf');
     
     if (documents.length === 0) {
@@ -512,92 +723,75 @@ function afficherPDFs() {
                 <p style="color: #999; margin-top: 0.5rem;">Uploadez votre premier document ci-dessus</p>
             </div>
         `;
-        console.log('⚠️ Aucun document à afficher');
-    } else {
-        console.log('✅ Affichage de', documents.length, 'document(s)');
-        
-        const categorieLabels = {
-            'reglement-general': '📜 Règlement Général',
-            'juges-arbitres': '👔 Juges & Arbitres',
-            'criteres-notation': '✅ Critères de Notation',
-            'procedures': '⚙️ Procédures',
-            'nouveautes': '⭐ Nouveautés',
-            'autres': '📁 Autres'
-        };
-        
-        liste.innerHTML = '<h3 style="margin-bottom: 1rem;">📋 Documents disponibles :</h3>' + 
-            documents.map((doc, index) => {
-                console.log(`  - Document ${index + 1}: ${doc.title}`);
-                const categorieLabel = categorieLabels[doc.category] || doc.category;
-                const dateObj = new Date(doc.uploadDate);
-                const dateFormatee = dateObj.toLocaleDateString('fr-FR');
-                const tailleFormatee = (doc.fileSize / 1024 / 1024).toFixed(2) + ' Mo';
-                
-                return `
-                <div class="pdf-item">
-                    <div class="pdf-info">
-                        <div class="pdf-title">📄 ${doc.title}</div>
-                        <div style="color: #555; margin: 0.5rem 0;">${doc.description}</div>
-                        <div class="pdf-meta">
-                            <span class="pdf-category">${categorieLabel}</span>
-                            <span>📅 ${dateFormatee}</span>
-                            <span style="margin-left: 1rem;">💾 ${tailleFormatee}</span>
-                        </div>
-                    </div>
-                    <div class="pdf-actions">
-                        <a href="${doc.fileData}" download="${doc.filename}" 
-                           style="background: #3498db; color: white; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none;">
-                            📥 Télécharger
-                        </a>
-                        <button onclick="supprimerDocument(${index})" 
-                                style="background: #e74c3c; padding: 0.5rem 1rem; font-size: 0.9rem;">
-                            🗑️ Supprimer
-                        </button>
+        return;
+    }
+    
+    const categorieLabels = {
+        'reglement-general': '📜 Règlement Général',
+        'juges-arbitres': '👔 Juges & Arbitres',
+        'criteres-notation': '✅ Critères de Notation',
+        'procedures': '⚙️ Procédures',
+        'nouveautes': '⭐ Nouveautés',
+        'autres': '📁 Autres'
+    };
+    
+    liste.innerHTML = '<h3 style="margin-bottom: 1rem;">📋 Documents disponibles :</h3>' + 
+        documents.map((doc, index) => {
+            const categorieLabel = categorieLabels[doc.category] || doc.category;
+            const dateObj = new Date(doc.uploadDate);
+            const dateFormatee = dateObj.toLocaleDateString('fr-FR');
+            const tailleFormatee = (doc.fileSize / 1024 / 1024).toFixed(2) + ' Mo';
+            
+            return `
+            <div class="pdf-item">
+                <div class="pdf-info">
+                    <div class="pdf-title">📄 ${doc.title}</div>
+                    <div style="color: #555; margin: 0.5rem 0;">${doc.description}</div>
+                    <div class="pdf-meta">
+                        <span class="pdf-category">${categorieLabel}</span>
+                        <span>📅 ${dateFormatee}</span>
+                        <span style="margin-left: 1rem;">💾 ${tailleFormatee}</span>
                     </div>
                 </div>
-            `}).join('');
-    }
+                <div class="pdf-actions">
+                    <a href="${doc.fileData}" download="${doc.filename}" 
+                       style="background: #3498db; color: white; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none;">
+                        📥 Télécharger
+                    </a>
+                    <button onclick="supprimerDocument(${index})" 
+                            style="background: #e74c3c; padding: 0.5rem 1rem; font-size: 0.9rem;">
+                        🗑️ Supprimer
+                    </button>
+                </div>
+            </div>
+        `}).join('');
 }
 
 function supprimerDocument(index) {
     if (confirm("⚠️ Supprimer définitivement ce document ?")) {
         const documents = JSON.parse(localStorage.getItem('documentsData') || '[]');
-        const docSupprime = documents[index];
         documents.splice(index, 1);
         localStorage.setItem('documentsData', JSON.stringify(documents));
-        console.log('🗑️ Document supprimé:', docSupprime.title);
         afficherPDFs();
         afficherMessage('✅ Document supprimé.');
     }
 }
 
-function afficherMessage(message, type = 'success') {
-    const msgElement = document.getElementById('message');
-    msgElement.textContent = message;
-    msgElement.className = type;
-    msgElement.style.display = 'block';
-    setTimeout(() => { msgElement.style.display = 'none'; }, 4000);
-}
-
-// ===== SYSTÈME EXPORT/IMPORT =====
-
-// Afficher les informations sur les données
+// ===== SAUVEGARDE =====
 function afficherInfoSauvegarde() {
     const info = document.getElementById('info-sauvegarde');
     
-    // Compter les éléments
     let nbGrades = 0;
     let nbTechniques = 0;
     let nbKatas = 0;
     let nbPhilo = 0;
-    let nbDocuments = 0;
     
     GRADES.forEach(grade => {
-        if (localStorage.getItem('grade-' + grade)) nbGrades++;
+        if (localStorage.getItem('grade-complet-' + grade)) nbGrades++;
     });
     
-    ['1er-dan', '2eme-dan', '3eme-dan', '4-5-6-dan', '20-attaques'].forEach(tech => {
-        if (localStorage.getItem('technique-' + tech)) nbTechniques++;
+    TECHNIQUES.forEach(tech => {
+        if (localStorage.getItem('technique-complete-' + tech)) nbTechniques++;
     });
     
     ['nage-no-kata', 'katame-no-kata', 'kime-no-kata', 'goshin-jitsu', 'ju-no-kata', 'itsutsu-no-kata', 'koshiki-no-kata', 'gonosen'].forEach(kata => {
@@ -609,9 +803,7 @@ function afficherInfoSauvegarde() {
     });
     
     const documents = JSON.parse(localStorage.getItem('documentsData') || '[]');
-    nbDocuments = documents.length;
     
-    // Calculer la taille totale
     let tailleTotal = 0;
     for (let key in localStorage) {
         if (localStorage.hasOwnProperty(key)) {
@@ -623,52 +815,38 @@ function afficherInfoSauvegarde() {
     info.innerHTML = `
         <p><strong>📊 Statistiques actuelles :</strong></p>
         <ul>
-            <li>🥋 Grades : ${nbGrades} / 6</li>
-            <li>💪 Techniques : ${nbTechniques} / 5</li>
+            <li>🥋 Grades complets : ${nbGrades} / 6</li>
+            <li>💪 Techniques complètes : ${nbTechniques} / 5</li>
             <li>📿 Katas : ${nbKatas} / 8</li>
             <li>🧠 Philosophie : ${nbPhilo} / 4</li>
-            <li>📝 Sections règlement : ${localStorage.getItem('reglement-general') ? '✅' : '❌'}</li>
-            <li>📄 Documents PDF : ${nbDocuments}</li>
+            <li>📄 Documents PDF : ${documents.length}</li>
         </ul>
-        <p><strong>💾 Taille totale des données :</strong> ${tailleMo} Mo</p>
-        <p style="margin-top: 1rem; padding: 1rem; background: #fff; border-radius: 6px;">
-            <strong>💡 Conseil :</strong> Faites une sauvegarde avant toute modification importante !
-        </p>
+        <p><strong>💾 Taille totale :</strong> ${tailleMo} Mo</p>
     `;
 }
 
-// Exporter toutes les données
 function exporterTout() {
-    console.log('📤 Début de l\'export...');
-    
     try {
         const sauvegarde = {
-            version: '1.0',
+            version: '2.0',
             date: new Date().toISOString(),
             site: 'grades-judo',
             donnees: {}
         };
         
-        // Exporter TOUTES les clés du localStorage
         for (let key in localStorage) {
             if (localStorage.hasOwnProperty(key)) {
-                // Ignorer la session
-                if (key !== 'grades_judo_session') {
-                    sauvegarde.donnees[key] = localStorage[key];
-                }
+                sauvegarde.donnees[key] = localStorage[key];
             }
         }
         
-        // Créer le fichier
         const json = JSON.stringify(sauvegarde, null, 2);
         const blob = new Blob([json], { type: 'application/json' });
         const url = URL.createObjectURL(blob);
         
-        // Nom du fichier avec date
         const date = new Date();
         const nomFichier = `grades-judo-backup-${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}.json`;
         
-        // Télécharger
         const a = document.createElement('a');
         a.href = url;
         a.download = nomFichier;
@@ -677,88 +855,290 @@ function exporterTout() {
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
         
-        console.log('✅ Export réussi !');
-        afficherMessage('✅ Sauvegarde téléchargée avec succès ! Fichier : ' + nomFichier);
-        
+        afficherMessage('✅ Sauvegarde téléchargée : ' + nomFichier);
     } catch (error) {
-        console.error('❌ Erreur export:', error);
-        afficherMessage('❌ Erreur lors de l\'export : ' + error.message, 'error');
+        afficherMessage('❌ Erreur export: ' + error.message, 'error');
     }
 }
 
-// Importer une sauvegarde
 function importerTout() {
     const fileInput = document.getElementById('import-file');
     const file = fileInput.files[0];
     
     if (!file) {
-        afficherMessage('❌ Veuillez sélectionner un fichier de sauvegarde', 'error');
+        afficherMessage('❌ Veuillez sélectionner un fichier', 'error');
         return;
     }
     
-    if (!file.name.endsWith('.json')) {
-        afficherMessage('❌ Le fichier doit être au format .json', 'error');
+    if (!confirm('⚠️ ATTENTION !\n\nCette opération va REMPLACER toutes vos données actuelles.\n\nContinuer ?')) {
         return;
     }
-    
-    if (!confirm('⚠️ ATTENTION !\n\nCette opération va REMPLACER toutes vos données actuelles par celles de la sauvegarde.\n\nVoulez-vous continuer ?')) {
-        return;
-    }
-    
-    console.log('📥 Début de l\'import...');
     
     const reader = new FileReader();
-    
-    reader.onerror = function() {
-        console.error('❌ Erreur lecture fichier');
-        afficherMessage('❌ Erreur lors de la lecture du fichier', 'error');
-    };
     
     reader.onload = function(e) {
         try {
             const sauvegarde = JSON.parse(e.target.result);
             
-            // Vérifier la structure
             if (!sauvegarde.donnees) {
-                throw new Error('Format de sauvegarde invalide');
+                throw new Error('Format invalide');
             }
             
-            console.log('📦 Sauvegarde du', sauvegarde.date);
-            console.log('📊 Nombre de clés:', Object.keys(sauvegarde.donnees).length);
+            localStorage.clear();
             
-            // Supprimer toutes les anciennes données (sauf session)
-            const keysToRemove = [];
-            for (let key in localStorage) {
-                if (localStorage.hasOwnProperty(key) && key !== 'grades_judo_session') {
-                    keysToRemove.push(key);
-                }
-            }
-            keysToRemove.forEach(key => localStorage.removeItem(key));
-            
-            // Importer les nouvelles données
             let compteur = 0;
             for (let key in sauvegarde.donnees) {
                 localStorage.setItem(key, sauvegarde.donnees[key]);
                 compteur++;
             }
             
-            console.log('✅ Import terminé :', compteur, 'clés restaurées');
+            afficherMessage('✅ Sauvegarde restaurée ! ' + compteur + ' éléments importés.');
             
-            afficherMessage('✅ Sauvegarde restaurée avec succès ! ' + compteur + ' éléments importés.');
-            
-            // Rafraîchir l'affichage
-            setTimeout(() => {
-                location.reload();
-            }, 2000);
-            
+            setTimeout(() => location.reload(), 2000);
         } catch (error) {
-            console.error('❌ Erreur import:', error);
-            afficherMessage('❌ Erreur lors de l\'import : ' + error.message, 'error');
+            afficherMessage('❌ Erreur import: ' + error.message, 'error');
         }
     };
     
     reader.readAsText(file);
 }
+
+// ===== MESSAGES =====
+function afficherMessage(message, type = 'success') {
+    const msgElement = document.getElementById('message');
+    msgElement.textContent = message;
+    msgElement.className = type;
+    msgElement.style.display = 'block';
+    setTimeout(() => { 
+        msgElement.style.display = 'none'; 
+    }, 4000);
+}
+
+// ===== INITIALISATION =====
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🔧 Admin chargé');
+    
+    // Charger le premier grade
+    chargerGradeComplet('1er-dan');
+    
+    // Charger la première technique
+    afficherTechnique('1er-dan');
+    
+    // Charger le premier kata
+    afficherKata('nage-no-kata');
+    
+    // Charger la première philo
+    afficherPhilo('shin-gi-tai');
+    
+    // Charger le règlement
+    chargerReglement();
+    
+    // Charger les nouveautés
+    chargerNouveautes();
+    
+    // Charger les PDFs
+    afficherPDFs();
+    
+    // Afficher les infos de sauvegarde
+    afficherInfoSauvegarde();
+    
+    // Afficher l'onglet Grades par défaut
+    afficherOnglet('grades');
+    
+    console.log('✅ Initialisation admin terminée');
+});
 </script>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f2f5;
+    padding: 1rem;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.onglets {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.onglet {
+    padding: 0.75rem 1.5rem;
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.onglet:hover {
+    background: #3498db;
+    color: white;
+    border-color: #3498db;
+}
+
+.onglet.active {
+    background: #2c3e50;
+    color: white;
+    border-color: #2c3e50;
+}
+
+.contenu-onglet {
+    display: none;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.contenu-onglet.active {
+    display: block;
+}
+
+.section-admin {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
+}
+
+.section-admin h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.section-admin label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: 500;
+}
+
+textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: 'Courier New', monospace;
+    resize: vertical;
+    transition: border-color 0.3s;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.btn-primary {
+    background: #27ae60;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: block;
+    margin: 2rem auto 0;
+}
+
+.btn-primary:hover {
+    background: #229954;
+}
+
+#message {
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+#message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+#message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.pdf-item {
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pdf-info {
+    flex: 1;
+}
+
+.pdf-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.pdf-meta {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.pdf-category {
+    background: #3498db;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    margin-right: 1rem;
+}
+
+.pdf-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+button {
+    background: #3498db;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #2980b9;
+}
+</style>
+
 </body>
 </html>
