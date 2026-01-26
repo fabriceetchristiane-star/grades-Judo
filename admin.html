@@ -203,10 +203,10 @@
     <p style="color: #666;">Uploadez des PDF qui seront visibles sur la page Documents</p>
     
     <div style="border: 2px dashed #3498db; padding: 2rem; margin: 1rem 0; border-radius: 8px; background: #f8f9fa;">
-        <h3 style="margin-top: 0;">📤 Ajouter un nouveau document</h3>
+        <h3 style="margin-top: 0;">📤 Ajouter un document ou une image</h3>
         
-        <label style="display: block; margin-top: 1rem; font-weight: bold;">📄 Fichier PDF :</label>
-        <input type="file" id="pdf-upload" accept=".pdf" style="margin: 0.5rem 0; padding: 0.5rem;">
+        <label style="display: block; margin-top: 1rem; font-weight: bold;">📄 Fichier (PDF, SVG, JPG, PNG) :</label>
+        <input type="file" id="pdf-upload" accept=".pdf,.svg,.jpg,.jpeg,.png,.gif" style="margin: 0.5rem 0; padding: 0.5rem;">
         
         <label style="display: block; margin-top: 1rem; font-weight: bold;">📝 Titre du document :</label>
         <input type="text" id="pdf-titre" placeholder="Ex: Règlement 2025" 
@@ -667,13 +667,24 @@ function uploaderPDF() {
     const file = fileInput.files[0];
     
     if (!file) {
-        afficherMessage('❌ Veuillez sélectionner un fichier PDF', 'error');
+        afficherMessage('❌ Veuillez sélectionner un fichier', 'error');
         return;
     }
-    if (file.type !== 'application/pdf') {
-        afficherMessage('❌ Le fichier doit être un PDF', 'error');
+    
+    const allowedTypes = [
+        'application/pdf',
+        'image/svg+xml',
+        'image/jpeg',
+        'image/jpg',
+        'image/png',
+        'image/gif'
+    ];
+    
+    if (!allowedTypes.includes(file.type)) {
+        afficherMessage('❌ Format non supporté. Utilisez : PDF, SVG, JPG, PNG ou GIF', 'error');
         return;
     }
+    
     if (!titreInput.value.trim()) {
         afficherMessage('❌ Veuillez donner un titre au document', 'error');
         return;
