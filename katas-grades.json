@@ -1,10 +1,12 @@
 {
   "1er-dan": {
     "videos": [
-      { "titre": "Nage no Kata — Kodokan", "url": "https://youtu.be/Suk2__BG69Q" }
+      { "titre": "Nage no Kata — Kodokan (Dominante Compétition)", "url": "https://youtu.be/Suk2__BG69Q" },
+      { "titre": "Goshin Jitsu — Kodokan (Dominante Technique au choix)", "url": "https://youtu.be/qcxKDm8Af7M" }
     ],
     "livres": [
-      { "titre": "Nage no Kata — Livre Kodokan (FR)", "url": "https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2020/07/Nage-no-kata_FRA-1596187174-1596187174.pdf" }
+      { "titre": "Nage no Kata — Livre Kodokan (FR)", "url": "https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2020/07/Nage-no-kata_FRA-1596187174-1596187174.pdf" },
+      { "titre": "Goshin Jitsu — Livre Kodokan (FR)", "url": "https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2022/07/Goshin_jutsu_FR-1657632234-1657632234.pdf" }
     ]
   },
   "2eme-dan": {
