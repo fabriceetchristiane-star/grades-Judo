@@ -297,120 +297,19 @@
     </main>
 
     <footer>
-        <!-- Section connexion professeur en bas de page -->
-        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
-            <h3 style="margin-bottom: 1rem;">⚙️ ESPACE PROFESSEUR</h3>
-            
-            <!-- Section connexion -->
-            <div id="login-section">
-                <input type="password" id="admin-password" placeholder="Mot de passe professeur" 
-                       style="padding: 0.75rem; margin: 0.5rem 0; width: 100%; border: 1px solid #ddd; border-radius: 6px; font-size: 1rem;">
-                <button onclick="verifierPassword()" class="btn-admin">Se connecter</button>
-            </div>
-            
-            <!-- Section admin (cachée au début) -->
-            <div id="admin-section" style="display: none;">
-                <a href="admin.html" class="btn-admin">🔐 Accéder à l'administration</a>
-                <button onclick="deconnexionAdmin()" class="btn-admin" style="background: #95a5a6; margin-top: 0.5rem;">
-                    🚪 Se déconnecter
-                </button>
-            </div>
-        </div>
-
-        <p>© 2025 Guide des Grades Judo - Résumé pour les passages de grades</p>
-        <p style="margin-top: 0.5rem;">
-            <a href="https://fabriceetchristiane-star.github.io/num-rique-judo/" style="color: white; text-decoration: underline;">Retour au Dojo Numérique</a>
+        <p>© 2025 Guide des Grades Judo — Club Judo Lambersart JAK</p>
+        <p style="margin-top: 1rem;">
+            <a href="https://fabriceetchristiane-star.github.io/num-rique-judo/" 
+               style="display:inline-block; background:#3498db; color:white; padding:0.6rem 1.4rem; border-radius:25px; text-decoration:none; font-weight:bold;">
+                🥋 Dojo Numérique
+            </a>
         </p>
     </footer>
 
 <script>
-    // ===== SYSTÈME DE CONNEXION ADMIN =====
-    function verifierPassword() {
-        console.log('🔑 Tentative de connexion...');
-        
-        // Vérifier que auth est disponible
-        if (typeof auth === 'undefined') {
-            alert('❌ Erreur : Système d\'authentification non chargé. Rafraîchissez la page.');
-            return;
-        }
-        
-        const password = document.getElementById('admin-password').value;
-        const loginSection = document.getElementById('login-section');
-        const adminSection = document.getElementById('admin-section');
-        
-        console.log('📝 Mot de passe entré:', password);
-        
-        if (auth.verifyPassword(password)) {
-            console.log('✅ Mot de passe correct ! Création session...');
-            auth.createSession();
-            console.log('🔍 Vérification session après création:', auth.checkSession());
-            loginSection.style.display = 'none';
-            adminSection.style.display = 'block';
-            console.log('✅ Interface admin affichée !');
-        } else {
-            console.log('❌ Mot de passe incorrect');
-            alert('❌ Mot de passe incorrect');
-            document.getElementById('admin-password').value = '';
-        }
-    }
-    
-    function deconnexionAdmin() {
-        if (typeof auth !== 'undefined') {
-            auth.clearSession();
-        }
-        location.reload();
-    }
-    
-    // Permettre la connexion avec la touche Entrée
     document.addEventListener('DOMContentLoaded', function() {
-        console.log('📊 Page Grades Judo chargée');
-        
-        // Vérifier que auth est chargé
-        if (typeof auth !== 'undefined' && auth.checkSession()) {
-            document.getElementById('login-section').style.display = 'none';
-            document.getElementById('admin-section').style.display = 'block';
-        }
-        
-        // Permettre l'entrée avec Enter
-        const passwordInput = document.getElementById('admin-password');
-        if (passwordInput) {
-            passwordInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    verifierPassword();
-                }
-            });
-        }
-        
-        document.getElementById('admin-password').value = '';
-    });function afficherOnglet(nom) {
-        const sections = document.querySelectorAll('.contenu-onglet');
-        sections.forEach(section => {
-            section.style.display = 'none';
-            section.classList.remove('active');
-        });
-
-        const boutons = document.querySelectorAll('.onglet');
-        boutons.forEach(btn => {
-            btn.classList.remove('active');
-        });
-
-        const sectionCible = document.getElementById('onglet-' + nom);
-        if (sectionCible) {
-            sectionCible.style.display = 'block';
-            sectionCible.classList.add('active');
-        }
-
-        const boutonActif = Array.from(boutons).find(btn => 
-            btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(nom)
-        );
-        if (boutonActif) {
-            boutonActif.classList.add('active');
-        }
-    }
-
-    if (typeof auth !== 'undefined' && auth.checkSession()) {
-        setTimeout(() => { afficherOnglet('grades'); }, 100);
-    }
+        console.log('Guide des Grades Judo chargé');
+    });
 </script>
 </body>
 </html>
