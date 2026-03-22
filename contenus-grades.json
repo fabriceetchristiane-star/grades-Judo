@@ -1,38 +1,56 @@
 {
   "1er-dan": {
-    "resume":    "",
-    "techniques": "",
-    "kata":       "",
-    "reglement":  ""
+    "conditions": "2 timbres de licence - Minimum 15 ans - Ceinture marron depuis 1 an - Passage devant jury FFJDA",
+    "uv1_kata": "3 premières séries du Nage-no-kata (rôle tori) + tout ou partie (rôle uke)",
+    "uv2_technique": "12 techniques imposées par le jury : 6 nage-waza + 4 ne-waza + 2 défenses au choix. Durée ~5 min. 1 méconnaissance tolérée par domaine.",
+    "uv2_nage": "Koshi-waza : Uki-goshi, Koshi-guruma, O-goshi, Tsurikomi-goshi, Harai-goshi, Uchi-mata\nTe-waza : Uki-otoshi, Tai-otoshi, Ippon-seoi-nage, Morote-seoi-nage, Kata-guruma\nAshi-waza : O-soto-gari, Ko-uchi-gari, O-uchi-gari, Ko-soto-gari, Hiza-guruma, Sasae-tsurikomi-ashi, De-ashi-barai, Okuri-ashi-barai\nSutemi-waza : Tomoe-nage, Sumi-gaeshi, Tani-otoshi",
+    "uv2_ne": "Osaekomi-waza : Hon-kesa-gatame, Ushiro-kesa-gatame, Kami-shiho-gatame, Tate-shiho-gatame, Yoko-shiho-gatame\nShime-waza : Gyaku-juji-jime, Kata-juji-jime, Nami-juji-jime, Hadaka-jime, Okuri-eri-jime\nKansetsu-waza : Ude-hishigi-juji-gatame, Ude-hishigi-ude-gatame, Ude-garami",
+    "defenses": "Séries A et B des 20 attaques imposées - Réponse libre à une agression",
+    "criteres": "Efficacité - Contrôle - Sobriété - Réalisme"
   },
   "2eme-dan": {
-    "resume":    "",
-    "techniques": "",
-    "kata":       "",
-    "reglement":  ""
+    "conditions": "2 timbres de licence - Minimum 17 ans - 1er Dan depuis 2 ans",
+    "uv1_kata": "Nage-no-kata en entier (tori) + tout ou partie (uke)",
+    "uv2_technique": "12 techniques imposées par le jury : 6 nage-waza + 4 ne-waza + 2 défenses au choix. Durée ~5 min.",
+    "uv2_nage": "Koshi-waza : Hane-goshi, Sode-tsurikomi-goshi, Tsuri-goshi, Ushiro-goshi\nTe-waza : Kuchiki-taoshi, Morote-gari, Sukui-nage, Eri-seoi-nage\nAshi-waza : Ko-soto-gake, O-guruma, Ashi-guruma, O-soto-otoshi\nSutemi-waza : Ura-nage, Yoko-guruma, Yoko-gake, Yoko-tomoe-nage, Uki-waza",
+    "uv2_ne": "Osaekomi-waza : Kuzure-kesa-gatame, Kuzure-kami-shiho-gatame, Kuzure-tate-shiho-gatame, Kuzure-yoko-shiho-gatame\nShime-waza : Kata-te-jime, Sankaku-jime, Sode-guruma-jime, Kata-ha-jime\nKansetsu-waza : Ude-hishigi-hiza-gatame, Ude-hishigi-waki-gatame",
+    "defenses": "Séries A, B et C des 20 attaques imposées",
+    "criteres": "Efficacité - Contrôle - Sobriété - Réalisme"
   },
   "3eme-dan": {
-    "resume":    "",
-    "techniques": "",
-    "kata":       "",
-    "reglement":  ""
+    "conditions": "2 timbres de licence - Minimum 20 ans - 2ème Dan depuis 3 ans",
+    "uv1_kata": "Nage-no-kata + Katame-no-kata (tori) + tout ou partie (uke)",
+    "uv2_technique": "12 techniques imposées par le jury : 6 nage-waza + 4 ne-waza + 2 défenses au choix. Durée ~5 min.",
+    "uv2_nage": "Koshi-waza : Utsuri-goshi, Ushiro-goshi\nTe-waza : Kibisu-gaeshi, Sumi-otoshi, Yama-arashi\nAshi-waza : O-soto-guruma, Tsubame-gaeshi, Harai-tsurikomi-ashi\nSutemi-waza : Ura-nage, Yoko-wakare, Hane-maki-komi, Soto-maki-komi, Ko-uchi-maki-komi",
+    "uv2_ne": "Osaekomi-waza : Makura-kesa-gatame, Kata-gatame\nShime-waza : Ashi-gatame-jime, Morote-jime, Tsukkomi-jime\nKansetsu-waza : Ude-hishigi-ashi-gatame, Ude-hishigi-sankaku-gatame, Ude-hishigi-hara-gatame",
+    "defenses": "Séries A, B, C et D des 20 attaques imposées",
+    "criteres": "Efficacité - Contrôle - Sobriété - Réalisme"
   },
   "4eme-dan": {
-    "resume":    "",
-    "techniques": "",
-    "kata":       "",
-    "reglement":  ""
+    "conditions": "2 timbres de licence - Minimum 24 ans - 3ème Dan depuis 4 ans",
+    "uv1_kata": "Nage-no-kata + Katame-no-kata + Kime-no-kata (tori) + tout ou partie (uke)",
+    "uv2_technique": "Dominante Compétition ou Dominante Technique selon le parcours du candidat",
+    "uv2_nage": "Techniques du programme complet 1er au 3ème Dan + techniques imposées par le jury selon dominante choisie",
+    "uv2_ne": "Programme complet ne-waza des 3 premiers dan + techniques spécifiques selon dominante",
+    "defenses": "Séries A, B, C, D et E des 20 attaques imposées",
+    "criteres": "Efficacité - Contrôle - Sobriété - Réalisme - Pédagogie"
   },
   "5eme-dan": {
-    "resume":    "",
-    "techniques": "",
-    "kata":       "",
-    "reglement":  ""
+    "conditions": "2 timbres de licence - Minimum 30 ans - 4ème Dan depuis 5 ans - Engagement fédéral significatif",
+    "uv1_kata": "2 katas imposés par le jury parmi : Nage-no-kata, Katame-no-kata, Kime-no-kata, Ju-no-kata, Koshiki-no-kata",
+    "uv2_technique": "Démonstration technique libre (randori, kata, pédagogie) devant jury national",
+    "uv2_nage": "Programme technique complet démontré avec maîtrise et pédagogie",
+    "uv2_ne": "Maîtrise complète du ne-waza - démonstration libre",
+    "defenses": "Séries complètes des 20 attaques imposées",
+    "criteres": "Excellence technique - Pédagogie - Engagement - Rayonnement du judo"
   },
   "6eme-dan": {
-    "resume":    "",
-    "techniques": "",
-    "kata":       "",
-    "reglement":  ""
+    "conditions": "Minimum 38 ans - 5ème Dan depuis 6 ans - Engagement exceptionnel pour le judo",
+    "uv1_kata": "Katas au choix du candidat - validation par commission nationale des hauts grades",
+    "uv2_technique": "Dossier de carrière - audition devant commission nationale des hauts grades FFJDA",
+    "uv2_nage": "Excellence et transmission du judo - pas de passage technique obligatoire",
+    "uv2_ne": "Expertise reconnue dans l'ensemble des domaines du judo",
+    "defenses": "Non applicable - grade de haute distinction",
+    "criteres": "Excellence - Transmission - Rayonnement national ou international du judo"
   }
 }
