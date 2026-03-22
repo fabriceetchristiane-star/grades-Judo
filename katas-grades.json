@@ -1,0 +1,77 @@
+{
+  "1er-dan": {
+    "videos": [
+      { "titre": "Nage no Kata — Kodokan", "url": "https://youtu.be/Suk2__BG69Q" }
+    ],
+    "livres": [
+      { "titre": "Nage no Kata — Livre Kodokan (FR)", "url": "https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2020/07/Nage-no-kata_FRA-1596187174-1596187174.pdf" }
+    ]
+  },
+  "2eme-dan": {
+    "videos": [
+      { "titre": "Nage no Kata — Kodokan", "url": "https://youtu.be/Suk2__BG69Q" },
+      { "titre": "Katame no Kata — Kodokan", "url": "https://youtu.be/zyTLmipWkb8" }
+    ],
+    "livres": [
+      { "titre": "Nage no Kata — Livre Kodokan (FR)", "url": "https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2020/07/Nage-no-kata_FRA-1596187174-1596187174.pdf" },
+      { "titre": "Katame no Kata — Livre Kodokan (FR)", "url": "https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2020/09/Katame-No-Kata_FRA-1599743291-1599743291.pdf" }
+    ]
+  },
+  "3eme-dan": {
+    "videos": [
+      { "titre": "Nage no Kata — Kodokan", "url": "https://youtu.be/Suk2__BG69Q" },
+      { "titre": "Katame no Kata — Kodokan", "url": "https://youtu.be/zyTLmipWkb8" },
+      { "titre": "Goshin Jitsu — Kodokan", "url": "https://youtu.be/qcxKDm8Af7M" }
+    ],
+    "livres": [
+      { "titre": "Nage no Kata — Livre Kodokan (FR)", "url": "https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2020/07/Nage-no-kata_FRA-1596187174-1596187174.pdf" },
+      { "titre": "Katame no Kata — Livre Kodokan (FR)", "url": "https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2020/09/Katame-No-Kata_FRA-1599743291-1599743291.pdf" },
+      { "titre": "Goshin Jitsu — Livre Kodokan (FR)", "url": "https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2022/07/Goshin_jutsu_FR-1657632234-1657632234.pdf" }
+    ]
+  },
+  "4eme-dan": {
+    "videos": [
+      { "titre": "Nage no Kata — Kodokan", "url": "https://youtu.be/Suk2__BG69Q" },
+      { "titre": "Katame no Kata — Kodokan", "url": "https://youtu.be/zyTLmipWkb8" },
+      { "titre": "Kime no Kata — Kodokan", "url": "https://youtu.be/Aa0bQ8NLiOw" },
+      { "titre": "Goshin Jitsu — Kodokan", "url": "https://youtu.be/qcxKDm8Af7M" }
+    ],
+    "livres": [
+      { "titre": "Nage no Kata — Livre Kodokan (FR)", "url": "https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2020/07/Nage-no-kata_FRA-1596187174-1596187174.pdf" },
+      { "titre": "Katame no Kata — Livre Kodokan (FR)", "url": "https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2020/09/Katame-No-Kata_FRA-1599743291-1599743291.pdf" },
+      { "titre": "Kime no Kata — Livre Kodokan (FR)", "url": "https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2020/10/Kime-No-Kata_FRA-1603376091-1603376091.PDF" },
+      { "titre": "Goshin Jitsu — Livre Kodokan (FR)", "url": "https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2022/07/Goshin_jutsu_FR-1657632234-1657632234.pdf" }
+    ]
+  },
+  "5eme-dan": {
+    "videos": [
+      { "titre": "Nage no Kata — Kodokan", "url": "https://youtu.be/Suk2__BG69Q" },
+      { "titre": "Katame no Kata — Kodokan", "url": "https://youtu.be/zyTLmipWkb8" },
+      { "titre": "Kime no Kata — Kodokan", "url": "https://youtu.be/Aa0bQ8NLiOw" },
+      { "titre": "Goshin Jitsu — Kodokan", "url": "https://youtu.be/qcxKDm8Af7M" },
+      { "titre": "Koshiki no Kata — Kodokan", "url": "https://youtu.be/n2_zAscgWpo" }
+    ],
+    "livres": [
+      { "titre": "Nage no Kata — Livre Kodokan (FR)", "url": "https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2020/07/Nage-no-kata_FRA-1596187174-1596187174.pdf" },
+      { "titre": "Katame no Kata — Livre Kodokan (FR)", "url": "https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2020/09/Katame-No-Kata_FRA-1599743291-1599743291.pdf" },
+      { "titre": "Kime no Kata — Livre Kodokan (FR)", "url": "https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2020/10/Kime-No-Kata_FRA-1603376091-1603376091.PDF" },
+      { "titre": "Goshin Jitsu — Livre Kodokan (FR)", "url": "https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2022/07/Goshin_jutsu_FR-1657632234-1657632234.pdf" }
+    ]
+  },
+  "6eme-dan": {
+    "videos": [
+      { "titre": "Nage no Kata — Kodokan", "url": "https://youtu.be/Suk2__BG69Q" },
+      { "titre": "Katame no Kata — Kodokan", "url": "https://youtu.be/zyTLmipWkb8" },
+      { "titre": "Kime no Kata — Kodokan", "url": "https://youtu.be/Aa0bQ8NLiOw" },
+      { "titre": "Goshin Jitsu — Kodokan", "url": "https://youtu.be/qcxKDm8Af7M" },
+      { "titre": "Koshiki no Kata — Kodokan", "url": "https://youtu.be/n2_zAscgWpo" },
+      { "titre": "Itsutsu no Kata — Kodokan", "url": "https://youtu.be/1_Xezi8nTpA" }
+    ],
+    "livres": [
+      { "titre": "Nage no Kata — Livre Kodokan (FR)", "url": "https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2020/07/Nage-no-kata_FRA-1596187174-1596187174.pdf" },
+      { "titre": "Katame no Kata — Livre Kodokan (FR)", "url": "https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2020/09/Katame-No-Kata_FRA-1599743291-1599743291.pdf" },
+      { "titre": "Kime no Kata — Livre Kodokan (FR)", "url": "https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2020/10/Kime-No-Kata_FRA-1603376091-1603376091.PDF" },
+      { "titre": "Goshin Jitsu — Livre Kodokan (FR)", "url": "https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2022/07/Goshin_jutsu_FR-1657632234-1657632234.pdf" }
+    ]
+  }
+}

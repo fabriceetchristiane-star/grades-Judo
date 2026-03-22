@@ -55,6 +55,15 @@
     <h2>⭐ Critères d'évaluation</h2>
     <div class="encart" id="criteres">Chargement...</div>
   </div>
+
+  <div class="bloc">
+    <h2>Vidéos Kata — Kodokan</h2>
+    <div id="kata-videos">Chargement...</div>
+  </div>
+  <div class="bloc">
+    <h2>Livres Kata — Kodokan</h2>
+    <div id="kata-livres">Chargement...</div>
+  </div>
   <div style="text-align:center; padding:2rem;">
     <a href="4eme-dan.html" class="btn-nav">⬅️ 4ème Dan</a>
     <a href="index.html" class="btn-nav">🏠 Accueil</a>
@@ -66,6 +75,17 @@
   <a href="https://fabriceetchristiane-star.github.io/num-rique-judo/" style="color:white;">🥋 Dojo Numérique</a>
 </footer>
 <script>
+fetch('katas-grades.json')
+  .then(r => r.json())
+  .then(d => {
+    const k = d['5eme-dan'];
+    document.getElementById('kata-videos').innerHTML = k.videos.map(v =>
+      '<a href="' + v.url + '" target="_blank" style="display:inline-block;margin:0.3rem;background:#e74c3c;color:white;padding:0.5rem 1.2rem;border-radius:20px;text-decoration:none;font-weight:bold;">&#9654; ' + v.titre + '</a>'
+    ).join('');
+    document.getElementById('kata-livres').innerHTML = k.livres.map(l =>
+      '<a href="' + l.url + '" target="_blank" style="display:inline-block;margin:0.3rem;background:#2c3e50;color:white;padding:0.5rem 1.2rem;border-radius:20px;text-decoration:none;font-weight:bold;">&#128196; ' + l.titre + '</a>'
+    ).join('');
+  });
 fetch('contenus-grades.json')
   .then(r => r.json())
   .then(d => {
@@ -81,3 +101,4 @@ fetch('contenus-grades.json')
 </script>
 </body>
 </html>
+
