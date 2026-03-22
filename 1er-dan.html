@@ -57,7 +57,11 @@
     <div class="encart" id="criteres">Chargement...</div>
   </div>
   <div class="bloc">
-    <h2>🎬 Vidéos Kata — Kodokan</h2>
+    <h2>📋 Techniques UV2 — Annexe 1 FFJDA</h2>
+    <div id="techniques-uv2">Chargement...</div>
+  </div>
+
+  <div class="bloc">
     <div id="kata-videos">Chargement...</div>
   </div>
   <div class="bloc">
@@ -74,6 +78,28 @@
   <a href="https://fabriceetchristiane-star.github.io/num-rique-judo/" style="color:white;">🥋 Dojo Numérique</a>
 </footer>
 <script>
+fetch('techniques-uv2.json')
+  .then(r => r.json())
+  .then(d => {
+    const t = d['1er-dan'];
+    const COULEURS = { 'koshi-waza':'#7d1f68', 'te-waza':'#1a6e3a', 'ashi-waza':'#1a5276', 'sutemi-waza':'#7d5a00', 'osaekomi-waza':'#5d4037', 'shime-waza':'#c0392b', 'kansetsu-waza':'#2c3e50' };
+    const NOMS = { 'koshi-waza':'Koshi-Waza (Hanches)', 'te-waza':'Te-Waza (Mains/Bras)', 'ashi-waza':'Ashi-Waza (Pieds/Jambes)', 'sutemi-waza':'Sutemi-Waza (Sacrifice)', 'osaekomi-waza':'Osaekomi-Waza (Immobilisations)', 'shime-waza':'Shime-Waza (Étranglements)', 'kansetsu-waza':'Kansetsu-Waza (Clés de bras)' };
+    let html = '<div style="margin-bottom:0.5rem;font-size:0.85rem;color:#e74c3c;font-weight:bold;">⚠️ Le jury impose 6 nage-waza + 4 ne-waza parmi ces techniques</div>';
+    html += '<h3 style="color:#1a5276;margin:1rem 0 0.5rem;">NAGE-WAZA</h3>';
+    for (const [cat, techs] of Object.entries(t['nage-waza'])) {
+      html += `<div style="margin-bottom:0.8rem;"><div style="background:${COULEURS[cat]};color:white;padding:0.3rem 0.8rem;border-radius:6px;font-size:0.8rem;font-weight:bold;display:inline-block;margin-bottom:0.4rem;">${NOMS[cat]}</div><div style="display:flex;flex-wrap:wrap;gap:0.3rem;">`;
+      techs.forEach(tech => { html += `<span style="background:#f0f0f0;padding:0.25rem 0.6rem;border-radius:15px;font-size:0.85rem;">${tech}</span>`; });
+      html += '</div></div>';
+    }
+    html += '<h3 style="color:#5d4037;margin:1rem 0 0.5rem;">NE-WAZA</h3>';
+    for (const [cat, techs] of Object.entries(t['ne-waza'])) {
+      html += `<div style="margin-bottom:0.8rem;"><div style="background:${COULEURS[cat]};color:white;padding:0.3rem 0.8rem;border-radius:6px;font-size:0.8rem;font-weight:bold;display:inline-block;margin-bottom:0.4rem;">${NOMS[cat]}</div><div style="display:flex;flex-wrap:wrap;gap:0.3rem;">`;
+      techs.forEach(tech => { html += `<span style="background:#f0f0f0;padding:0.25rem 0.6rem;border-radius:15px;font-size:0.85rem;">${tech}</span>`; });
+      html += '</div></div>';
+    }
+    document.getElementById('techniques-uv2').innerHTML = html;
+  });
+
 fetch('katas-grades.json')
   .then(r => r.json())
   .then(d => {

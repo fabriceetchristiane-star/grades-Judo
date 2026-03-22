@@ -1,0 +1,41 @@
+{
+  "1er-dan": {
+    "nage-waza": {
+      "koshi-waza": ["Uki-goshi","Koshi-guruma","O-goshi","Tsurikomi-goshi","Harai-goshi","Uchi-mata"],
+      "te-waza": ["Uki-otoshi","Tai-otoshi","Ippon-seoi-nage","Morote-seoi-nage","Kata-guruma"],
+      "ashi-waza": ["O-soto-gari","Ko-uchi-gari","O-uchi-gari","Ko-soto-gari","Hiza-guruma","Sasae-tsurikomi-ashi","De-ashi-barai","Okuri-ashi-barai","Uchi-mata"],
+      "sutemi-waza": ["Tomoe-nage","Sumi-gaeshi","Tani-otoshi"]
+    },
+    "ne-waza": {
+      "osaekomi-waza": ["Hon-kesa-gatame","Ushiro-kesa-gatame","Kami-shiho-gatame","Tate-shiho-gatame","Yoko-shiho-gatame"],
+      "shime-waza": ["Gyaku-juji-jime","Kata-juji-jime","Nami-juji-jime","Hadaka-jime","Okuri-eri-jime"],
+      "kansetsu-waza": ["Ude-hishigi-juji-gatame","Ude-hishigi-ude-gatame","Ude-garami"]
+    }
+  },
+  "2eme-dan": {
+    "nage-waza": {
+      "koshi-waza": ["Hane-goshi","Sode-tsurikomi-goshi","Tsuri-goshi","Ushiro-goshi"],
+      "te-waza": ["Kuchiki-taoshi","Morote-gari","Sukui-nage","Eri-seoi-nage"],
+      "ashi-waza": ["Ko-soto-gake","O-guruma","Ashi-guruma","O-soto-otoshi"],
+      "sutemi-waza": ["Ura-nage","Yoko-guruma","Yoko-gake","Yoko-tomoe-nage","Uki-waza"]
+    },
+    "ne-waza": {
+      "osaekomi-waza": ["Kuzure-kesa-gatame","Kuzure-kami-shiho-gatame","Kuzure-tate-shiho-gatame","Kuzure-yoko-shiho-gatame"],
+      "shime-waza": ["Kata-te-jime","Sankaku-jime","Sode-guruma-jime","Kata-ha-jime"],
+      "kansetsu-waza": ["Ude-hishigi-hiza-gatame","Ude-hishigi-waki-gatame"]
+    }
+  },
+  "3eme-dan": {
+    "nage-waza": {
+      "koshi-waza": ["Utsuri-goshi","Ushiro-goshi"],
+      "te-waza": ["Kibisu-gaeshi","Sumi-otoshi","Yama-arashi"],
+      "ashi-waza": ["O-soto-guruma","Tsubame-gaeshi","Harai-tsurikomi-ashi"],
+      "sutemi-waza": ["Ura-nage","Yoko-wakare","Hane-maki-komi","Soto-maki-komi","Ko-uchi-maki-komi"]
+    },
+    "ne-waza": {
+      "osaekomi-waza": ["Makura-kesa-gatame","Kata-gatame"],
+      "shime-waza": ["Ashi-gatame-jime","Morote-jime","Tsukkomi-jime"],
+      "kansetsu-waza": ["Ude-hishigi-ashi-gatame","Ude-hishigi-sankaku-gatame","Ude-hishigi-hara-gatame"]
+    }
+  }
+}
