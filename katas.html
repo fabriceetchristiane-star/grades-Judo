@@ -1,189 +1,124 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katas Judo - Ressources</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        .content-section {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            margin: 2rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .content-text {
-            line-height: 1.8;
-            color: #555;
-            white-space: pre-wrap;
-            margin: 1rem 0;
-        }
-
-        .pdf-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-            margin: 1rem 0;
-        }
-
-        .pdf-btn {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 0.8rem 0.3rem;
-            background: #9b59b6;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            text-align: center;
-            transition: all 0.3s;
-            border: 2px solid #8e44ad;
-            min-height: 60px;
-            justify-content: center;
-            font-size: 0.9rem;
-        }
-
-        .pdf-btn:hover {
-            background: #8e44ad;
-            transform: translateY(-2px);
-            text-decoration: none;
-            color: white;
-        }
-
-        .pdf-btn span {
-            font-size: 1.2rem;
-            margin-bottom: 0.3rem;
-        }
-
-        @media (max-width: 768px) {
-            .pdf-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .pdf-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katas Judo — Guide des Grades</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { font-family:'Segoe UI',sans-serif; background:#f8f9fa; margin:0; padding:0; }
+    .onglets { display:flex; flex-wrap:wrap; gap:0.4rem; padding:0.8rem 1rem; background:white; box-shadow:0 2px 6px rgba(0,0,0,0.1); position:sticky; top:0; z-index:100; justify-content:center; }
+    .onglet { padding:0.45rem 1rem; border-radius:20px; border:none; cursor:pointer; font-size:0.82rem; font-weight:bold; background:#eee; color:#333; transition:all .2s; }
+    .onglet.active { background:#1a1a2e; color:white; }
+    .section { display:none; padding:1rem; max-width:960px; margin:0 auto; }
+    .section.active { display:block; }
+    .kata-card { background:white; border-radius:12px; padding:1.5rem; margin-bottom:1.2rem; box-shadow:0 2px 10px rgba(0,0,0,0.08); }
+    .kata-card h3 { color:#2c3e50; margin:0 0 0.4rem; font-size:1.1rem; }
+    .kata-card p { color:#666; font-size:0.88rem; margin:0.3rem 0 0.5rem; }
+    .grade-badge { display:inline-block; background:#1a1a2e; color:white; padding:0.15rem 0.6rem; border-radius:12px; font-size:0.72rem; margin:0.15rem; }
+    .btn-rouge { display:inline-block; background:#e74c3c; color:white; padding:0.45rem 1rem; border-radius:20px; text-decoration:none; font-weight:bold; font-size:0.85rem; margin:0.25rem; }
+    .btn-rouge:hover { background:#c0392b; color:white; }
+    .btn-bleu { display:inline-block; background:#2c3e50; color:white; padding:0.45rem 1rem; border-radius:20px; text-decoration:none; font-weight:bold; font-size:0.85rem; margin:0.25rem; }
+    .btn-bleu:hover { background:#1a2636; color:white; }
+    .btn-gris { display:inline-block; background:#bdc3c7; color:white; padding:0.45rem 1rem; border-radius:20px; font-size:0.85rem; margin:0.25rem; }
+    .alerte { background:#fef9e7; border:1px solid #f0c040; border-radius:8px; padding:0.7rem 1rem; font-size:0.85rem; color:#7d6608; margin-bottom:1rem; }
+    .btn-nav { display:inline-block; background:#3498db; color:white; padding:0.6rem 1.4rem; border-radius:25px; text-decoration:none; margin:0.3rem; font-weight:bold; }
+    footer { text-align:center; padding:1.5rem; background:#2c3e50; color:white; margin-top:2rem; }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>🥋 Tous les Katas</h1>
-        <nav>
-            <a href="index.html">Accueil</a>
-            <a href="techniques.html">Techniques</a>
-            <a href="katas.html" class="nav-active">Katas</a>
-            <a href="reglement.html">Règlement</a>
-            <a href="philosophie.html">Philosophie</a>
-        </nav>
-    </header>
+<header>
+  <h1>🥋 Katas Officiels — FFJDA 2025/2026</h1>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="techniques.html">Techniques</a>
+    <a href="katas.html" class="nav-active">Katas</a>
+    <a href="reglement.html">Règlement</a>
+    <a href="philosophie.html">Philosophie</a>
+  </nav>
+</header>
 
-    <main>
-        <h2>Katas Officiels - Référence Complète</h2>
-        
-        <!-- Nage-no-kata -->
-        <div class="content-section">
-            <h3>🌀 Nage-no-kata</h3>
-            <div id="contenu-nage-no-kata" class="content-text"></div>
-            <div id="pdfs-nage-no-kata"></div>
-        </div>
+<!-- Onglets par grade -->
+<div class="onglets">
+  <button class="onglet active" onclick="afficher('tous',this)">Tous</button>
+  <button class="onglet" onclick="afficher('1er-dan',this)">1er Dan</button>
+  <button class="onglet" onclick="afficher('2eme-dan',this)">2ème Dan</button>
+  <button class="onglet" onclick="afficher('3eme-dan',this)">3ème Dan</button>
+  <button class="onglet" onclick="afficher('4eme-dan',this)">4ème Dan</button>
+  <button class="onglet" onclick="afficher('5eme-dan',this)">5ème Dan</button>
+  <button class="onglet" onclick="afficher('6eme-dan',this)">6ème Dan</button>
+  <button class="onglet" onclick="afficher('7eme-dan',this)">7ème Dan</button>
+</div>
 
-        <!-- Katame-no-kata -->
-        <div class="content-section">
-            <h3>🔒 Katame-no-kata</h3>
-            <div id="contenu-katame-no-kata" class="content-text"></div>
-            <div id="pdfs-katame-no-kata"></div>
-        </div>
+<div id="sec-tous" class="section active"></div>
+<div id="sec-1er-dan" class="section"></div>
+<div id="sec-2eme-dan" class="section"></div>
+<div id="sec-3eme-dan" class="section"></div>
+<div id="sec-4eme-dan" class="section"></div>
+<div id="sec-5eme-dan" class="section"></div>
+<div id="sec-6eme-dan" class="section"></div>
+<div id="sec-7eme-dan" class="section"></div>
 
-        <!-- Kime-no-kata -->
-        <div class="content-section">
-            <h3>⚡ Kime-no-kata</h3>
-            <div id="contenu-kime-no-kata" class="content-text"></div>
-            <div id="pdfs-kime-no-kata"></div>
-        </div>
+<div style="text-align:center; padding:2rem;">
+  <a href="index.html" class="btn-nav">🏠 Accueil</a>
+  <a href="https://fabriceetchristiane-star.github.io/num-rique-judo/" target="_blank" class="btn-nav">🥋 Dojo Numérique</a>
+</div>
+<footer><p>Guide des Grades Judo — Club JAK Lambersart — FFJDA 2025/2026</p></footer>
 
-        <!-- Kodokan Goshin-jitsu -->
-        <div class="content-section">
-            <h3>🛡️ Kodokan Goshin-jitsu</h3>
-            <div id="contenu-goshin-jitsu" class="content-text"></div>
-            <div id="pdfs-goshin-jitsu"></div>
-        </div>
+<script>
+const GRADE_LABELS = {
+  '1er-dan':'1er Dan','2eme-dan':'2ème Dan','3eme-dan':'3ème Dan',
+  '4eme-dan':'4ème Dan','5eme-dan':'5ème Dan','6eme-dan':'6ème Dan','7eme-dan':'7ème Dan'
+};
 
-        <!-- Ju-no-kata -->
-        <div class="content-section">
-            <h3>💫 Ju-no-kata</h3>
-            <div id="contenu-ju-no-kata" class="content-text"></div>
-            <div id="pdfs-ju-no-kata"></div>
-        </div>
+function buildCard(kata, gradeFilter) {
+  let html = '<div class="kata-card">';
+  html += '<h3>' + kata.emoji + ' ' + kata.nom + '</h3>';
+  html += '<p>' + kata.desc.replace(/\n/g,'<br>') + '</p>';
+  if (gradeFilter === 'tous') {
+    Object.keys(kata.grades).forEach(function(g) {
+      html += '<span class="grade-badge">' + GRADE_LABELS[g] + '</span>';
+    });
+    html += '<br style="margin:0.5rem 0;">';
+  } else if (kata.grades[gradeFilter]) {
+    html += '<div class="alerte">' + kata.grades[gradeFilter].replace(/\n/g,'<br>') + '</div>';
+  }
+  if (kata.video) html += '<a href="' + kata.video + '" target="_blank" class="btn-rouge">▶ Voir la vidéo</a>';
+  if (kata.livre) html += '<a href="' + kata.livre + '" target="_blank" class="btn-bleu">📄 Livre Kodokan (FR)</a>';
+  if (!kata.video && !kata.livre) html += '<span class="btn-gris">Document à venir</span>';
+  html += '</div>';
+  return html;
+}
 
-        <!-- Itsutsu-no-kata -->
-        <div class="content-section">
-            <h3>🌊 Itsutsu-no-kata</h3>
-            <div id="contenu-itsutsu-no-kata" class="content-text"></div>
-            <div id="pdfs-itsutsu-no-kata"></div>
-        </div>
+function afficher(grade, btn) {
+  document.querySelectorAll('.section').forEach(function(s) { s.classList.remove('active'); });
+  document.querySelectorAll('.onglet').forEach(function(o) { o.classList.remove('active'); });
+  document.getElementById('sec-' + grade).classList.add('active');
+  btn.classList.add('active');
+}
 
-        <!-- Koshiki-no-kata -->
-        <div class="content-section">
-            <h3>⚔️ Koshiki-no-kata</h3>
-            <div id="contenu-koshiki-no-kata" class="content-text"></div>
-            <div id="pdfs-koshiki-no-kata"></div>
-        </div>
+function initialiser(KATAS) {
+  document.getElementById('sec-tous').innerHTML =
+    '<p style="color:#666;padding:0.5rem 0 1rem;text-align:center;">Tous les katas officiels — cliquez sur un grade pour filtrer</p>' +
+    KATAS.map(function(k) { return buildCard(k, 'tous'); }).join('');
 
-        <!-- Gonosen -->
-        <div class="content-section">
-            <h3>🎯 Gonosen</h3>
-            <div id="contenu-gonosen" class="content-text"></div>
-            <div id="pdfs-gonosen"></div>
-        </div>
-    </main>
+  Object.keys(GRADE_LABELS).forEach(function(grade) {
+    var filtered = KATAS.filter(function(k) { return k.grades[grade]; });
+    var div = document.getElementById('sec-' + grade);
+    if (!div) return;
+    if (filtered.length > 0) {
+      div.innerHTML = '<p style="color:#666;padding:0.5rem 0 1rem;">Katas pour le <strong>' + GRADE_LABELS[grade] + '</strong> :</p>' +
+        filtered.map(function(k) { return buildCard(k, grade); }).join('');
+    } else {
+      div.innerHTML = '<p style="text-align:center;color:#888;padding:2rem;">Aucun kata spécifique défini pour ce grade.</p>';
+    }
+  });
+}
 
-    <footer style="margin-top: 3rem; padding: 2rem; text-align: center; background: #2c3e50; color: white;">
-        <p>© 2025 Guide des Grades Judo</p>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            chargerKata('nage-no-kata');
-            chargerKata('katame-no-kata');
-            chargerKata('kime-no-kata');
-            chargerKata('goshin-jitsu');
-            chargerKata('ju-no-kata');
-            chargerKata('itsutsu-no-kata');
-            chargerKata('koshiki-no-kata');
-            chargerKata('gonosen');
-        });
-
-        function chargerKata(kata) {
-            // Charger le contenu texte
-            const contenu = localStorage.getItem('kata-' + kata);
-            const contenuDiv = document.getElementById('contenu-' + kata);
-            
-            if (contenu && contenu.trim()) {
-                contenuDiv.innerHTML = contenu;
-            } else {
-                contenuDiv.innerHTML = '<p style="color: #999; font-style: italic;">Contenu en cours de rédaction...</p>';
-            }
-            
-            // Charger les PDFs
-            const pdfs = JSON.parse(localStorage.getItem('pdfs-katas') || '[]');
-            const filtered = pdfs.filter(p => p.section === kata);
-            const pdfsDiv = document.getElementById('pdfs-' + kata);
-            
-            if (filtered.length > 0) {
-                pdfsDiv.innerHTML = '<h4 style="margin-top: 1rem;">📄 Documents disponibles :</h4><div class="pdf-grid">' +
-                    filtered.map(pdf => `
-                        <a href="${pdf.data}" download="${pdf.nom}" class="pdf-btn">
-                            <span>📥</span>
-                            ${pdf.nom.replace('.pdf', '')}
-                        </a>
-                    `).join('') + '</div>';
-            }
-        }
-    </script>
+fetch('katas.json')
+  .then(function(r) { return r.json(); })
+  .then(function(data) { initialiser(data); })
+  .catch(function(e) { console.error('Erreur chargement katas.json :', e); });
+</script>
 </body>
 </html>

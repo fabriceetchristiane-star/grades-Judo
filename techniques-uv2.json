@@ -1,0 +1,153 @@
+{
+  "1er-dan": {
+    "nage-waza": {
+      "koshi-waza": [
+        {"nom":"Harai-goshi","url":"https://youtu.be/qTo8HlAAkOo"},
+        {"nom":"Kubi-nage","url":"https://youtu.be/K7b1r6p3lIM"},
+        {"nom":"Koshi-guruma","url":"https://youtu.be/SU7Id6uVJ44"},
+        {"nom":"O-goshi","url":"https://youtu.be/yhu1mfy2vJ4"},
+        {"nom":"Tsurikomi-goshi","url":"https://youtu.be/McfzA0yRVt4"},
+        {"nom":"Uchi-mata","url":"https://youtu.be/iUpSu5J-bgw"},
+        {"nom":"Uki-goshi","url":"https://youtu.be/bPKwtB4lyOQ"}
+      ],
+      "te-waza": [
+        {"nom":"Ippon-seoi-nage","url":"https://youtu.be/FQnOlCxo4oI"},
+        {"nom":"Kata-guruma","url":"https://youtu.be/cnHRhSy8yi4"},
+        {"nom":"Uki-otoshi","url":"https://youtu.be/6H5tmncOY4Q"},
+        {"nom":"Tai-otoshi","url":"https://youtu.be/4x6S3Q-Ktv8"},
+        {"nom":"Morote-seoi-nage","url":"https://youtu.be/zIq0xI0ogxk"}
+      ],
+      "ashi-waza": [
+        {"nom":"De-ashi-barai","url":"https://youtu.be/4BUUvqxi_Kk"},
+        {"nom":"Hiza-guruma","url":"https://youtu.be/JPJx9-oAVns"},
+        {"nom":"Sasae-tsurikomi-ashi","url":"https://youtu.be/699i--pvYmE"},
+        {"nom":"Ko-soto-gari","url":"https://youtu.be/jeQ541ScLB4"},
+        {"nom":"Ko-uchi-gari","url":"https://youtu.be/3Jb3tZvr9Ng"},
+        {"nom":"Okuri-ashi-barai","url":"https://youtu.be/nw1ZdRjrdRI"},
+        {"nom":"O-soto-gari","url":"https://www.youtube.com/watch?v=c-A_nP7mKAc"},
+        {"nom":"O-uchi-gari","url":"https://youtu.be/0itJFhV9pDQ"},
+        {"nom":"Uchi-mata","url":"https://youtu.be/iUpSu5J-bgw"}
+      ],
+      "sutemi-waza": [
+        {"nom":"Sumi-gaeshi","url":"https://youtu.be/5VhduA5xkbA"},
+        {"nom":"Tomoe-nage","url":"https://youtu.be/880WbHvHv6A"}
+      ]
+    },
+    "ne-waza": {
+      "osaekomi-waza": [
+        {"nom":"Hon-kesa-gatame","url":"https://youtu.be/NDaQuJOFBYk"},
+        {"nom":"Kami-shiho-gatame","url":"https://youtu.be/HFuMjOv0WN8"},
+        {"nom":"Yoko-shiho-gatame","url":"https://youtu.be/TT7XJVSEQxA"},
+        {"nom":"Tate-shiho-gatame","url":"https://youtu.be/55-rFmBx53g"},
+        {"nom":"Ushiro-kesa-gatame","url":"https://youtu.be/SBapox2M2dE"}
+      ],
+      "shime-waza": [
+        {"nom":"Gyaku-juji-jime","url":"https://youtu.be/t3tQriIPdlI"},
+        {"nom":"Hadaka-jime","url":"https://youtu.be/9f0n8jez7iA"},
+        {"nom":"Kata-juji-jime","url":"https://youtu.be/k2cHry9HByQ"},
+        {"nom":"Nami-juji-jime","url":"https://youtu.be/k2cHry9HByQ"},
+        {"nom":"Okuri-eri-jime","url":"https://youtu.be/EiqyoVcIAi8"}
+      ],
+      "kansetsu-waza": [
+        {"nom":"Ude-hishigi-juji-gatame","url":"https://kdkjudo.org/katame-waza/"},
+        {"nom":"Ude-hishigi-ude-gatame","url":"https://kdkjudo.org/katame-waza/"},
+        {"nom":"Ude-garami","url":"https://kdkjudo.org/katame-waza/"}
+      ]
+    }
+  },
+  "2eme-dan": {
+    "nage-waza": {
+      "koshi-waza": [
+        {"nom":"Hane-goshi","url":"https://youtu.be/M9_7De6A1kk"},
+        {"nom":"Sode-tsurikomi-goshi","url":"https://youtu.be/McfzA0yRVt4"},
+        {"nom":"Tsuri-goshi","url":"https://youtu.be/bPKwtB4lyOQ"}
+      ],
+      "te-waza": [
+        {"nom":"Eri-seoi-nage","url":"https://youtu.be/FQnOlCxo4oI"},
+        {"nom":"Te-guruma","url":"https://youtu.be/cnHRhSy8yi4"},
+        {"nom":"Morote-gari","url":"https://youtu.be/zIq0xI0ogxk"},
+        {"nom":"Kuchiki-taoshi","url":"https://youtu.be/ZNL47q1aJNY"}
+      ],
+      "ashi-waza": [
+        {"nom":"O-guruma","url":"https://youtu.be/iUpSu5J-bgw"},
+        {"nom":"Ashi-guruma","url":"https://youtu.be/JPJx9-oAVns"},
+        {"nom":"Ko-soto-gake","url":"https://youtu.be/jeQ541ScLB4"},
+        {"nom":"O-soto-otoshi","url":"https://youtu.be/c-A_nP7mKAc"},
+        {"nom":"Tsubame-gaeshi","url":"https://youtu.be/4BUUvqxi_Kk"}
+      ],
+      "sutemi-waza": [
+        {"nom":"Ura-nage","url":"https://youtu.be/Fgi9b8DJ5sQ"},
+        {"nom":"Tani-otoshi","url":"https://youtu.be/3b9Me3Fohpk"},
+        {"nom":"Yoko-guruma","url":"https://youtu.be/MehP6I5cY2c"},
+        {"nom":"Yoko-gake","url":"https://youtu.be/880WbHvHv6A"},
+        {"nom":"Ko-uchi-makikomi","url":"https://youtu.be/_1eygIXLD_w"},
+        {"nom":"Yoko-tomoe-nage","url":"https://youtu.be/880WbHvHv6A"},
+        {"nom":"Uki-waza","url":"https://youtu.be/6H5tmncOY4Q"}
+      ]
+    },
+    "ne-waza": {
+      "osaekomi-waza": [
+        {"nom":"Kuzure-kami-shiho-gatame","url":"https://youtu.be/YUrogQWdwiY"},
+        {"nom":"Kuzure-kesa-gatame","url":"https://youtu.be/Q2fb9jaoUFQ"},
+        {"nom":"Kuzure-tate-shiho-gatame","url":"https://youtu.be/55-rFmBx53g"},
+        {"nom":"Kuzure-yoko-shiho-gatame","url":"https://youtu.be/TT7XJVSEQxA"}
+      ],
+      "shime-waza": [
+        {"nom":"Sankaku-jime","url":"https://youtu.be/E3nvQzClcAU"},
+        {"nom":"Kata-ha-jime","url":"https://youtu.be/yaTGgRjnwB8"},
+        {"nom":"Kata-te-jime","url":"https://youtu.be/cHeIs-fSqwE"},
+        {"nom":"Sode-guruma-jime","url":"https://youtu.be/E3nvQzClcAU"}
+      ],
+      "kansetsu-waza": [
+        {"nom":"Ude-hishigi-hiza-gatame","url":"https://kdkjudo.org/katame-waza/"},
+        {"nom":"Ude-hishigi-waki-gatame","url":"https://kdkjudo.org/katame-waza/"}
+      ]
+    }
+  },
+  "3eme-dan": {
+    "nage-waza": {
+      "koshi-waza": [
+        {"nom":"Utsuri-goshi","url":"https://youtu.be/SU7Id6uVJ44"},
+        {"nom":"Ushiro-goshi","url":"https://youtu.be/bPKwtB4lyOQ"}
+      ],
+      "te-waza": [
+        {"nom":"Sumi-otoshi","url":"https://youtu.be/6H5tmncOY4Q"},
+        {"nom":"Kibisu-gaeshi","url":"https://youtu.be/_MWAdYi_LC4"},
+        {"nom":"Uchi-mata-sukashi","url":"https://youtu.be/V-RS3uhtVWM"},
+        {"nom":"Sukui-nage","url":"https://youtu.be/cnHRhSy8yi4"},
+        {"nom":"Yama-arashi","url":"https://youtu.be/qTo8HlAAkOo"},
+        {"nom":"Seoi-otoshi","url":"https://youtu.be/FQnOlCxo4oI"}
+      ],
+      "ashi-waza": [
+        {"nom":"Harai-tsurikomi-ashi","url":"https://youtu.be/699i--pvYmE"},
+        {"nom":"O-soto-guruma","url":"https://youtu.be/c-A_nP7mKAc"},
+        {"nom":"O-soto-gaeshi","url":"https://youtu.be/8ZjM3X_EANo"}
+      ],
+      "sutemi-waza": [
+        {"nom":"Soto-makikomi","url":"https://youtu.be/bWG9O1BVKtQ"},
+        {"nom":"Harai-makikomi","url":"https://youtu.be/VBaHzKaCXss"},
+        {"nom":"Yoko-wakare","url":"https://youtu.be/880WbHvHv6A"},
+        {"nom":"Yoko-otoshi","url":"https://youtu.be/MehP6I5cY2c"},
+        {"nom":"Tawara-gaeshi","url":"https://youtu.be/5VhduA5xkbA"},
+        {"nom":"Daki-wakare","url":"https://youtu.be/Fgi9b8DJ5sQ"}
+      ]
+    },
+    "ne-waza": {
+      "osaekomi-waza": [
+        {"nom":"Makura-kesa-gatame","url":"https://youtu.be/Q2fb9jaoUFQ"},
+        {"nom":"Kata-gatame","url":"https://youtu.be/zQR3IOXxO_Q"}
+      ],
+      "shime-waza": [
+        {"nom":"Morote-jime","url":"https://youtu.be/-RHC4V7TQiY"},
+        {"nom":"Tsukkomi-jime","url":"https://youtu.be/dKKpnD3eLcY"},
+        {"nom":"Ashi-gatame-jime","url":"https://youtu.be/E3nvQzClcAU"},
+        {"nom":"Ryo-te-jime","url":"https://youtu.be/-RHC4V7TQiY"}
+      ],
+      "kansetsu-waza": [
+        {"nom":"Ude-hishigi-ashi-gatame","url":"https://kdkjudo.org/katame-waza/"},
+        {"nom":"Ude-hishigi-sankaku-gatame","url":"https://kdkjudo.org/katame-waza/"},
+        {"nom":"Ude-hishigi-hara-gatame","url":"https://kdkjudo.org/katame-waza/"}
+      ]
+    }
+  }
+}

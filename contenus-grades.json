@@ -1,0 +1,56 @@
+{
+  "1er-dan": {
+    "conditions": "2 licences FFJDA minimum - Age plancher : 15 ans (présentation) / 17 ans (homologation) - Ceinture marron",
+    "uv1_kata": "DOMINANTE COMPETITION : 3 premières séries du Nage-no-kata (rôle tori) + tout ou partie (rôle uke)\nDOMINANTE TECHNIQUE : Nage-no-kata en entier OU Kodokan Goshin Jitsu (rôle tori)",
+    "uv2_technique": "12 techniques imposées par le jury : 6 nage-waza + 4 ne-waza + 2 défenses au choix (séries A et B). Durée ~5 min. 1 méconnaissance tolérée par domaine.",
+    "uv2_nage": "Koshi-waza : Uki-goshi, Koshi-guruma, O-goshi, Tsurikomi-goshi, Harai-goshi, Uchi-mata\nTe-waza : Uki-otoshi, Tai-otoshi, Ippon-seoi-nage, Morote-seoi-nage, Kata-guruma\nAshi-waza : O-soto-gari, Ko-uchi-gari, O-uchi-gari, Ko-soto-gari, Hiza-guruma, Sasae-tsurikomi-ashi, De-ashi-barai, Okuri-ashi-barai\nSutemi-waza : Tomoe-nage, Sumi-gaeshi, Tani-otoshi",
+    "uv2_ne": "Osaekomi-waza : Hon-kesa-gatame, Ushiro-kesa-gatame, Kami-shiho-gatame, Tate-shiho-gatame, Yoko-shiho-gatame\nShime-waza : Gyaku-juji-jime, Kata-juji-jime, Nami-juji-jime, Hadaka-jime, Okuri-eri-jime\nKansetsu-waza : Ude-hishigi-juji-gatame, Ude-hishigi-ude-gatame, Ude-garami",
+    "defenses": "Séries A et B des 20 attaques imposées ju-jitsu - 2 saisies et 2 réponses différentes",
+    "criteres": "Efficacité - Contrôle - Sobriété - Réalisme"
+  },
+  "2eme-dan": {
+    "conditions": "2 licences FFJDA - Age plancher : 15 ans (présentation) / 17 ans (homologation) - 1 an de 1er dan",
+    "uv1_kata": "DOMINANTE COMPETITION : Nage-no-kata en entier (rôle tori)\nDOMINANTE TECHNIQUE : Nage-no-kata OU Kodokan Goshin Jitsu (différent du kata présenté au 1er dan)",
+    "uv2_technique": "a) 1 technique nage-waza + 1 ne-waza + 1 défense au choix (contexte dynamique) 3-4 min\nb) 6 techniques : 2 nage-waza + 2 ne-waza imposées + 2 défenses série C - 5 min max",
+    "uv2_nage": "Koshi-waza : Hane-goshi, Sode-tsurikomi-goshi, Tsuri-goshi, Ushiro-goshi\nTe-waza : Kuchiki-taoshi, Morote-gari, Sukui-nage, Eri-seoi-nage\nAshi-waza : Ko-soto-gake, O-guruma, Ashi-guruma, O-soto-otoshi\nSutemi-waza : Ura-nage, Yoko-guruma, Yoko-gake, Yoko-tomoe-nage, Uki-waza",
+    "uv2_ne": "Osaekomi-waza : Kuzure-kesa-gatame, Kuzure-kami-shiho-gatame, Kuzure-tate-shiho-gatame, Kuzure-yoko-shiho-gatame\nShime-waza : Kata-te-jime, Sankaku-jime, Sode-guruma-jime, Kata-ha-jime\nKansetsu-waza : Ude-hishigi-hiza-gatame, Ude-hishigi-waki-gatame",
+    "defenses": "Séries A, B et C des 20 attaques imposées ju-jitsu",
+    "criteres": "Efficacité - Contrôle - Sobriété - Réalisme"
+  },
+  "3eme-dan": {
+    "conditions": "Age plancher : 17 ans (présentation) / 20 ans (homologation) - 1 an de 2ème dan",
+    "uv1_kata": "DOMINANTE COMPETITION : Katame-no-kata + Kodokan Goshin Jitsu en entier (rôle tori) - les deux obligatoires\nDOMINANTE TECHNIQUE : Katame-no-kata + Nage-no-kata OU Goshin Jitsu (rôle tori)",
+    "uv2_technique": "a) 3 tech nage-waza (3 directions) + 2 ne-waza + défenses (9 min max)\nb) 6 techniques : 2 nage + 2 ne imposées + 2 défenses série D (5 min max)",
+    "uv2_nage": "Koshi-waza : Utsuri-goshi, Ushiro-goshi\nTe-waza : Kibisu-gaeshi, Sumi-otoshi, Yama-arashi\nAshi-waza : O-soto-guruma, Tsubame-gaeshi, Harai-tsurikomi-ashi\nSutemi-waza : Ura-nage, Yoko-wakare, Hane-maki-komi, Soto-maki-komi, Ko-uchi-maki-komi",
+    "uv2_ne": "Osaekomi-waza : Makura-kesa-gatame, Kata-gatame\nShime-waza : Ashi-gatame-jime, Morote-jime, Tsukkomi-jime\nKansetsu-waza : Ude-hishigi-ashi-gatame, Ude-hishigi-sankaku-gatame, Ude-hishigi-hara-gatame",
+    "defenses": "Séries A, B, C et D des 20 attaques imposées ju-jitsu",
+    "criteres": "Efficacité - Contrôle - Sobriété - Réalisme"
+  },
+  "4eme-dan": {
+    "conditions": "Age plancher : 20 ans (présentation) / 24 ans (homologation) - 2 ans de 3ème dan",
+    "uv1_kata": "Kime-no-kata obligatoire + 1 autre kata au choix parmi : Nage-no-kata, Katame-no-kata, Kodokan Goshin Jitsu, Go-no-sen (rôle tori)",
+    "uv2_technique": "Tokui-waza nage-waza (opportunités, séquences tactiques, liaisons debout-sol) min 3 min\nTokui-waza ne-waza min 2 min\nTechniques de défense sur saisies, coups, armes min 2 min\nDurée totale max 10 min",
+    "uv2_nage": "Techniques du programme complet 1er au 3ème dan + tokui-waza personnel",
+    "uv2_ne": "Programme complet ne-waza + tokui-waza personnel en ne-waza",
+    "defenses": "Séries A, B, C, D et E des 20 attaques imposées",
+    "criteres": "Efficacité - Contrôle - Sobriété - Réalisme - Pédagogie"
+  },
+  "5eme-dan": {
+    "conditions": "Age plancher 29 ans - 3 ans de 4ème dan - Engagement fédéral 4 ans minimum - Candidature avant le 5 janvier à la CODG",
+    "uv1_kata": "Ju-no-kata obligatoire (rôle tori) - Prestation totale 25 à 30 min",
+    "uv2_technique": "Judo debout et sol (min 10 min dont 4 min tachi waza ou ne waza) - Jujitsu défenses toutes familles (min 5 min)\nDocument écrit à envoyer 1 mois avant l'examen",
+    "uv2_nage": "Système d'attaque et défense personnel - Points clés des techniques - Kumi-kata et postures - Séquences tactiques",
+    "uv2_ne": "Défenses et ripostes toutes familles - Atémis, clés, projections, liaisons debout-sol, contrôles au sol",
+    "defenses": "Techniques défense avec armes référencées dans les katas judo + bâton court",
+    "criteres": "Excellence technique - Pédagogie - Engagement - Rayonnement du judo - Jury unanimité 3 juges 6ème dan min"
+  },
+  "6eme-dan": {
+    "conditions": "Age plancher 40 ans - 4 ans de 5ème dan - 25 ans de ceinture noire - 2 titres ou fonctions min 4 ans - Candidature avant 5 janvier",
+    "uv1_kata": "Koshiki-no-kata obligatoire (cérémonial complet, rôle tori) - Prestation totale max 30 min",
+    "uv2_technique": "Prestation hors kata 20 min : 1 à 3 secteurs parmi nage-waza, ne-waza, jujitsu self-défense\nEntretien avec jury 10 min - Document écrit envoyé 1 mois avant",
+    "uv2_nage": "Qualité des connaissances techniques - Efficacité et réalité du judo - Cohérence entre les secteurs choisis",
+    "uv2_ne": "Maîtrise complète - Rayonnement d'un 6ème dan",
+    "defenses": "Self-défense si choisi comme secteur de prestation",
+    "criteres": "Excellence - Transmission - Rayonnement - Jury unanimité 3 juges 7ème dan min - Mentions : Excellent / Très bien"
+  }
+}

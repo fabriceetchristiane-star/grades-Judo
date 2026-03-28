@@ -1,249 +1,152 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Techniques Judo - Ressources</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        .content-section {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            margin: 2rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .content-text {
-    line-height: 1.8;
-    color: #555;
-    margin: 1rem 0;
-}
-
-.content-text h3, .content-text h4 {
-    color: #2c3e50;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.content-text h3 {
-    font-size: 1.3rem;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 0.3rem;
-}
-
-.content-text h4 {
-    font-size: 1.1rem;
-    color: #3498db;
-}
-
-.content-text ul, .content-text ol {
-    margin-left: 2rem;
-    margin-bottom: 1rem;
-}
-
-.content-text li {
-    margin-bottom: 0.5rem;
-}
-
-.content-text a {
-    color: #3498db;
-    text-decoration: underline;
-    font-weight: 500;
-}
-
-.content-text a:hover {
-    color: #2980b9;
-    text-decoration: none;
-}
-
-.content-text strong {
-    color: #2c3e50;
-    font-weight: 600;
-}
-
-.content-text em {
-    color: #666;
-}
-
-.content-text p {
-    margin-bottom: 1rem;
-}
-        .pdf-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-            margin: 1rem 0;
-        }
-
-        .pdf-btn {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 0.8rem 0.3rem;
-            background: #9b59b6;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            text-align: center;
-            transition: all 0.3s;
-            border: 2px solid #8e44ad;
-            min-height: 60px;
-            justify-content: center;
-            font-size: 0.9rem;
-        }
-
-        .pdf-btn:hover {
-            background: #8e44ad;
-            transform: translateY(-2px);
-            text-decoration: none;
-            color: white;
-        }
-
-        .pdf-btn span {
-            font-size: 1.2rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .grade-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin: 1rem 0;
-        }
-
-        @media (max-width: 768px) {
-            .pdf-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .grade-links {
-                flex-direction: column;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .pdf-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Techniques UV2 — Guide des Grades Judo</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { font-family:'Segoe UI',sans-serif; background:#f8f9fa; margin:0; padding:0; }
+    .bloc { background:white; padding:1.5rem; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.08); margin:1.5rem auto; max-width:960px; }
+    .bloc h2 { color:#2c3e50; border-bottom:3px solid #3498db; padding-bottom:0.5rem; margin-top:0; }
+    .cat-titre { display:inline-block; color:white; padding:0.3rem 0.9rem; border-radius:6px; font-size:0.82rem; font-weight:bold; margin-bottom:0.5rem; margin-top:0.8rem; }
+    .techs { display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom:0.6rem; }
+    .tech-badge { display:inline-flex; align-items:center; gap:0.3rem; background:#f0f0f0; padding:0.25rem 0.7rem; border-radius:15px; font-size:0.85rem; }
+    .btn-video { background:#e74c3c; color:white; padding:0.1rem 0.45rem; border-radius:10px; font-size:0.75rem; text-decoration:none; }
+    .btn-video:hover { background:#c0392b; }
+    .section-ne { margin-top:1.2rem; }
+    .alerte { background:#fef9e7; border:1px solid #f0c040; border-radius:8px; padding:0.7rem 1rem; font-size:0.85rem; color:#7d6608; margin-bottom:1rem; }
+    .btn-nav { display:inline-block; background:#3498db; color:white; padding:0.6rem 1.4rem; border-radius:25px; text-decoration:none; margin:0.3rem; font-weight:bold; }
+    footer { text-align:center; padding:1.5rem; background:#2c3e50; color:white; margin-top:2rem; }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>💪 Techniques Judo</h1>
-        <nav>
-            <a href="index.html">Accueil</a>
-            <a href="techniques.html" class="nav-active">Techniques</a>
-            <a href="katas.html">Katas</a>
-            <a href="reglement.html">Règlement</a>
-            <a href="philosophie.html">Philosophie</a>
-        </nav>
-    </header>
+<header>
+  <h1>💪 Techniques UV2 — Annexe 1 FFJDA</h1>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="techniques.html" class="nav-active">Techniques</a>
+    <a href="katas.html">Katas</a>
+    <a href="reglement.html">Règlement</a>
+    <a href="philosophie.html">Philosophie</a>
+  </nav>
+</header>
+<main>
+  <div id="contenu-1er-dan"></div>
+  <div id="contenu-2eme-dan"></div>
+  <div id="contenu-3eme-dan"></div>
 
-    <main>
-        <h2>Référentiels Techniques par Grade</h2>
-        
-        <!-- 1er Dan -->
-        <div class="content-section">
-            <h3>🥋 1er Dan</h3>
-            <div id="contenu-1er-dan" class="content-text"></div>
-            <div id="pdfs-1er-dan"></div>
-        </div>
+  <div style="text-align:center; padding:2rem;">
+    <a href="1er-dan.html" class="btn-nav">1er Dan</a>
+    <a href="2eme-dan.html" class="btn-nav">2ème Dan</a>
+    <a href="3eme-dan.html" class="btn-nav">3ème Dan</a>
+    <a href="index.html" class="btn-nav">🏠 Accueil</a>
+  </div>
+</main>
+<footer>
+  <p>Guide des Grades Judo — Club JAK Lambersart — Annexe 1 FFJDA 2025/2026</p>
+  <a href="https://fabriceetchristiane-star.github.io/num-rique-judo/" style="color:white;">🥋 Dojo Numérique</a>
+</footer>
 
-        <!-- 2ème Dan -->
-        <div class="content-section">
-            <h3>🥋 2ème Dan</h3>
-            <div id="contenu-2eme-dan" class="content-text"></div>
-            <div id="pdfs-2eme-dan"></div>
-        </div>
+<script>
+const COULEURS = {
+  'koshi-waza':'#7d1f68','te-waza':'#1a6e3a','ashi-waza':'#1a5276',
+  'sutemi-waza':'#7d5a00','osaekomi-waza':'#5d4037','shime-waza':'#c0392b','kansetsu-waza':'#2c3e50'
+};
+const NOMS = {
+  'koshi-waza':'Koshi-Waza — Techniques de hanche',
+  'te-waza':'Te-Waza — Techniques de main et bras',
+  'ashi-waza':'Ashi-Waza — Techniques de pied et jambe',
+  'sutemi-waza':'Sutemi-Waza — Techniques de sacrifice',
+  'osaekomi-waza':'Osaekomi-Waza — Immobilisations',
+  'shime-waza':'Shime-Waza — Etranglements',
+  'kansetsu-waza':'Kansetsu-Waza — Cles de bras'
+};
+const TITRES = {
+  '1er-dan':  { label:'1er Dan', couleur:'#1a1a2e', defense:'Séries A et B' },
+  '2eme-dan': { label:'2ème Dan', couleur:'#2c3e50', defense:'Série C' },
+  '3eme-dan': { label:'3ème Dan', couleur:'#8B4513', defense:'Série D' }
+};
 
-        <!-- 3ème Dan -->
-        <div class="content-section">
-            <h3>🥋 3ème Dan</h3>
-            <div id="contenu-3eme-dan" class="content-text"></div>
-            <div id="pdfs-3eme-dan"></div>
-        </div>
+function buildSection(grade, data) {
+  const t = TITRES[grade];
+  const g = data[grade];
+  if (!g) return '';
 
-        <!-- 4-5-6 Dan -->
-        <div class="content-section">
-            <h3>🎓 4-5-6 Dan</h3>
-            <div id="contenu-4-5-6-dan" class="content-text"></div>
-            <div id="pdfs-4-5-6-dan"></div>
-        </div>
+  let html = `<div class="bloc"><h2>🥋 ${t.label} — Techniques UV2</h2>`;
+  html += `<div class="alerte">⚠️ Le jury impose des techniques parmi cette liste — 6 nage-waza + 4 ne-waza + 2 défenses (${t.defense})</div>`;
 
-        <!-- 20 Attaques/Défenses -->
-        <div class="content-section">
-            <h3>🥊 20 Attaques/Défenses</h3>
-            <div id="contenu-20-attaques" class="content-text"></div>
-            <img src="images/20-attaques-imposees.jpg" alt="20 Techniques Imposées" style="width:100%; max-width:800px; margin:1rem 0;">
-            <div id="pdfs-20-attaques"></div>
-        </div>
+  html += '<h3 style="color:#1a5276;margin:1rem 0 0.3rem;">NAGE-WAZA — Techniques de projection</h3>';
+  for (const [cat, techs] of Object.entries(g['nage-waza'])) {
+    html += `<div class="cat-titre" style="background:${COULEURS[cat]}">${NOMS[cat]}</div>`;
+    html += '<div class="techs">';
+    techs.forEach(t => {
+      html += `<span class="tech-badge">${t.nom}`;
+      if (t.url) html += `<a href="${t.url}" target="_blank" class="btn-video">&#9654;</a>`;
+      html += '</span>';
+    });
+    html += '</div>';
+  }
 
-        <div class="card">
-            <h3>🎓 Accès Direct par Grade</h3>
-            <div class="grade-links">
-                <a href="1er-dan.html" class="btn">1er Dan</a>
-                <a href="2eme-dan.html" class="btn">2ème Dan</a>
-                <a href="3eme-dan.html" class="btn">3ème Dan</a>
-                <a href="4eme-dan.html" class="btn">4ème Dan</a>
-                <a href="5eme-dan.html" class="btn">5ème Dan</a>
-                <a href="6eme-dan.html" class="btn">6ème Dan</a>
-            </div>
-        </div>
-    </main>
-
-    <footer style="margin-top: 3rem; padding: 2rem; text-align: center; background: #2c3e50; color: white;">
-        <p>© 2026 Guide des Grades Judo</p>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            chargerSection('1er-dan');
-            chargerSection('2eme-dan');
-            chargerSection('3eme-dan');
-            chargerSection('4-5-6-dan');
-            chargerSection('20-attaques');
-        });
-
-        function formaterTexte(texte) {
-    if (!texte || texte.trim() === '') return '';
-    
-    if (texte.includes('<p>') || texte.includes('<h3>') || texte.includes('<ul>')) {
-        return texte;
-    }
-    
-    return texte
-        .split('\n\n')
-        .filter(p => p.trim())
-        .map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`)
-        .join('');
+  html += '<div class="section-ne"><h3 style="color:#5d4037;margin:1rem 0 0.3rem;">NE-WAZA — Techniques au sol</h3>';
+  for (const [cat, techs] of Object.entries(g['ne-waza'])) {
+    html += `<div class="cat-titre" style="background:${COULEURS[cat]}">${NOMS[cat]}</div>`;
+    html += '<div class="techs">';
+    techs.forEach(t => {
+      html += `<span class="tech-badge">${t.nom}`;
+      if (t.url) html += `<a href="${t.url}" target="_blank" class="btn-video">&#9654;</a>`;
+      html += '</span>';
+    });
+    html += '</div>';
+  }
+  html += '</div></div>';
+  return html;
 }
 
-function chargerSection(section) {
-    const contenu = localStorage.getItem('technique-' + section);
-    const contenuDiv = document.getElementById('contenu-' + section);
-    
-    if (contenu && contenu.trim()) {
-        contenuDiv.innerHTML = formaterTexte(contenu);
-    } else {
-        contenuDiv.innerHTML = '<p style="color: #999; font-style: italic;">Contenu en cours de rédaction...</p>';
-    }
-    
-    const pdfs = JSON.parse(localStorage.getItem('pdfs-techniques') || '[]');
-    const filtered = pdfs.filter(p => p.section === section);
-    const pdfsDiv = document.getElementById('pdfs-' + section);
-    
-    if (filtered.length > 0) {
-        pdfsDiv.innerHTML = '<h4 style="margin-top: 1rem;">📄 Documents disponibles :</h4><div class="pdf-grid">' +
-            filtered.map(pdf => `
-                <a href="${pdf.data}" download="${pdf.nom}" class="pdf-btn">
-                    <span>📥</span>
-                    ${pdf.nom.replace('.pdf', '')}
-                </a>
-            `).join('') + '</div>';
-    }
+fetch('techniques-uv2.json')
+  .then(r => r.json())
+  .then(data => {
+    document.getElementById('contenu-1er-dan').innerHTML  = buildSection('1er-dan', data);
+    document.getElementById('contenu-2eme-dan').innerHTML = buildSection('2eme-dan', data);
+    document.getElementById('contenu-3eme-dan').innerHTML = buildSection('3eme-dan', data);
+  })
+  .catch(err => console.error('Erreur:', err));
+</script>
+</body>
+</html>
+
+<script>
+const COULEURS = {'koshi-waza':'#7d1f68','te-waza':'#1a6e3a','ashi-waza':'#1a5276','sutemi-waza':'#7d5a00','osaekomi-waza':'#5d4037','shime-waza':'#c0392b','kansetsu-waza':'#2c3e50'};
+const NOMS = {'koshi-waza':'Koshi-Waza — Hanches','te-waza':'Te-Waza — Mains/Bras','ashi-waza':'Ashi-Waza — Pieds/Jambes','sutemi-waza':'Sutemi-Waza — Sacrifice','osaekomi-waza':'Osaekomi-Waza — Immobilisations','shime-waza':'Shime-Waza — Etranglements','kansetsu-waza':'Kansetsu-Waza — Cles de bras'};
+const TITRES = {'1er-dan':{label:'1er Dan',defense:'Series A et B'},'2eme-dan':{label:'2eme Dan',defense:'Serie C'},'3eme-dan':{label:'3eme Dan',defense:'Serie D'}};
+
+function buildSection(grade, data) {
+  const t = TITRES[grade];
+  const g = data[grade];
+  if (!g) return '';
+  let html = '<div class="bloc"><h2>Techniques ' + t.label + '</h2>';
+  html += '<div class="alerte">Le jury impose 6 nage-waza + 4 ne-waza + 2 defenses (' + t.defense + ')</div>';
+  html += '<h3 style="color:#1a5276;">NAGE-WAZA</h3>';
+  for (const [cat, techs] of Object.entries(g['nage-waza'])) {
+    html += '<div class="cat-titre" style="background:' + COULEURS[cat] + '">' + NOMS[cat] + '</div><div class="techs">';
+    techs.forEach(function(te) { html += '<span class="tech-badge">' + te.nom + (te.url ? '<a href="' + te.url + '" target="_blank" class="btn-video">&#9654;</a>' : '') + '</span>'; });
+    html += '</div>';
+  }
+  html += '<h3 style="color:#5d4037;margin-top:1rem;">NE-WAZA</h3>';
+  for (const [cat, techs] of Object.entries(g['ne-waza'])) {
+    html += '<div class="cat-titre" style="background:' + COULEURS[cat] + '">' + NOMS[cat] + '</div><div class="techs">';
+    techs.forEach(function(te) { html += '<span class="tech-badge">' + te.nom + (te.url ? '<a href="' + te.url + '" target="_blank" class="btn-video">&#9654;</a>' : '') + '</span>'; });
+    html += '</div>';
+  }
+  html += '</div>';
+  return html;
 }
-    </script>
+
+fetch('techniques-uv2.json').then(function(r){return r.json();}).then(function(data){
+  document.getElementById('contenu-1er-dan').innerHTML  = buildSection('1er-dan', data);
+  document.getElementById('contenu-2eme-dan').innerHTML = buildSection('2eme-dan', data);
+  document.getElementById('contenu-3eme-dan').innerHTML = buildSection('3eme-dan', data);
+});
+</script>
 </body>
 </html>

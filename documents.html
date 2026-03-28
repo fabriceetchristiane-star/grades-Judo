@@ -343,7 +343,8 @@
                 'jpg': '🖼️',
                 'jpeg': '🖼️',
                 'png': '🖼️',
-                'gif': '🖼️'
+                'gif': '🖼️',
+                'webp': '🖼️'
             };
             return icons[ext] || '📄';
         }
@@ -369,8 +370,23 @@
 
         // Créer une carte de document
         function createDocumentCard(doc) {
+            // Si c'est un lien Drive
+            if (doc.isLink) {
+                return `
+                    <div class="document-card" onclick="window.open('${doc.driveLink}', '_blank')" style="border-left: 4px solid #27ae60; cursor: pointer;">
+                        <div class="document-icon">🔗</div>
+                        <div class="document-title">${doc.title}</div>
+                        <div class="document-description">${doc.description || 'Document Google Drive'}</div>
+                        <div class="document-meta">
+                            <span class="document-type" style="background: #27ae60;">DRIVE</span>
+                            <span class="document-date">${formatDate(doc.uploadDate)}</span>
+                        </div>
+                    </div>
+                `;
+            }
+            // Fichier uploadé classique
             return `
-                <div class="document-card" onclick="openDocument('${doc.filename}', '${doc.category}')">
+                <div class="document-card" onclick="openDocument('${doc.filename}', '${doc.category}', '${doc.fileData || ''}')">
                     <div class="document-icon">${getFileIcon(doc.filename)}</div>
                     <div class="document-title">${doc.title || doc.filename}</div>
                     <div class="document-description">${doc.description || 'Aucune description disponible'}</div>
@@ -416,12 +432,15 @@
         }
 
         // Ouvrir un document
-        function openDocument(filename, category) {
-            // Construction du chemin selon la catégorie
+        function openDocument(filename, category, fileData) {
+            // Si fileData est présent (base64), ouvrir directement
+            if (fileData && fileData.startsWith('data:')) {
+                window.open(fileData, '_blank');
+                return;
+            }
+            // Sinon construction du chemin selon la catégorie
             const categoryPath = getCategoryPath(category);
             const path = `uploads/${categoryPath}/${filename}`;
-            
-            // Ouvrir dans un nouvel onglet
             window.open(path, '_blank');
         }
 

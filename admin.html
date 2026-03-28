@@ -203,32 +203,74 @@
     <p style="color: #666;">Uploadez des PDF qui seront visibles sur la page Documents</p>
     
     <div style="border: 2px dashed #3498db; padding: 2rem; margin: 1rem 0; border-radius: 8px; background: #f8f9fa;">
-        <h3 style="margin-top: 0;">📤 Ajouter un document ou une image</h3>
+        <h3 style="margin-top: 0;">📤 Ajouter un document (Upload ou Lien Drive)</h3>
         
-        <label style="display: block; margin-top: 1rem; font-weight: bold;">📄 Fichier (PDF, SVG, JPG, PNG) :</label>
-        <input type="file" id="pdf-upload" accept=".pdf,.svg,.jpg,.jpeg,.png,.gif" style="margin: 0.5rem 0; padding: 0.5rem;">
+        <!-- Choix du type -->
+        <div style="margin: 1rem 0;">
+            <label style="margin-right: 2rem;">
+                <input type="radio" name="type-ajout-grades" value="upload" checked onchange="toggleAjoutTypeGrades()"> 📤 Upload fichier
+            </label>
+            <label>
+                <input type="radio" name="type-ajout-grades" value="lien" onchange="toggleAjoutTypeGrades()"> 🔗 Lien Google Drive
+            </label>
+        </div>
         
-        <label style="display: block; margin-top: 1rem; font-weight: bold;">📝 Titre du document :</label>
-        <input type="text" id="pdf-titre" placeholder="Ex: Règlement 2025" 
-               style="width: 100%; padding: 0.75rem; margin: 0.5rem 0; border: 2px solid #ddd; border-radius: 6px;">
+        <!-- Section Upload -->
+        <div id="section-upload-grades">
+            <label style="display: block; margin-top: 1rem; font-weight: bold;">📄 Fichier (PDF, SVG, JPG, PNG, WebP) :</label>
+            <input type="file" id="pdf-upload" accept=".pdf,.svg,.jpg,.jpeg,.png,.gif,.webp" style="margin: 0.5rem 0; padding: 0.5rem;">
+            
+            <label style="display: block; margin-top: 1rem; font-weight: bold;">📝 Titre du document :</label>
+            <input type="text" id="pdf-titre" placeholder="Ex: Règlement 2025" 
+                   style="width: 100%; padding: 0.75rem; margin: 0.5rem 0; border: 2px solid #ddd; border-radius: 6px;">
+            
+            <label style="display: block; margin-top: 1rem; font-weight: bold;">📋 Description :</label>
+            <textarea id="pdf-description" placeholder="Description du document..." rows="3"
+                      style="width: 100%; padding: 0.75rem; margin: 0.5rem 0; border: 2px solid #ddd; border-radius: 6px;"></textarea>
+            
+            <label style="display: block; margin-top: 1rem; font-weight: bold;">🗂️ Catégorie :</label>
+            <select id="pdf-categorie" style="width: 100%; padding: 0.75rem; margin: 0.5rem 0; border: 2px solid #ddd; border-radius: 6px;">
+                <option value="reglement-general">📜 Règlement Général</option>
+                <option value="juges-arbitres">👔 Juges & Arbitres</option>
+                <option value="criteres-notation">✅ Critères de Notation</option>
+                <option value="procedures">⚙️ Procédures</option>
+                <option value="nouveautes">⭐ Nouveautés</option>
+                <option value="autres">📁 Autres</option>
+            </select>
+            
+            <button onclick="uploaderPDF()" style="background: #27ae60; margin-top: 1rem; padding: 1rem 2rem; font-size: 1.1rem;">
+                📤 Uploader le Document
+            </button>
+        </div>
         
-        <label style="display: block; margin-top: 1rem; font-weight: bold;">📋 Description :</label>
-        <textarea id="pdf-description" placeholder="Description du document..." rows="3"
-                  style="width: 100%; padding: 0.75rem; margin: 0.5rem 0; border: 2px solid #ddd; border-radius: 6px;"></textarea>
-        
-        <label style="display: block; margin-top: 1rem; font-weight: bold;">🗂️ Catégorie :</label>
-        <select id="pdf-categorie" style="width: 100%; padding: 0.75rem; margin: 0.5rem 0; border: 2px solid #ddd; border-radius: 6px;">
-            <option value="reglement-general">📜 Règlement Général</option>
-            <option value="juges-arbitres">👔 Juges & Arbitres</option>
-            <option value="criteres-notation">✅ Critères de Notation</option>
-            <option value="procedures">⚙️ Procédures</option>
-            <option value="nouveautes">⭐ Nouveautés</option>
-            <option value="autres">📁 Autres</option>
-        </select>
-        
-        <button onclick="uploaderPDF()" style="background: #27ae60; margin-top: 1rem; padding: 1rem 2rem; font-size: 1.1rem;">
-            📤 Uploader le Document
-        </button>
+        <!-- Section Lien Drive -->
+        <div id="section-lien-grades" style="display: none;">
+            <label style="display: block; margin-top: 1rem; font-weight: bold;">📝 Titre du document :</label>
+            <input type="text" id="lien-titre" placeholder="Ex: Règlement 2025" 
+                   style="width: 100%; padding: 0.75rem; margin: 0.5rem 0; border: 2px solid #ddd; border-radius: 6px;">
+            
+            <label style="display: block; margin-top: 1rem; font-weight: bold;">🔗 Lien Google Drive :</label>
+            <input type="text" id="lien-url" placeholder="https://drive.google.com/..." 
+                   style="width: 100%; padding: 0.75rem; margin: 0.5rem 0; border: 2px solid #ddd; border-radius: 6px;">
+            
+            <label style="display: block; margin-top: 1rem; font-weight: bold;">📋 Description :</label>
+            <textarea id="lien-description" placeholder="Description du document..." rows="3"
+                      style="width: 100%; padding: 0.75rem; margin: 0.5rem 0; border: 2px solid #ddd; border-radius: 6px;"></textarea>
+            
+            <label style="display: block; margin-top: 1rem; font-weight: bold;">🗂️ Catégorie :</label>
+            <select id="lien-categorie" style="width: 100%; padding: 0.75rem; margin: 0.5rem 0; border: 2px solid #ddd; border-radius: 6px;">
+                <option value="reglement-general">📜 Règlement Général</option>
+                <option value="juges-arbitres">👔 Juges & Arbitres</option>
+                <option value="criteres-notation">✅ Critères de Notation</option>
+                <option value="procedures">⚙️ Procédures</option>
+                <option value="nouveautes">⭐ Nouveautés</option>
+                <option value="autres">📁 Autres</option>
+            </select>
+            
+            <button onclick="ajouterLienDriveGrades()" style="background: #27ae60; margin-top: 1rem; padding: 1rem 2rem; font-size: 1.1rem;">
+                🔗 Ajouter le lien
+            </button>
+        </div>
     </div>
     
     <div id="liste-pdf" style="margin-top: 2rem;"></div>
@@ -677,11 +719,12 @@ function uploaderPDF() {
         'image/jpeg',
         'image/jpg',
         'image/png',
-        'image/gif'
+        'image/gif',
+        'image/webp'
     ];
     
     if (!allowedTypes.includes(file.type)) {
-        afficherMessage('❌ Format non supporté. Utilisez : PDF, SVG, JPG, PNG ou GIF', 'error');
+        afficherMessage('❌ Format non supporté. Utilisez : PDF, SVG, JPG, PNG, GIF ou WebP', 'error');
         return;
     }
     
@@ -753,6 +796,33 @@ function afficherPDFs() {
             const dateFormatee = dateObj.toLocaleDateString('fr-FR');
             const tailleFormatee = (doc.fileSize / 1024 / 1024).toFixed(2) + ' Mo';
             
+            // Si c'est un lien Drive
+            if (doc.isLink) {
+                return `
+                <div class="pdf-item" style="border-left: 4px solid #27ae60;">
+                    <div class="pdf-info">
+                        <div class="pdf-title">🔗 ${doc.title}</div>
+                        <div style="color: #555; margin: 0.5rem 0;">${doc.description}</div>
+                        <div class="pdf-meta">
+                            <span class="pdf-category">${categorieLabel}</span>
+                            <span>📅 ${dateFormatee}</span>
+                            <span style="margin-left: 1rem; color: #27ae60;">Lien Google Drive</span>
+                        </div>
+                    </div>
+                    <div class="pdf-actions">
+                        <a href="${doc.driveLink}" target="_blank"
+                           style="background: #27ae60; color: white; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none;">
+                            🌐 Ouvrir Drive
+                        </a>
+                        <button onclick="supprimerDocument(${index})" 
+                                style="background: #e74c3c; padding: 0.5rem 1rem; font-size: 0.9rem;">
+                            🗑️ Supprimer
+                        </button>
+                    </div>
+                </div>
+            `;}
+
+            // Si c'est un fichier uploadé
             return `
             <div class="pdf-item">
                 <div class="pdf-info">
@@ -785,6 +855,63 @@ function supprimerDocument(index) {
         localStorage.setItem('documentsData', JSON.stringify(documents));
         afficherPDFs();
         afficherMessage('✅ Document supprimé.');
+    }
+}
+
+// ===== GESTION LIEN DRIVE GRADES =====
+function toggleAjoutTypeGrades() {
+    const type = document.querySelector('input[name="type-ajout-grades"]:checked').value;
+    const sectionUpload = document.getElementById('section-upload-grades');
+    const sectionLien = document.getElementById('section-lien-grades');
+    if (type === 'upload') {
+        sectionUpload.style.display = 'block';
+        sectionLien.style.display = 'none';
+    } else {
+        sectionUpload.style.display = 'none';
+        sectionLien.style.display = 'block';
+    }
+}
+
+function ajouterLienDriveGrades() {
+    const titreInput = document.getElementById('lien-titre');
+    const urlInput = document.getElementById('lien-url');
+    const descInput = document.getElementById('lien-description');
+    const catInput = document.getElementById('lien-categorie');
+
+    if (!titreInput.value.trim()) {
+        afficherMessage('❌ Veuillez donner un titre au document', 'error');
+        return;
+    }
+    if (!urlInput.value.trim()) {
+        afficherMessage('❌ Veuillez coller un lien Google Drive', 'error');
+        return;
+    }
+    if (!urlInput.value.includes('drive.google.com')) {
+        afficherMessage('❌ Le lien doit être un lien Google Drive (drive.google.com)', 'error');
+        return;
+    }
+
+    try {
+        const documents = JSON.parse(localStorage.getItem('documentsData') || '[]');
+        documents.push({
+            title: titreInput.value.trim(),
+            description: descInput.value.trim() || '',
+            category: catInput.value,
+            uploadDate: new Date().toISOString(),
+            fileSize: 0,
+            filename: '',
+            fileData: '',
+            isLink: true,
+            driveLink: urlInput.value.trim()
+        });
+        localStorage.setItem('documentsData', JSON.stringify(documents));
+        afficherMessage('✅ Lien Drive ajouté avec succès !');
+        afficherPDFs();
+        titreInput.value = '';
+        urlInput.value = '';
+        descInput.value = '';
+    } catch (error) {
+        afficherMessage('❌ Erreur: ' + error.message, 'error');
     }
 }
 
