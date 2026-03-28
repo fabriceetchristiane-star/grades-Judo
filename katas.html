@@ -15,7 +15,6 @@
     .kata-card { background:white; border-radius:12px; padding:1.5rem; margin-bottom:1.2rem; box-shadow:0 2px 10px rgba(0,0,0,0.08); }
     .kata-card h3 { color:#2c3e50; margin:0 0 0.4rem; font-size:1.1rem; }
     .kata-card p { color:#666; font-size:0.88rem; margin:0.3rem 0 0.5rem; }
-    .kata-desc { color:#555; font-size:0.9rem; line-height:1.6; margin:0.5rem 0 1rem; white-space:pre-wrap; }
     .grade-badge { display:inline-block; background:#1a1a2e; color:white; padding:0.15rem 0.6rem; border-radius:12px; font-size:0.72rem; margin:0.15rem; }
     .btn-rouge { display:inline-block; background:#e74c3c; color:white; padding:0.45rem 1rem; border-radius:20px; text-decoration:none; font-weight:bold; font-size:0.85rem; margin:0.25rem; }
     .btn-rouge:hover { background:#c0392b; color:white; }
@@ -67,104 +66,6 @@
 <footer><p>Guide des Grades Judo — Club JAK Lambersart — FFJDA 2025/2026</p></footer>
 
 <script>
-const KATAS = [
-  {
-    id: 'nage-no-kata',
-    nom: 'Nage-no-kata',
-    emoji: '🌀',
-    desc: 'Forme des projections — 15 techniques en 5 séries de 3.\nObligatoire pour les 1er, 2ème, 3ème, 4ème dan.',
-    grades: {
-      '1er-dan': 'COMPETITION : 3 premières séries (tori) + tout ou partie (uke)\nTECHNIQUE : Nage-no-kata OU Goshin-jitsu en entier (au choix)',
-      '2eme-dan': 'COMPETITION : Nage-no-kata en entier (tori)\nTECHNIQUE : Nage-no-kata OU Goshin-jitsu — différent du 1er dan',
-      '3eme-dan': 'TECHNIQUE : Katame-no-kata + Nage-no-kata OU Goshin-jitsu (au choix)',
-      '4eme-dan': 'Kime-no-kata obligatoire + Nage-no-kata au choix parmi les options'
-    },
-    video: 'https://youtu.be/Suk2__BG69Q',
-    livre: 'https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2020/07/Nage-no-kata_FRA-1596187174-1596187174.pdf'
-  },
-  {
-    id: 'goshin-jitsu',
-    nom: 'Kodokan Goshin-jitsu',
-    emoji: '🛡️',
-    desc: 'Forme de self-défense moderne — 21 techniques en 3 groupes.\nObligatoire au 3ème dan (dominante compétition).',
-    grades: {
-      '1er-dan': 'TECHNIQUE : Nage-no-kata OU Goshin-jitsu en entier (au choix)',
-      '2eme-dan': 'TECHNIQUE : Nage-no-kata OU Goshin-jitsu — différent du 1er dan',
-      '3eme-dan': 'COMPETITION : Katame-no-kata + Goshin-jitsu obligatoires\nTECHNIQUE : Katame-no-kata + Goshin-jitsu OU Nage-no-kata',
-      '4eme-dan': 'Kime-no-kata obligatoire + Goshin-jitsu au choix parmi les options'
-    },
-    video: 'https://youtu.be/qcxKDm8Af7M',
-    livre: 'https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2022/07/Goshin_jutsu_FR-1657632234-1657632234.pdf'
-  },
-  {
-    id: 'katame-no-kata',
-    nom: 'Katame-no-kata',
-    emoji: '🔒',
-    desc: 'Forme des techniques au sol — 15 techniques en 3 séries.\nObligatoire au 3ème dan.',
-    grades: {
-      '3eme-dan': 'COMPETITION : Katame-no-kata + Goshin-jitsu obligatoires\nTECHNIQUE : Katame-no-kata + Goshin-jitsu OU Nage-no-kata',
-      '4eme-dan': 'Kime-no-kata obligatoire + Katame-no-kata au choix parmi les options'
-    },
-    video: 'https://youtu.be/zyTLmipWkb8',
-    livre: 'https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2020/09/Katame-No-Kata_FRA-1599743291-1599743291.pdf'
-  },
-  {
-    id: 'kime-no-kata',
-    nom: 'Kime-no-kata',
-    emoji: '⚡',
-    desc: 'Forme des techniques décisives — 20 techniques au total.\nObligatoire au 4ème dan.',
-    grades: {
-      '4eme-dan': 'COMPETITION et TECHNIQUE : Kime-no-kata OBLIGATOIRE + 1 autre kata au choix (Nage-no, Katame-no, Goshin-jitsu ou Gonosen)'
-    },
-    video: 'https://youtu.be/1-YAOozPQNU',
-    livre: 'https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2020/10/Kime-No-Kata_FRA-1603376091-1603376091.PDF'
-  },
-  {
-    id: 'gonosen-no-kata',
-    nom: 'Gonosen-no-kata',
-    emoji: '🎯',
-    desc: 'Forme des contres de projection — 10 paires de techniques.\nOption pour le 4ème dan.',
-    grades: {
-      '4eme-dan': 'Option : Kime-no-kata obligatoire + Gonosen au choix parmi les autres katas'
-    },
-    video: 'https://youtu.be/9nIbfoZosP4',
-    livre: null
-  },
-  {
-    id: 'ju-no-kata',
-    nom: 'Ju-no-kata',
-    emoji: '💫',
-    desc: 'Forme de la souplesse — 15 techniques en 3 séries.\nObligatoire au 5ème dan.',
-    grades: {
-      '5eme-dan': 'Le candidat démontrera le Ju-no-kata dans le rôle de tori (obligatoire)'
-    },
-    video: 'https://youtu.be/Aa0bQ8NLiOw',
-    livre: null
-  },
-  {
-    id: 'koshiki-no-kata',
-    nom: 'Koshiki-no-kata',
-    emoji: '⚔️',
-    desc: 'Forme ancienne — 21 techniques en 2 parties (omote et ura).\nObligatoire au 6ème dan avec respect du cérémonial.',
-    grades: {
-      '6eme-dan': 'Koshiki-no-kata OBLIGATOIRE avec respect du cérémonial, exécution en totalité dans le rôle de Tori'
-    },
-    video: 'https://youtu.be/n2_zAscgWpo',
-    livre: null
-  },
-  {
-    id: 'itsutsu-no-kata',
-    nom: 'Itsutsu-no-kata',
-    emoji: '🌊',
-    desc: 'Forme des cinq principes — le kata le plus mystique du judo.\nObligatoire au 7ème dan.',
-    grades: {
-      '7eme-dan': 'Itsutsu-no-kata OBLIGATOIRE dans le rôle de tori'
-    },
-    video: 'https://youtu.be/1_Xezi8nTpA',
-    livre: null
-  }
-];
-
 const GRADE_LABELS = {
   '1er-dan':'1er Dan','2eme-dan':'2ème Dan','3eme-dan':'3ème Dan',
   '4eme-dan':'4ème Dan','5eme-dan':'5ème Dan','6eme-dan':'6ème Dan','7eme-dan':'7ème Dan'
@@ -173,8 +74,7 @@ const GRADE_LABELS = {
 function buildCard(kata, gradeFilter) {
   let html = '<div class="kata-card">';
   html += '<h3>' + kata.emoji + ' ' + kata.nom + '</h3>';
-  html += '<p>' + kata.desc + '</p>';
-
+  html += '<p>' + kata.desc.replace(/\n/g,'<br>') + '</p>';
   if (gradeFilter === 'tous') {
     Object.keys(kata.grades).forEach(function(g) {
       html += '<span class="grade-badge">' + GRADE_LABELS[g] + '</span>';
@@ -183,7 +83,6 @@ function buildCard(kata, gradeFilter) {
   } else if (kata.grades[gradeFilter]) {
     html += '<div class="alerte">' + kata.grades[gradeFilter].replace(/\n/g,'<br>') + '</div>';
   }
-
   if (kata.video) html += '<a href="' + kata.video + '" target="_blank" class="btn-rouge">▶ Voir la vidéo</a>';
   if (kata.livre) html += '<a href="' + kata.livre + '" target="_blank" class="btn-bleu">📄 Livre Kodokan (FR)</a>';
   if (!kata.video && !kata.livre) html += '<span class="btn-gris">Document à venir</span>';
@@ -198,23 +97,28 @@ function afficher(grade, btn) {
   btn.classList.add('active');
 }
 
-// Section TOUS
-document.getElementById('sec-tous').innerHTML =
-  '<p style="color:#666;padding:0.5rem 0 1rem;text-align:center;">Tous les katas officiels — cliquez sur un grade pour filtrer</p>' +
-  KATAS.map(function(k) { return buildCard(k, 'tous'); }).join('');
+function initialiser(KATAS) {
+  document.getElementById('sec-tous').innerHTML =
+    '<p style="color:#666;padding:0.5rem 0 1rem;text-align:center;">Tous les katas officiels — cliquez sur un grade pour filtrer</p>' +
+    KATAS.map(function(k) { return buildCard(k, 'tous'); }).join('');
 
-// Sections par grade
-Object.keys(GRADE_LABELS).forEach(function(grade) {
-  var filtered = KATAS.filter(function(k) { return k.grades[grade]; });
-  var div = document.getElementById('sec-' + grade);
-  if (!div) return;
-  if (filtered.length > 0) {
-    div.innerHTML = '<p style="color:#666;padding:0.5rem 0 1rem;">Katas pour le <strong>' + GRADE_LABELS[grade] + '</strong> :</p>' +
-      filtered.map(function(k) { return buildCard(k, grade); }).join('');
-  } else {
-    div.innerHTML = '<p style="text-align:center;color:#888;padding:2rem;">Aucun kata spécifique défini pour ce grade.</p>';
-  }
-});
+  Object.keys(GRADE_LABELS).forEach(function(grade) {
+    var filtered = KATAS.filter(function(k) { return k.grades[grade]; });
+    var div = document.getElementById('sec-' + grade);
+    if (!div) return;
+    if (filtered.length > 0) {
+      div.innerHTML = '<p style="color:#666;padding:0.5rem 0 1rem;">Katas pour le <strong>' + GRADE_LABELS[grade] + '</strong> :</p>' +
+        filtered.map(function(k) { return buildCard(k, grade); }).join('');
+    } else {
+      div.innerHTML = '<p style="text-align:center;color:#888;padding:2rem;">Aucun kata spécifique défini pour ce grade.</p>';
+    }
+  });
+}
+
+fetch('katas.json')
+  .then(function(r) { return r.json(); })
+  .then(function(data) { initialiser(data); })
+  .catch(function(e) { console.error('Erreur chargement katas.json :', e); });
 </script>
 </body>
 </html>
