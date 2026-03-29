@@ -1,0 +1,118 @@
+{
+  "general": {
+    "titre": "Règlement Général",
+    "icone": "📋",
+    "contenu": [
+      {
+        "sous_titre": "Principes d'attribution des grades",
+        "texte": "Les grades de Judo-Jujitsu symbolisent les valeurs de l'esprit, de la technique et de l'efficacité (shin-ghi-tai). La partie sportive (TAÏ) est indispensable du 1er au 4ème dan, mais ne suffit pas à elle seule. Avec l'avancée en grade, les valeurs évoluent : l'expérience (GHI) et l'esprit (SHIN) prennent progressivement le dessus."
+      },
+      {
+        "sous_titre": "Conditions d'éligibilité",
+        "texte": "Les candidats doivent être présentés par l'enseignant FFJDA de leur club. Pour le 1er dan, le club doit justifier d'au moins 2 licences. Un certificat médical de non contre-indication (CACI) est obligatoire pour l'UV technique. Pour les non-licenciés FFJDA, un carnet de grades spécifique et 2 ans de pratique minimum sont requis."
+      },
+      {
+        "sous_titre": "Délais entre les grades",
+        "texte": "Des délais minimum sont imposés entre chaque grade : 1 an de ceinture marron pour le 1er dan • 1 an de 1er dan pour le 2ème dan • 1 an de 2ème dan pour le 3ème dan • 2 ans de 3ème dan pour le 4ème dan • 3 ans de 4ème dan (âge minimum 29 ans) pour le 5ème dan • 4 ans de 5ème dan (âge minimum 40 ans) pour le 6ème dan • 13 ans de 6ème dan (âge minimum 53 ans) pour le 7ème dan."
+      },
+      {
+        "sous_titre": "Homologation des grades",
+        "texte": "Les grades sont authentifiés par un diplôme officiel remis par la CSDGE. Pour se présenter au dan supérieur, le grade précédent doit avoir été homologué. Les résultats sont enregistrés sur l'extranet et le carnet de grades. Un grade obtenu à titre exceptionnel ne permet pas l'accès au grade supérieur sauf conditions particulières."
+      },
+      {
+        "sous_titre": "Tableau synoptique 1er au 4ème dan (saison 2025-2026)",
+        "texte": "1er dan : né(e) en 2011 ou avant — homologation à 15 ans révolus minimum.\n2ème dan : 15 ans révolus — homologation à 17 ans révolus minimum.\n3ème dan : 17 ans révolus — homologation à 20 ans révolus minimum.\n4ème dan : 20 ans révolus — homologation à 24 ans révolus minimum.\nChaque grade comprend 4 UV : UV1 Kata • UV2 Technique • UV3 Efficacité • UV4 Engagement personnel."
+      }
+    ]
+  },
+  "juges": {
+    "titre": "Guide des Juges & Arbitres",
+    "icone": "⚖️",
+    "contenu": [
+      {
+        "sous_titre": "Composition du jury",
+        "texte": "1er et 2ème dan : jury de 2 juges minimum, juges régionaux 3ème dan et plus.\n3ème dan : jury de 3 juges, juges régionaux 4ème dan et plus.\n4ème dan : jury de 3 juges, juges régionaux 5ème dan et plus.\n5ème dan : jury de 3 juges nationaux, 6ème dan minimum.\n6ème dan : jury de 3 juges nationaux, 7ème dan minimum.\n7ème dan : jury de 3 juges nationaux, 7ème dan minimum.\nLe critère principal de sélection du jury est la neutralité et l'équité."
+      },
+      {
+        "sous_titre": "Conditions pour devenir juge",
+        "texte": "Être 3ème dan minimum • Avoir participé à des stages régionaux de formation de juges (6 heures minimum par saison) • Avoir été mis en situation de juge stagiaire sur au moins 2 examens • Avoir été évalué favorablement. Les juges sont nommés pour une olympiade et doivent justifier de 12 heures de formation continue par saison sportive."
+      },
+      {
+        "sous_titre": "Déontologie",
+        "texte": "Un juge ne peut pas, lors d'un même examen, assurer sa mission de jury ET se présenter comme candidat ou partenaire. Les membres du jury pour les 5ème et 6ème dan sont choisis sur la liste nationale établie par le DTN et entérinée par le Président de la CSDGE."
+      },
+      {
+        "sous_titre": "L'arbitrage",
+        "texte": "L'arbitrage est assuré au minimum par un arbitre stagiaire départemental par tapis. Dimension minimum du tapis : 5×5 mètres avec 2 mètres de sécurité. Le corps arbitral est encadré par l'instructeur départemental d'arbitrage et des arbitres confirmés."
+      }
+    ]
+  },
+  "criteres": {
+    "titre": "Critères d'Évaluation",
+    "icone": "📊",
+    "contenu": [
+      {
+        "sous_titre": "UV1 — Kata",
+        "texte": "1er dan Compétition : 3 premières séries du Nage-no-kata en tori + tout ou partie en uke.\n1er dan Technique : Nage-no-kata OU Kodokan-goshin-jitsu en entier (au choix).\n2ème dan Compétition : Nage-no-kata en entier en tori.\n2ème dan Technique : Nage-no-kata OU Kodokan-goshin-jitsu (différent du 1er dan).\n3ème dan Compétition : Katame-no-kata + Kodokan-goshin-jitsu en entier (2 katas obligatoires).\n3ème dan Technique : Katame-no-kata + Nage-no-kata OU Kodokan-goshin-jitsu.\n4ème dan (les 2 dominantes) : Kime-no-kata OBLIGATOIRE + 1 autre kata au choix parmi Nage-no, Katame-no, Kodokan-goshin-jitsu ou Go-no-sen.\nEn cas d'échec à un kata (3ème et 4ème dan), le candidat conserve le bénéfice du kata réussi."
+      },
+      {
+        "sous_titre": "UV2 — Technique",
+        "texte": "1er dan : 12 techniques (6 nage-waza, 4 ne-waza imposées, 2 défenses libres séries A&B) — 5 min max. Une méconnaissance par secteur admise.\n2ème dan : (a) 1 technique au choix par domaine en contexte dynamique + (b) 6 techniques dont 2 défenses série C — 5 min max.\n3ème dan : (a) 3 techniques nage-waza + 2 ne-waza + défenses sur saisies/coups/armes — 9 min max + (b) 6 techniques série D — 5 min max.\n4ème dan : Tokui-waza en nage-waza (3 min min) + tokui-waza en ne-waza (2 min min) + défenses (2 min min) — 10 min max.\nL'UV2 n'est pas fractionnable pour les dominantes technique."
+      },
+      {
+        "sous_titre": "UV3 — Efficacité",
+        "texte": "1er dan Compétition : 5 victoires consécutives (ippon/waza-ari) totalisant 44 points min OU 100 points cumulés sur plusieurs épreuves.\n1er dan Technique : 20 points en compétition (shiai, RGC, jujitsu, ne-waza). Candidats nés en 1985 et avant : dispensés.\n2ème et 3ème dan Compétition : mêmes critères que 1er dan compétition.\n3ème et 4ème dan Technique : 20 points. Candidats nés en 1985 et avant : dispensés.\n4ème dan Compétition : 5 victoires consécutives 44 pts min OU 120 points cumulés."
+      },
+      {
+        "sous_titre": "UV4 — Engagement personnel",
+        "texte": "1er et 2ème dan : 1/2 journée de stage ou de mise en situation (commissaire sportif ou arbitrage).\n3ème et 4ème dan : 1 journée de stage ou de mise en situation.\nÉquivalences acceptées : arbitre ou commissaire sportif départemental en activité, participant à la coupe du jeune officiel.\nLa validation de l'UV4 est effectuée par l'OTD et doit être remontée sur l'extranet."
+      },
+      {
+        "sous_titre": "5ème dan — Épreuve nationale",
+        "texte": "Prestation personnelle de 25 à 30 minutes en 3 parties : (1) Ju-no-kata en tori — OBLIGATOIRE en début d'épreuve • (2) Judo debout et sol : système d'attaque et de défense — 10 min minimum dont 4 min tachi-waza ou ne-waza • (3) Jujitsu : techniques de défense toutes familles avec armes — 5 min minimum. Unanimité du jury requise pour l'admission. Examen national en mai à Brétigny."
+      },
+      {
+        "sous_titre": "6ème dan — Épreuve nationale",
+        "texte": "Prestation de 30 min maximum : (1) Koshiki-no-kata OBLIGATOIRE avec respect du cérémonial en tori • (2) Prestation hors kata de 20 min : 1, 2 ou 3 secteurs choisis parmi nage-waza, ne-waza, jujitsu • (3) Entretien de 10 min avec le jury. Unanimité requise. Mentions possibles : « excellent » (3×excellent) ou « très bien » (2×excellent + 1 bien). Examen national en novembre à Paris."
+      },
+      {
+        "sous_titre": "7ème dan — Épreuve nationale",
+        "texte": "Prestation totale de 30 à 40 min : (1) Itsutsu-no-kata OBLIGATOIRE • (2) Partie technique libre pédagogique à l'attention des ceintures noires — 15 à 20 min • (3) Entretien avec le jury — 10 à 15 min. Admission : 3 appréciations « bien » minimum. Examen national en novembre à Paris."
+      }
+    ]
+  },
+  "procedure": {
+    "titre": "Procédure d'Examen",
+    "icone": "🎯",
+    "contenu": [
+      {
+        "sous_titre": "Inscription aux examens",
+        "texte": "Les inscriptions se font par l'extranet fédéral. C'est la responsabilité du président de club et du professeur de valider les inscriptions. Sur une saison sportive : maximum 5 présentations en test shiai, 3 à l'UV kata et 3 à l'UV technique."
+      },
+      {
+        "sous_titre": "Organisation territoriale",
+        "texte": "1er au 4ème dan : au moins 3 sessions par ligue, coordonnées par la CORG, à l'échelon départemental ou régional.\n5ème dan : examen national en mai à Brétigny.\n6ème dan : examen national en novembre à Paris.\n7ème dan : examen national en novembre à Paris.\nDu 5ème au 7ème dan, les dossiers de candidature doivent être envoyés à la CODG avant le 5 janvier et à grade@ffjudo.com avant le 15 février."
+      },
+      {
+        "sous_titre": "Tests Shiai",
+        "texte": "Conditions : dès l'homologation du grade précédent, à partir des cadets. Vétérans : 40 ans dans l'année de l'examen.\nFormat : poules de 5 combats maximum par compétiteur. Durée des combats : 2 minutes. Récupération : 2 minutes entre chaque combat. Pas de golden score ni de décision (hiki-wake).\nComptage : Ippon = 10 pts, waza-ari = 7 pts, waza-ari-awazate-ippon = 10 pts.\nUn combattant totalisant au moins 5 victoires consécutives et 44 points minimum obtient son test shiai."
+      },
+      {
+        "sous_titre": "Relation Grade-Championnat",
+        "texte": "Valable pour l'UV3 à partir des cadets. Les points sont comptabilisés après homologation du grade précédent. Compétitions concernées : Championnats de France (cadets, juniors, seniors, para-judo, divisions 1/2/3), tournois excellence, tournois labellisés A, compétitions de loisirs RGC, tournois du projet Ligue autorisés, championnats jujitsu.\nAttribution : 5 victoires consécutives + 44 points minimum sur une même compétition."
+      },
+      {
+        "sous_titre": "Relation Grade-Stage",
+        "texte": "Applicable du 2ème au 5ème dan. Permet aux enseignants (BEES, CQP, BPJEPS, DEJEPS, DESJEPS) d'acquérir des UV lors de stages nationaux au calendrier fédéral. Un candidat peut présenter une seule UV par stage (UV1 kata OU UV2 technique). Le jury est composé de 3 personnes minimum désignées par le CTSN responsable."
+      },
+      {
+        "sous_titre": "Accès aux hauts grades (INSEP / Collectif national)",
+        "texte": "Les judokas de l'INSEP et du collectif national passent uniquement l'UV1 kata (exemptés de l'UV technique, UV efficacité et UV engagement). 3 examens par an, en respectant les délais réglementaires. Jury de 3 juges haut gradés sur les listes nationales."
+      },
+      {
+        "sous_titre": "Grades à titre exceptionnel",
+        "texte": "Mesure extrêmement rare, pour les personnes présentant des incapacités physiques. Du 1er au 4ème dan : dossiers gérés par les ligues. Du 5ème au 6ème dan : dossiers gérés au national. Aucun grade honorifique ni posthume n'est attribué. Un seul grade exceptionnel possible du 1er au 6ème dan. La demande reste soumise aux critères de présentation du grade demandé et nécessite l'avis motivé de la CORG."
+      }
+    ]
+  }
+}
