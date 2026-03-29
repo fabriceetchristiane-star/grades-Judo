@@ -1,302 +1,91 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Règlement - Ressources</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        .reglement-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .reglement-section {
-            background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .reglement-section h2 {
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .reglement-section .contenu {
-            line-height: 1.8;
-            color: #555;
-            white-space: pre-wrap;
-            margin-bottom: 1.5rem;
-        }
-
-        .reglement-section .vide {
-            color: #999;
-            font-style: italic;
-            padding: 2rem;
-            text-align: center;
-            background: #f8f9fa;
-            border-radius: 8px;
-        }
-
-        .section-icon {
-            font-size: 1.5rem;
-            margin-right: 0.5rem;
-        }
-
-        /* Styles pour les documents PDF */
-        .documents-list {
-            margin-top: 1.5rem;
-        }
-
-        .documents-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 0.75rem 1rem;
-            border-radius: 8px 8px 0 0;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .document-item {
-            background: #f8f9fa;
-            border: 1px solid #e9ecef;
-            border-top: none;
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s;
-        }
-
-        .document-item:last-child {
-            border-radius: 0 0 8px 8px;
-        }
-
-        .document-item:hover {
-            background: #e9ecef;
-            transform: translateX(5px);
-        }
-
-        .document-info {
-            flex: 1;
-        }
-
-        .document-title {
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 0.25rem;
-        }
-
-        .document-description {
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .document-meta {
-            font-size: 0.85rem;
-            color: #999;
-            margin-top: 0.25rem;
-        }
-
-        .document-actions {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .btn-download {
-            background: #27ae60;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s;
-        }
-
-        .btn-download:hover {
-            background: #229954;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(39, 174, 96, 0.3);
-        }
-
-        .no-documents {
-            padding: 1rem;
-            text-align: center;
-            color: #999;
-            font-style: italic;
-            background: #f8f9fa;
-            border: 1px dashed #dee2e6;
-            border-radius: 8px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Règlement des Grades — FFJDA 2025/2026</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { font-family:'Segoe UI',sans-serif; background:#f8f9fa; margin:0; padding:0; }
+    .onglets { display:flex; flex-wrap:wrap; gap:0.4rem; padding:0.8rem 1rem; background:white; box-shadow:0 2px 6px rgba(0,0,0,0.1); position:sticky; top:0; z-index:100; justify-content:center; }
+    .onglet { padding:0.45rem 1rem; border-radius:20px; border:none; cursor:pointer; font-size:0.82rem; font-weight:bold; background:#eee; color:#333; transition:all .2s; }
+    .onglet.active { background:#1a1a2e; color:white; }
+    .section { display:none; padding:1rem; max-width:960px; margin:0 auto; }
+    .section.active { display:block; }
+    .section-intro { color:#666; font-size:0.9rem; padding:0.5rem 0 1rem; text-align:center; }
+    .bloc { background:white; border-radius:12px; padding:1.5rem; margin-bottom:1.2rem; box-shadow:0 2px 10px rgba(0,0,0,0.08); }
+    .bloc h3 { color:#2c3e50; margin:0 0 0.8rem; font-size:1rem; border-left:4px solid #3498db; padding-left:0.7rem; }
+    .bloc p { color:#555; font-size:0.88rem; line-height:1.7; margin:0; white-space:pre-wrap; }
+    .btn-nav { display:inline-block; background:#3498db; color:white; padding:0.6rem 1.4rem; border-radius:25px; text-decoration:none; margin:0.3rem; font-weight:bold; }
+    footer { text-align:center; padding:1.5rem; background:#2c3e50; color:white; margin-top:2rem; }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>📝 Règlement des Grades</h1>
-        <nav>
-            <a href="index.html">Accueil</a>
-            <a href="techniques.html">Techniques</a>
-            <a href="katas.html">Katas</a>
-            <a href="reglement.html" class="nav-active">Règlement</a>
-            <a href="https://fabriceetchristiane-star.github.io/num-rique-judo/">Dojo Numérique</a>
-        </nav>
-    </header>
+<header>
+  <h1>📝 Règlement des Grades — FFJDA 2025/2026</h1>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="techniques.html">Techniques</a>
+    <a href="katas.html">Katas</a>
+    <a href="reglement.html" class="nav-active">Règlement</a>
+    <a href="philosophie.html">Philosophie</a>
+  </nav>
+</header>
 
-    <main class="reglement-container">
-        <h2 style="text-align: center; margin-bottom: 2rem; color: #2c3e50;">Règlement Officiel</h2>
-        
-        <!-- Règlement Général -->
-        <div class="reglement-section">
-            <h2><span class="section-icon">📋</span>Règlement Général</h2>
-            <div id="contenu-general" class="contenu"></div>
-            <div id="docs-reglement-general"></div>
-        </div>
+<div class="onglets" id="onglets-container"></div>
 
-        <!-- Guide des Juges -->
-        <div class="reglement-section">
-            <h2><span class="section-icon">⚖️</span>Guide des Juges & Arbitres</h2>
-            <div id="contenu-juges" class="contenu"></div>
-            <div id="docs-juges-arbitres"></div>
-        </div>
+<div id="sections-container"></div>
 
-        <!-- Critères d'Évaluation -->
-        <div class="reglement-section">
-            <h2><span class="section-icon">📊</span>Critères d'Évaluation</h2>
-            <div id="contenu-criteres" class="contenu"></div>
-            <div id="docs-criteres-notation"></div>
-        </div>
+<div style="text-align:center; padding:2rem;">
+  <a href="index.html" class="btn-nav">🏠 Accueil</a>
+  <a href="https://fabriceetchristiane-star.github.io/num-rique-judo/" target="_blank" class="btn-nav">🥋 Dojo Numérique</a>
+</div>
+<footer><p>Guide des Grades Judo — Club JAK Lambersart — FFJDA 2025/2026</p></footer>
 
-        <!-- Procédure Examen -->
-        <div class="reglement-section">
-            <h2><span class="section-icon">🎯</span>Procédure d'Examen</h2>
-            <div id="contenu-procedure" class="contenu"></div>
-            <div id="docs-procedures"></div>
-        </div>
+<script>
+fetch('reglement.json')
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    var onglets = document.getElementById('onglets-container');
+    var sections = document.getElementById('sections-container');
+    var keys = Object.keys(data);
+    var premier = true;
 
-        <!-- Nouveautés -->
-        <div class="reglement-section">
-            <h2><span class="section-icon">🔄</span>Nouveautés</h2>
-            <div id="contenu-nouveautes" class="contenu"></div>
-            <div id="docs-nouveautes"></div>
-        </div>
+    keys.forEach(function(key) {
+      var section = data[key];
 
-        <!-- Autres Documents -->
-        <div class="reglement-section">
-            <h2><span class="section-icon">📁</span>Autres Documents</h2>
-            <div id="docs-autres"></div>
-        </div>
-    </main>
+      // Onglet
+      var btn = document.createElement('button');
+      btn.className = 'onglet' + (premier ? ' active' : '');
+      btn.textContent = section.icone + ' ' + section.titre;
+      btn.onclick = (function(k, b) {
+        return function() { afficher(k, b); };
+      })(key, btn);
+      onglets.appendChild(btn);
 
-    <footer style="margin-top: 3rem; padding: 2rem; text-align: center; background: #2c3e50; color: white;">
-        <p>© 2025 Guide des Grades Judo</p>
-    </footer>
+      // Section
+      var div = document.createElement('div');
+      div.id = 'sec-' + key;
+      div.className = 'section' + (premier ? ' active' : '');
 
-    <script>
-        // Charger les contenus depuis localStorage
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('📖 Chargement des sections de règlement...');
-            
-            // Charger les textes
-            chargerSection('general', 'Règlement général en cours de rédaction...');
-            chargerSection('juges', 'Guide des juges en cours de rédaction...');
-            chargerSection('criteres', 'Critères d\'évaluation en cours de rédaction...');
-            chargerSection('procedure', 'Procédure d\'examen en cours de rédaction...');
-            chargerSection('nouveautes', 'Nouveautés réglementaires en cours de rédaction...');
+      var intro = '<p class="section-intro">' + section.icone + ' ' + section.titre + ' — Textes officiels FFJDA 2025/2026</p>';
+      var blocs = section.contenu.map(function(item) {
+        return '<div class="bloc"><h3>' + item.sous_titre + '</h3><p>' + item.texte + '</p></div>';
+      }).join('');
+      div.innerHTML = intro + blocs;
+      sections.appendChild(div);
 
-            // Charger les documents PDF pour chaque catégorie
-            chargerDocumentsParCategorie('reglement-general');
-            chargerDocumentsParCategorie('juges-arbitres');
-            chargerDocumentsParCategorie('criteres-notation');
-            chargerDocumentsParCategorie('procedures');
-            chargerDocumentsParCategorie('nouveautes');
-            chargerDocumentsParCategorie('autres');
-        });
+      premier = false;
+    });
+  })
+  .catch(function(e) { console.error('Erreur chargement reglement.json :', e); });
 
-        function chargerSection(section, messageParDefaut) {
-            const contenu = localStorage.getItem('reglement-' + section);
-            const element = document.getElementById('contenu-' + section);
-            
-            if (contenu && contenu.trim()) {
-                element.innerHTML = contenu;
-                console.log('✅ Section chargée:', section, '- Taille:', contenu.length);
-            } else {
-                element.innerHTML = `<div class="vide">${messageParDefaut}</div>`;
-                console.log('ℹ️ Section vide:', section);
-            }
-        }
-
-        function chargerDocumentsParCategorie(categorie) {
-            console.log('📄 Chargement des documents pour:', categorie);
-            
-            // Récupérer tous les documents
-            const documents = JSON.parse(localStorage.getItem('documentsData') || '[]');
-            
-            // Filtrer par catégorie
-            const docsFiltres = documents.filter(doc => doc.category === categorie);
-            
-            console.log(`  → ${docsFiltres.length} document(s) trouvé(s)`);
-            
-            // Trouver le conteneur
-            const containerId = 'docs-' + categorie;
-            const container = document.getElementById(containerId);
-            
-            if (!container) {
-                console.warn('⚠️ Conteneur non trouvé:', containerId);
-                return;
-            }
-            
-            // Afficher les documents
-            if (docsFiltres.length > 0) {
-                let html = '<div class="documents-list">';
-                html += '<div class="documents-header">📄 Documents disponibles</div>';
-                
-                docsFiltres.forEach((doc, index) => {
-                    const dateObj = new Date(doc.uploadDate);
-                    const dateFormatee = dateObj.toLocaleDateString('fr-FR');
-                    const tailleFormatee = (doc.fileSize / 1024 / 1024).toFixed(2) + ' Mo';
-                    
-                    html += `
-                        <div class="document-item">
-                            <div class="document-info">
-                                <div class="document-title">📎 ${doc.title}</div>
-                                <div class="document-description">${doc.description}</div>
-                                <div class="document-meta">
-                                    📅 Ajouté le ${dateFormatee} • 💾 ${tailleFormatee}
-                                </div>
-                            </div>
-                            <div class="document-actions">
-                                <a href="${doc.fileData}" download="${doc.filename}" class="btn-download">
-                                    📥 Télécharger
-                                </a>
-                            </div>
-                        </div>
-                    `;
-                });
-                
-                html += '</div>';
-                container.innerHTML = html;
-            } else {
-                container.innerHTML = '<div class="no-documents">Aucun document disponible pour cette section</div>';
-            }
-        }
-
-        // Fonction pour formater la taille
-        function formatFileSize(bytes) {
-            if (!bytes) return 'N/A';
-            if (bytes < 1024) return bytes + ' B';
-            if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
-            return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
-        }
-    </script>
+function afficher(key, btn) {
+  document.querySelectorAll('.section').forEach(function(s) { s.classList.remove('active'); });
+  document.querySelectorAll('.onglet').forEach(function(o) { o.classList.remove('active'); });
+  document.getElementById('sec-' + key).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
 </body>
 </html>
