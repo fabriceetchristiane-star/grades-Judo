@@ -91,13 +91,13 @@ fetch('techniques-uv2.json')
     html += '<h3 style="color:#1a5276;margin:1rem 0 0.5rem;">NAGE-WAZA</h3>';
     for (const [cat, techs] of Object.entries(t['nage-waza'])) {
       html += '<div style="margin-bottom:0.8rem;"><div style="background:' + COULEURS[cat] + ';color:white;padding:0.3rem 0.8rem;border-radius:6px;font-size:0.8rem;font-weight:bold;display:inline-block;margin-bottom:0.4rem;">' + NOMS[cat] + '</div><div style="display:flex;flex-wrap:wrap;gap:0.3rem;">';
-      techs.forEach(tech => { html += '<span style="background:#f0f0f0;padding:0.25rem 0.6rem;border-radius:15px;font-size:0.85rem;">' + tech + '</span>'; });
+      techs.forEach(tech => { html += '<span style="display:inline-flex;align-items:center;gap:0.3rem;background:#f0f0f0;padding:0.25rem 0.6rem;border-radius:15px;font-size:0.85rem;">' + (tech.nom||tech) + (tech.url ? '<a href="' + tech.url + '" target="_blank" style="background:#e74c3c;color:white;padding:0.1rem 0.4rem;border-radius:10px;font-size:0.75rem;text-decoration:none;">&#9654;</a>' : '') + '</span>'; });
       html += '</div></div>';
     }
     html += '<h3 style="color:#5d4037;margin:1rem 0 0.5rem;">NE-WAZA</h3>';
     for (const [cat, techs] of Object.entries(t['ne-waza'])) {
       html += '<div style="margin-bottom:0.8rem;"><div style="background:' + COULEURS[cat] + ';color:white;padding:0.3rem 0.8rem;border-radius:6px;font-size:0.8rem;font-weight:bold;display:inline-block;margin-bottom:0.4rem;">' + NOMS[cat] + '</div><div style="display:flex;flex-wrap:wrap;gap:0.3rem;">';
-      techs.forEach(tech => { html += '<span style="background:#f0f0f0;padding:0.25rem 0.6rem;border-radius:15px;font-size:0.85rem;">' + tech + '</span>'; });
+      techs.forEach(tech => { html += '<span style="display:inline-flex;align-items:center;gap:0.3rem;background:#f0f0f0;padding:0.25rem 0.6rem;border-radius:15px;font-size:0.85rem;">' + (tech.nom||tech) + (tech.url ? '<a href="' + tech.url + '" target="_blank" style="background:#e74c3c;color:white;padding:0.1rem 0.4rem;border-radius:10px;font-size:0.75rem;text-decoration:none;">&#9654;</a>' : '') + '</span>'; });
       html += '</div></div>';
     }
     document.getElementById('techniques-uv2').innerHTML = html;
