@@ -14,9 +14,10 @@
     .tech-badge { display:inline-flex; align-items:center; gap:0.3rem; background:#f0f0f0; padding:0.25rem 0.7rem; border-radius:15px; font-size:0.85rem; }
     .btn-video { background:#e74c3c; color:white; padding:0.1rem 0.45rem; border-radius:10px; font-size:0.75rem; text-decoration:none; }
     .btn-video:hover { background:#c0392b; }
-    .section-ne { margin-top:1.2rem; }
     .alerte { background:#fef9e7; border:1px solid #f0c040; border-radius:8px; padding:0.7rem 1rem; font-size:0.85rem; color:#7d6608; margin-bottom:1rem; }
     .btn-nav { display:inline-block; background:#3498db; color:white; padding:0.6rem 1.4rem; border-radius:25px; text-decoration:none; margin:0.3rem; font-weight:bold; }
+    .affiche-container { text-align:center; margin-top:1.5rem; }
+    .affiche-container img { max-width:100%; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.15); }
     footer { text-align:center; padding:1.5rem; background:#2c3e50; color:white; margin-top:2rem; }
   </style>
 </head>
@@ -36,6 +37,15 @@
   <div id="contenu-2eme-dan"></div>
   <div id="contenu-3eme-dan"></div>
 
+  <!-- Affiche 20 attaques défenses imposées -->
+  <div class="bloc">
+    <h2>🛡️ Les 20 Attaques-Défenses Imposées Ju-Jitsu</h2>
+    <div class="alerte">⚠️ Séries A et B pour le 1er dan — Série C pour le 2ème dan — Série D pour le 3ème dan</div>
+    <div class="affiche-container">
+      <img id="img-attaques" src="images/20-attaques-imposees.png" alt="Les 20 attaques défenses imposées jujitsu — Séries A B C D" onerror="this.src='images/20-attaques-imposees.jpg'">
+    </div>
+  </div>
+
   <div style="text-align:center; padding:2rem;">
     <a href="1er-dan.html" class="btn-nav">1er Dan</a>
     <a href="2eme-dan.html" class="btn-nav">2ème Dan</a>
@@ -54,16 +64,13 @@ const COULEURS = {
   'sutemi-waza':'#7d5a00','osaekomi-waza':'#5d4037','shime-waza':'#c0392b','kansetsu-waza':'#2c3e50'
 };
 const NOMS = {
-  'koshi-waza':'Koshi-Waza — Techniques de hanche',
-  'te-waza':'Te-Waza — Techniques de main et bras',
-  'ashi-waza':'Ashi-Waza — Techniques de pied et jambe',
-  'sutemi-waza':'Sutemi-Waza — Techniques de sacrifice',
-  'osaekomi-waza':'Osaekomi-Waza — Immobilisations',
-  'shime-waza':'Shime-Waza — Etranglements',
-  'kansetsu-waza':'Kansetsu-Waza — Cles de bras'
+  'koshi-waza':'Koshi-Waza — Hanches','te-waza':'Te-Waza — Mains/Bras',
+  'ashi-waza':'Ashi-Waza — Pieds/Jambes','sutemi-waza':'Sutemi-Waza — Sacrifice',
+  'osaekomi-waza':'Osaekomi-Waza — Immobilisations','shime-waza':'Shime-Waza — Étranglements',
+  'kansetsu-waza':'Kansetsu-Waza — Clés de bras'
 };
 const TITRES = {
-  '1er-dan':  { label:'1er Dan', couleur:'#1a1a2e', defense:'Séries A et B' },
+  '1er-dan':  { label:'1er Dan',  couleur:'#1a1a2e', defense:'Séries A et B' },
   '2eme-dan': { label:'2ème Dan', couleur:'#2c3e50', defense:'Série C' },
   '3eme-dan': { label:'3ème Dan', couleur:'#8B4513', defense:'Série D' }
 };
@@ -72,29 +79,26 @@ function buildSection(grade, data) {
   const t = TITRES[grade];
   const g = data[grade];
   if (!g) return '';
-
-  let html = `<div class="bloc"><h2>🥋 ${t.label} — Techniques UV2</h2>`;
-  html += `<div class="alerte">⚠️ Le jury impose des techniques parmi cette liste — 6 nage-waza + 4 ne-waza + 2 défenses (${t.defense})</div>`;
-
+  let html = '<div class="bloc"><h2>🥋 ' + t.label + ' — Techniques UV2</h2>';
+  html += '<div class="alerte">⚠️ Le jury impose 6 nage-waza + 4 ne-waza + 2 défenses (' + t.defense + ')</div>';
   html += '<h3 style="color:#1a5276;margin:1rem 0 0.3rem;">NAGE-WAZA — Techniques de projection</h3>';
   for (const [cat, techs] of Object.entries(g['nage-waza'])) {
-    html += `<div class="cat-titre" style="background:${COULEURS[cat]}">${NOMS[cat]}</div>`;
+    html += '<div class="cat-titre" style="background:' + COULEURS[cat] + '">' + NOMS[cat] + '</div>';
     html += '<div class="techs">';
-    techs.forEach(t => {
-      html += `<span class="tech-badge">${t.nom}`;
-      if (t.url) html += `<a href="${t.url}" target="_blank" class="btn-video">&#9654;</a>`;
+    techs.forEach(function(tech) {
+      html += '<span class="tech-badge">' + tech.nom;
+      if (tech.url) html += '<a href="' + tech.url + '" target="_blank" class="btn-video">&#9654;</a>';
       html += '</span>';
     });
     html += '</div>';
   }
-
-  html += '<div class="section-ne"><h3 style="color:#5d4037;margin:1rem 0 0.3rem;">NE-WAZA — Techniques au sol</h3>';
+  html += '<div style="margin-top:1.2rem;"><h3 style="color:#5d4037;margin:1rem 0 0.3rem;">NE-WAZA — Techniques au sol</h3>';
   for (const [cat, techs] of Object.entries(g['ne-waza'])) {
-    html += `<div class="cat-titre" style="background:${COULEURS[cat]}">${NOMS[cat]}</div>`;
+    html += '<div class="cat-titre" style="background:' + COULEURS[cat] + '">' + NOMS[cat] + '</div>';
     html += '<div class="techs">';
-    techs.forEach(t => {
-      html += `<span class="tech-badge">${t.nom}`;
-      if (t.url) html += `<a href="${t.url}" target="_blank" class="btn-video">&#9654;</a>`;
+    techs.forEach(function(tech) {
+      html += '<span class="tech-badge">' + tech.nom;
+      if (tech.url) html += '<a href="' + tech.url + '" target="_blank" class="btn-video">&#9654;</a>';
       html += '</span>';
     });
     html += '</div>';
@@ -104,49 +108,13 @@ function buildSection(grade, data) {
 }
 
 fetch('techniques-uv2.json')
-  .then(r => r.json())
-  .then(data => {
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
     document.getElementById('contenu-1er-dan').innerHTML  = buildSection('1er-dan', data);
     document.getElementById('contenu-2eme-dan').innerHTML = buildSection('2eme-dan', data);
     document.getElementById('contenu-3eme-dan').innerHTML = buildSection('3eme-dan', data);
   })
-  .catch(err => console.error('Erreur:', err));
-</script>
-</body>
-</html>
-
-<script>
-const COULEURS = {'koshi-waza':'#7d1f68','te-waza':'#1a6e3a','ashi-waza':'#1a5276','sutemi-waza':'#7d5a00','osaekomi-waza':'#5d4037','shime-waza':'#c0392b','kansetsu-waza':'#2c3e50'};
-const NOMS = {'koshi-waza':'Koshi-Waza — Hanches','te-waza':'Te-Waza — Mains/Bras','ashi-waza':'Ashi-Waza — Pieds/Jambes','sutemi-waza':'Sutemi-Waza — Sacrifice','osaekomi-waza':'Osaekomi-Waza — Immobilisations','shime-waza':'Shime-Waza — Etranglements','kansetsu-waza':'Kansetsu-Waza — Cles de bras'};
-const TITRES = {'1er-dan':{label:'1er Dan',defense:'Series A et B'},'2eme-dan':{label:'2eme Dan',defense:'Serie C'},'3eme-dan':{label:'3eme Dan',defense:'Serie D'}};
-
-function buildSection(grade, data) {
-  const t = TITRES[grade];
-  const g = data[grade];
-  if (!g) return '';
-  let html = '<div class="bloc"><h2>Techniques ' + t.label + '</h2>';
-  html += '<div class="alerte">Le jury impose 6 nage-waza + 4 ne-waza + 2 defenses (' + t.defense + ')</div>';
-  html += '<h3 style="color:#1a5276;">NAGE-WAZA</h3>';
-  for (const [cat, techs] of Object.entries(g['nage-waza'])) {
-    html += '<div class="cat-titre" style="background:' + COULEURS[cat] + '">' + NOMS[cat] + '</div><div class="techs">';
-    techs.forEach(function(te) { html += '<span class="tech-badge">' + te.nom + (te.url ? '<a href="' + te.url + '" target="_blank" class="btn-video">&#9654;</a>' : '') + '</span>'; });
-    html += '</div>';
-  }
-  html += '<h3 style="color:#5d4037;margin-top:1rem;">NE-WAZA</h3>';
-  for (const [cat, techs] of Object.entries(g['ne-waza'])) {
-    html += '<div class="cat-titre" style="background:' + COULEURS[cat] + '">' + NOMS[cat] + '</div><div class="techs">';
-    techs.forEach(function(te) { html += '<span class="tech-badge">' + te.nom + (te.url ? '<a href="' + te.url + '" target="_blank" class="btn-video">&#9654;</a>' : '') + '</span>'; });
-    html += '</div>';
-  }
-  html += '</div>';
-  return html;
-}
-
-fetch('techniques-uv2.json').then(function(r){return r.json();}).then(function(data){
-  document.getElementById('contenu-1er-dan').innerHTML  = buildSection('1er-dan', data);
-  document.getElementById('contenu-2eme-dan').innerHTML = buildSection('2eme-dan', data);
-  document.getElementById('contenu-3eme-dan').innerHTML = buildSection('3eme-dan', data);
-});
+  .catch(function(e) { console.error('Erreur chargement techniques-uv2.json :', e); });
 </script>
 </body>
 </html>

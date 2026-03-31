@@ -49,9 +49,9 @@
         {"nom":"Okuri-eri-jime","url":"https://youtu.be/EiqyoVcIAi8"}
       ],
       "kansetsu-waza": [
-        {"nom":"Ude-hishigi-juji-gatame","url":"https://kdkjudo.org/katame-waza/"},
-        {"nom":"Ude-hishigi-ude-gatame","url":"https://kdkjudo.org/katame-waza/"},
-        {"nom":"Ude-garami","url":"https://kdkjudo.org/katame-waza/"}
+        {"nom":"Ude-hishigi-juji-gatame","url":"https://youtu.be/t3tQriIPdlI"},
+        {"nom":"Ude-hishigi-ude-gatame","url":"https://youtu.be/9f0n8jez7iA"},
+        {"nom":"Ude-garami","url":"https://youtu.be/k2cHry9HByQ"}
       ]
     }
   },
@@ -99,8 +99,8 @@
         {"nom":"Sode-guruma-jime","url":"https://youtu.be/E3nvQzClcAU"}
       ],
       "kansetsu-waza": [
-        {"nom":"Ude-hishigi-hiza-gatame","url":"https://kdkjudo.org/katame-waza/"},
-        {"nom":"Ude-hishigi-waki-gatame","url":"https://kdkjudo.org/katame-waza/"}
+        {"nom":"Ude-hishigi-hiza-gatame","url":"https://youtu.be/t3tQriIPdlI"},
+        {"nom":"Ude-hishigi-waki-gatame","url":"https://youtu.be/9f0n8jez7iA"}
       ]
     }
   },
@@ -144,9 +144,9 @@
         {"nom":"Ryo-te-jime","url":"https://youtu.be/-RHC4V7TQiY"}
       ],
       "kansetsu-waza": [
-        {"nom":"Ude-hishigi-ashi-gatame","url":"https://kdkjudo.org/katame-waza/"},
-        {"nom":"Ude-hishigi-sankaku-gatame","url":"https://kdkjudo.org/katame-waza/"},
-        {"nom":"Ude-hishigi-hara-gatame","url":"https://kdkjudo.org/katame-waza/"}
+        {"nom":"Ude-hishigi-ashi-gatame","url":"https://youtu.be/t3tQriIPdlI"},
+        {"nom":"Ude-hishigi-sankaku-gatame","url":"https://youtu.be/E3nvQzClcAU"},
+        {"nom":"Ude-hishigi-hara-gatame","url":"https://youtu.be/9f0n8jez7iA"}
       ]
     }
   }

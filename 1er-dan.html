@@ -80,42 +80,46 @@
 </footer>
 <script>
 fetch('techniques-uv2.json')
-  .then(r => r.json())
-  .then(d => {
-    const t = d['1er-dan'];
-    const COULEURS = { 'koshi-waza':'#7d1f68', 'te-waza':'#1a6e3a', 'ashi-waza':'#1a5276', 'sutemi-waza':'#7d5a00', 'osaekomi-waza':'#5d4037', 'shime-waza':'#c0392b', 'kansetsu-waza':'#2c3e50' };
-    const NOMS = { 'koshi-waza':'Koshi-Waza (Hanches)', 'te-waza':'Te-Waza (Mains/Bras)', 'ashi-waza':'Ashi-Waza (Pieds/Jambes)', 'sutemi-waza':'Sutemi-Waza (Sacrifice)', 'osaekomi-waza':'Osaekomi-Waza (Immobilisations)', 'shime-waza':'Shime-Waza (Étranglements)', 'kansetsu-waza':'Kansetsu-Waza (Clés de bras)' };
-    let html = '<div style="margin-bottom:0.5rem;font-size:0.85rem;color:#e74c3c;font-weight:bold;">⚠️ Le jury impose 6 nage-waza + 4 ne-waza parmi ces techniques</div>';
+  .then(function(r) { return r.json(); })
+  .then(function(d) {
+    var t = d['1er-dan'];
+    if (!t) return;
+    var COULEURS = { 'koshi-waza':'#7d1f68','te-waza':'#1a6e3a','ashi-waza':'#1a5276','sutemi-waza':'#7d5a00','osaekomi-waza':'#5d4037','shime-waza':'#c0392b','kansetsu-waza':'#2c3e50' };
+    var NOMS = { 'koshi-waza':'Koshi-Waza (Hanches)','te-waza':'Te-Waza (Mains/Bras)','ashi-waza':'Ashi-Waza (Pieds/Jambes)','sutemi-waza':'Sutemi-Waza (Sacrifice)','osaekomi-waza':'Osaekomi-Waza (Immobilisations)','shime-waza':'Shime-Waza (Étranglements)','kansetsu-waza':'Kansetsu-Waza (Clés de bras)' };
+    var html = '<div style="margin-bottom:0.5rem;font-size:0.85rem;color:#e74c3c;font-weight:bold;">⚠️ Le jury impose 6 nage-waza + 4 ne-waza parmi ces techniques</div>';
     html += '<h3 style="color:#1a5276;margin:1rem 0 0.5rem;">NAGE-WAZA</h3>';
-    for (const [cat, techs] of Object.entries(t['nage-waza'])) {
-      html += `<div style="margin-bottom:0.8rem;"><div style="background:${COULEURS[cat]};color:white;padding:0.3rem 0.8rem;border-radius:6px;font-size:0.8rem;font-weight:bold;display:inline-block;margin-bottom:0.4rem;">${NOMS[cat]}</div><div style="display:flex;flex-wrap:wrap;gap:0.3rem;">`;
-      techs.forEach(tech => { html += '<span style="display:inline-flex;align-items:center;gap:0.3rem;background:#f0f0f0;padding:0.25rem 0.6rem;border-radius:15px;font-size:0.85rem;">' + (tech.nom || tech) + (tech.url ? '<a href="' + tech.url + '" target="_blank" style="background:#e74c3c;color:white;padding:0.1rem 0.4rem;border-radius:10px;font-size:0.75rem;text-decoration:none;">&#9654;</a>' : '') + '</span>'; });
+    Object.keys(t['nage-waza']).forEach(function(cat) {
+      var techs = t['nage-waza'][cat];
+      html += '<div style="margin-bottom:0.8rem;"><div style="background:' + COULEURS[cat] + ';color:white;padding:0.3rem 0.8rem;border-radius:6px;font-size:0.8rem;font-weight:bold;display:inline-block;margin-bottom:0.4rem;">' + NOMS[cat] + '</div><div style="display:flex;flex-wrap:wrap;gap:0.3rem;">';
+      techs.forEach(function(tech) { html += '<span style="display:inline-flex;align-items:center;gap:0.3rem;background:#f0f0f0;padding:0.25rem 0.6rem;border-radius:15px;font-size:0.85rem;">' + (tech.nom||tech) + (tech.url ? '<a href="' + tech.url + '" target="_blank" style="background:#e74c3c;color:white;padding:0.1rem 0.4rem;border-radius:10px;font-size:0.75rem;text-decoration:none;">&#9654;</a>' : '') + '</span>'; });
       html += '</div></div>';
-    }
+    });
     html += '<h3 style="color:#5d4037;margin:1rem 0 0.5rem;">NE-WAZA</h3>';
-    for (const [cat, techs] of Object.entries(t['ne-waza'])) {
-      html += `<div style="margin-bottom:0.8rem;"><div style="background:${COULEURS[cat]};color:white;padding:0.3rem 0.8rem;border-radius:6px;font-size:0.8rem;font-weight:bold;display:inline-block;margin-bottom:0.4rem;">${NOMS[cat]}</div><div style="display:flex;flex-wrap:wrap;gap:0.3rem;">`;
-      techs.forEach(tech => { html += '<span style="display:inline-flex;align-items:center;gap:0.3rem;background:#f0f0f0;padding:0.25rem 0.6rem;border-radius:15px;font-size:0.85rem;">' + (tech.nom || tech) + (tech.url ? '<a href="' + tech.url + '" target="_blank" style="background:#e74c3c;color:white;padding:0.1rem 0.4rem;border-radius:10px;font-size:0.75rem;text-decoration:none;">&#9654;</a>' : '') + '</span>'; });
+    Object.keys(t['ne-waza']).forEach(function(cat) {
+      var techs = t['ne-waza'][cat];
+      html += '<div style="margin-bottom:0.8rem;"><div style="background:' + COULEURS[cat] + ';color:white;padding:0.3rem 0.8rem;border-radius:6px;font-size:0.8rem;font-weight:bold;display:inline-block;margin-bottom:0.4rem;">' + NOMS[cat] + '</div><div style="display:flex;flex-wrap:wrap;gap:0.3rem;">';
+      techs.forEach(function(tech) { html += '<span style="display:inline-flex;align-items:center;gap:0.3rem;background:#f0f0f0;padding:0.25rem 0.6rem;border-radius:15px;font-size:0.85rem;">' + (tech.nom||tech) + (tech.url ? '<a href="' + tech.url + '" target="_blank" style="background:#e74c3c;color:white;padding:0.1rem 0.4rem;border-radius:10px;font-size:0.75rem;text-decoration:none;">&#9654;</a>' : '') + '</span>'; });
       html += '</div></div>';
-    }
+    });
     document.getElementById('techniques-uv2').innerHTML = html;
-  });
+  }).catch(function(e) { document.getElementById('techniques-uv2').innerHTML = '<p style="color:red;">Erreur chargement techniques</p>'; console.error(e); });
 
 fetch('katas-grades.json')
-  .then(r => r.json())
-  .then(d => {
-    const k = d['1er-dan'];
-    document.getElementById('kata-videos').innerHTML = k.videos.map(v =>
-      `<a href="${v.url}" target="_blank" style="display:inline-block;margin:0.3rem;background:#e74c3c;color:white;padding:0.5rem 1.2rem;border-radius:20px;text-decoration:none;font-weight:bold;">▶ ${v.titre}</a>`
-    ).join('');
-    document.getElementById('kata-livres').innerHTML = k.livres.map(l =>
-      `<a href="${l.url}" target="_blank" style="display:inline-block;margin:0.3rem;background:#2c3e50;color:white;padding:0.5rem 1.2rem;border-radius:20px;text-decoration:none;font-weight:bold;">📄 ${l.titre}</a>`
-    ).join('');
-  });
+  .then(function(r) { return r.json(); })
+  .then(function(d) {
+    var k = d['1er-dan'];
+    document.getElementById('kata-videos').innerHTML = k.videos.map(function(v) {
+      return '<a href="' + v.url + '" target="_blank" style="display:inline-block;margin:0.3rem;background:#e74c3c;color:white;padding:0.5rem 1.2rem;border-radius:20px;text-decoration:none;font-weight:bold;">&#9654; ' + v.titre + '</a>';
+    }).join('');
+    document.getElementById('kata-livres').innerHTML = k.livres.map(function(l) {
+      return '<a href="' + l.url + '" target="_blank" style="display:inline-block;margin:0.3rem;background:#2c3e50;color:white;padding:0.5rem 1.2rem;border-radius:20px;text-decoration:none;font-weight:bold;">&#128196; ' + l.titre + '</a>';
+    }).join('');
+  }).catch(function(e) { console.error('katas-grades.json erreur:', e); });
+
 fetch('contenus-grades.json')
-  .then(r => r.json())
-  .then(d => {
-    const g = d['1er-dan'];
+  .then(function(r) { return r.json(); })
+  .then(function(d) {
+    var g = d['1er-dan'];
     document.getElementById('conditions').textContent = g.conditions;
     document.getElementById('uv1').textContent       = g.uv1_kata;
     document.getElementById('uv2').textContent       = g.uv2_technique;
@@ -123,7 +127,7 @@ fetch('contenus-grades.json')
     document.getElementById('ne').textContent        = g.uv2_ne;
     document.getElementById('defenses').textContent  = g.defenses;
     document.getElementById('criteres').textContent  = g.criteres;
-  });
+  }).catch(function(e) { console.error('contenus-grades.json erreur:', e); });
 </script>
 </body>
 </html>
