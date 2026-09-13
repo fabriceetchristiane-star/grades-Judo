@@ -35,7 +35,8 @@
     "videos": [
       { "titre": "Nage no Kata — Kodokan", "url": "https://youtu.be/Suk2__BG69Q" },
       { "titre": "Katame no Kata — Kodokan", "url": "https://youtu.be/zyTLmipWkb8" },
-      { "titre": "Ju no Kata — ⚠️ lien officiel Kodokan à confirmer", "url": "https://fr.wikipedia.org/wiki/J%C5%AB_no_kata" },
+      { "titre": "Ju no Kata — Kodokan", "url": "https://youtu.be/Aa0bQ8NLiOw" },
+      { "titre": "Kime no Kata — Kodokan ⚠️ lien à reconfirmer (l'ancien pointait en fait vers Ju no Kata)", "url": "" },
       { "titre": "Goshin Jitsu — Kodokan", "url": "https://youtu.be/qcxKDm8Af7M" }
     ],
     "livres": [
@@ -48,8 +49,8 @@
     "videos": [
       { "titre": "Nage no Kata — Kodokan", "url": "https://youtu.be/Suk2__BG69Q" },
       { "titre": "Katame no Kata — Kodokan", "url": "https://youtu.be/zyTLmipWkb8" },
-      { "titre": "Ju no Kata — ⚠️ lien officiel Kodokan à confirmer", "url": "https://fr.wikipedia.org/wiki/J%C5%AB_no_kata" },
-      { "titre": "Kime no Kata — Kodokan", "url": "https://youtu.be/Aa0bQ8NLiOw" },
+      { "titre": "Ju no Kata — Kodokan", "url": "https://youtu.be/Aa0bQ8NLiOw" },
+      { "titre": "Kime no Kata — Kodokan ⚠️ lien à reconfirmer (l'ancien pointait en fait vers Ju no Kata)", "url": "" },
       { "titre": "Goshin Jitsu — Kodokan", "url": "https://youtu.be/qcxKDm8Af7M" },
       { "titre": "Koshiki no Kata — Kodokan", "url": "https://youtu.be/n2_zAscgWpo" }
     ],
@@ -64,8 +65,8 @@
     "videos": [
       { "titre": "Nage no Kata — Kodokan", "url": "https://youtu.be/Suk2__BG69Q" },
       { "titre": "Katame no Kata — Kodokan", "url": "https://youtu.be/zyTLmipWkb8" },
-      { "titre": "Ju no Kata — ⚠️ lien officiel Kodokan à confirmer", "url": "https://fr.wikipedia.org/wiki/J%C5%AB_no_kata" },
-      { "titre": "Kime no Kata — Kodokan", "url": "https://youtu.be/Aa0bQ8NLiOw" },
+      { "titre": "Ju no Kata — Kodokan", "url": "https://youtu.be/Aa0bQ8NLiOw" },
+      { "titre": "Kime no Kata — Kodokan ⚠️ lien à reconfirmer (l'ancien pointait en fait vers Ju no Kata)", "url": "" },
       { "titre": "Goshin Jitsu — Kodokan", "url": "https://youtu.be/qcxKDm8Af7M" },
       { "titre": "Koshiki no Kata — Kodokan", "url": "https://youtu.be/n2_zAscgWpo" },
       { "titre": "Itsutsu no Kata — Kodokan", "url": "https://youtu.be/1_Xezi8nTpA" }
