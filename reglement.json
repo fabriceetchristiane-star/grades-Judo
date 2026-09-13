@@ -110,5 +110,31 @@
         "texte": "Ce résumé est établi à partir des Textes Officiels FFJDA 2026/2027 publiés sur ffjudo.com (Règlement des Grades). Les points suivants méritent une relecture attentive avant mise en ligne définitive : la formulation en 2 options désormais explicite de l'UV3 (efficacité sportive / efficacité combinée) pour tous les dans du 1er au 4ème ; la confirmation du contenu exact de l'Annexe 1 (liste complète des techniques UV2 par dan), non récupérable automatiquement depuis le PDF et à vérifier manuellement ; l'inversion Ju-no-kata / Kime-no-kata au 4ème et 5ème dan à répercuter également dans techniques-uv2.json, katas.json et contenus-grades.json."
       }
     ]
+  },
+  "transitoires": {
+    "titre": "Dispositions Transitoires & Équivalences",
+    "icone": "🔄",
+    "contenu": [
+      {
+        "sous_titre": "Disposition transitoire kata 4ème/5ème dan",
+        "texte": "Le règlement 2026/2027 inverse le kata du 4ème dan (désormais Ju-no-kata, au lieu de Kime-no-kata) et du 5ème dan (désormais Kime-no-kata, au lieu de Ju-no-kata). Disposition transitoire officielle : par dérogation, le Ju-no-kata sera demandé pour les candidats ayant obtenu leur 4ème dan sous l'ancien règlement des grades lorsqu'ils se présenteront au 5ème dan. Aucune démarche à faire : cette équivalence est automatique et gérée par le jury le jour de l'examen."
+      },
+      {
+        "sous_titre": "Équivalence UV1 Kata — podiums championnats de France",
+        "texte": "Pour le 1er et le 2ème dan, un podium aux championnats de France de kata (Nage-no-kata) vaut équivalence pour l'UV1, sur demande du candidat le jour de l'examen."
+      },
+      {
+        "sous_titre": "Équivalences UV4 — engagement personnel",
+        "texte": "Sont reconnus équivalents à l'UV4 (pour tous les dans concernés) : être commissaire sportif ou arbitre départemental en activité, ou avoir participé à la coupe du jeune officiel (arbitre ou commissaire sportif). Une UV4 acquise à un dan donné est aussi valable dans les autres disciplines (judo, jujitsu traditionnel, jiu-jitsu brésilien, jujitsu contact) : principe de transversalité."
+      },
+      {
+        "sous_titre": "Dispositions pour sportifs de haut niveau",
+        "texte": "Les sportifs inscrits sur listes ministérielles (élite, seniors, collectifs nationaux INSEP) sont exemptés des UV2, UV3 et UV4 : ces compétences sont reconnues acquises au vu de leur parcours sportif. Un judoka ayant été champion du monde, champion ou médaillé olympique/paralympique, ou champion d'Europe/triple médaillé européen, peut être directement proposé par le DTN pour une promotion au 6ème dan, sous réserve des âges planchers."
+      },
+      {
+        "sous_titre": "Non-licenciés FFJDA",
+        "texte": "Les pratiquants de fédérations multisports/affinitaires/scolaires/universitaires agréées peuvent se présenter avec un carnet de grades spécifique délivré par la Ligue, après 2 ans de pratique minimum et paiement d'un droit de présentation. La date officielle du grade est celle inscrite sur ce carnet."
+      }
+    ]
   }
 }
