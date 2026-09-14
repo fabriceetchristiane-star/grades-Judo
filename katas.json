@@ -8,7 +8,7 @@
       "1er-dan": "COMPÉTITION : 3 premières séries dans le rôle de tori + tout ou partie dans le rôle de uke\nTECHNIQUE : Nage-no-kata OU Kodokan-goshin-jitsu en entier au choix du candidat",
       "2eme-dan": "COMPÉTITION : Nage-no-kata en entier dans le rôle de tori\nTECHNIQUE : Nage-no-kata OU Kodokan-goshin-jitsu — doit être différent du kata présenté au 1er dan",
       "3eme-dan": "TECHNIQUE : Katame-no-kata OBLIGATOIRE + Nage-no-kata OU Kodokan-goshin-jitsu au choix",
-      "4eme-dan": "Kime-no-kata OBLIGATOIRE + 1 kata au choix parmi : Nage-no-kata, Katame-no-kata, Kodokan-goshin-jitsu ou Go-no-sen"
+      "4eme-dan": "Ju-no-kata OBLIGATOIRE (⚠️ inversion FFJDA 2026/2027, voir page Règlement) + 1 kata au choix parmi : Nage-no-kata, Katame-no-kata, Kodokan-goshin-jitsu ou Kime-no-kata"
     },
     "video": "https://youtu.be/Suk2__BG69Q",
     "livre": "https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2020/07/Nage-no-kata_FRA-1596187174-1596187174.pdf"
@@ -22,7 +22,7 @@
       "1er-dan": "TECHNIQUE : Nage-no-kata OU Kodokan-goshin-jitsu en entier dans le rôle de tori (au choix)",
       "2eme-dan": "TECHNIQUE : Nage-no-kata OU Kodokan-goshin-jitsu — différent du kata présenté au 1er dan",
       "3eme-dan": "COMPÉTITION : Katame-no-kata + Kodokan-goshin-jitsu — 2 katas OBLIGATOIRES\nTECHNIQUE : Katame-no-kata OBLIGATOIRE + Kodokan-goshin-jitsu OU Nage-no-kata au choix",
-      "4eme-dan": "Kime-no-kata OBLIGATOIRE + Kodokan-goshin-jitsu au choix parmi les options"
+      "4eme-dan": "Ju-no-kata OBLIGATOIRE (⚠️ inversion FFJDA 2026/2027) + Kodokan-goshin-jitsu au choix parmi les options"
     },
     "video": "https://youtu.be/qcxKDm8Af7M",
     "livre": "https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2022/07/Goshin_jutsu_FR-1657632234-1657632234.pdf"
@@ -34,7 +34,7 @@
     "desc": "Forme des techniques au sol — 15 techniques en 3 séries.\nObligatoire au 3ème dan.",
     "grades": {
       "3eme-dan": "COMPÉTITION : Katame-no-kata + Kodokan-goshin-jitsu — 2 katas OBLIGATOIRES\nTECHNIQUE : Katame-no-kata OBLIGATOIRE + Kodokan-goshin-jitsu OU Nage-no-kata au choix",
-      "4eme-dan": "Kime-no-kata OBLIGATOIRE + Katame-no-kata au choix parmi les options"
+      "4eme-dan": "Ju-no-kata OBLIGATOIRE (⚠️ inversion FFJDA 2026/2027) + Katame-no-kata au choix parmi les options"
     },
     "video": "https://youtu.be/zyTLmipWkb8",
     "livre": "https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2020/09/Katame-No-Kata_FRA-1599743291-1599743291.pdf"
@@ -43,9 +43,9 @@
     "id": "kime-no-kata",
     "nom": "Kime-no-kata",
     "emoji": "⚡",
-    "desc": "Forme des techniques décisives — 20 techniques au total.\nObligatoire au 4ème dan.",
+    "desc": "Forme des techniques décisives — 20 techniques au total.\nObligatoire au 5ème dan (⚠️ inversion FFJDA 2026/2027, auparavant 4ème dan).",
     "grades": {
-      "4eme-dan": "COMPÉTITION et TECHNIQUE : Kime-no-kata OBLIGATOIRE + 1 autre kata au choix parmi : Nage-no-kata, Katame-no-kata, Kodokan-goshin-jitsu ou Go-no-sen"
+      "5eme-dan": "Kime-no-kata OBLIGATOIRE (rôle tori). ⚠️ Depuis 2026/2027 c'est le kata du 5ème dan (auparavant 4ème dan) — voir la disposition transitoire sur la page Règlement."
     },
     "video": "https://youtu.be/Aa0bQ8NLiOw",
     "livre": "https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2020/10/Kime-No-Kata_FRA-1603376091-1603376091.PDF"
@@ -56,7 +56,7 @@
     "emoji": "🎯",
     "desc": "Forme des contres de projection — 10 paires de techniques.\nOption pour le 4ème dan.",
     "grades": {
-      "4eme-dan": "Kime-no-kata OBLIGATOIRE + Go-no-sen au choix parmi les options (Nage-no, Katame-no, Goshin-jitsu ou Go-no-sen)"
+      "4eme-dan": "Ju-no-kata OBLIGATOIRE (⚠️ inversion FFJDA 2026/2027) + Go-no-sen au choix parmi les options (Nage-no, Katame-no, Goshin-jitsu ou Kime-no)"
     },
     "video": "https://youtu.be/9nIbfoZosP4",
     "livre": null
@@ -65,9 +65,10 @@
     "id": "ju-no-kata",
     "nom": "Ju-no-kata",
     "emoji": "💫",
-    "desc": "Forme de la souplesse — 15 techniques en 3 séries.\nObligatoire au 5ème dan.",
+    "desc": "Forme de la souplesse — 15 techniques en 3 séries.\nObligatoire au 4ème dan (⚠️ inversion FFJDA 2026/2027, auparavant 5ème dan).",
     "grades": {
-      "5eme-dan": "Le candidat démontrera le Ju-no-kata dans le rôle de tori (obligatoire)"
+      "4eme-dan": "Le candidat présente le Ju-no-kata dans le rôle de tori (obligatoire). ⚠️ Depuis 2026/2027 c'est le kata du 4ème dan (auparavant 5ème dan).",
+      "5eme-dan": "Par dérogation transitoire, demandé aux candidats ayant obtenu leur 4ème dan sous l'ancien règlement — voir la page Règlement."
     },
     "video": "https://youtu.be/n2_zAscgWpo",
     "livre": null
