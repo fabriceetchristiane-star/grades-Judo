@@ -14,9 +14,12 @@
     .section { display:none; padding:1rem; max-width:960px; margin:0 auto; }
     .section.active { display:block; }
     .section-intro { color:#666; font-size:0.9rem; padding:0.5rem 0 1rem; text-align:center; }
-    .bloc { background:white; border-radius:12px; padding:1.5rem; margin-bottom:1.2rem; box-shadow:0 2px 10px rgba(0,0,0,0.08); }
-    .bloc h3 { color:#2c3e50; margin:0 0 0.8rem; font-size:1rem; border-left:4px solid #3498db; padding-left:0.7rem; }
-    .bloc p { color:#555; font-size:0.88rem; line-height:1.7; margin:0; white-space:pre-wrap; }
+    .bloc { background:white; border-radius:12px; padding:0; margin-bottom:1.2rem; box-shadow:0 2px 10px rgba(0,0,0,0.08); overflow:hidden; }
+    .bloc summary { color:#2c3e50; margin:0; font-size:1rem; font-weight:bold; border-left:4px solid #3498db; padding:1rem 1.2rem; cursor:pointer; list-style:none; }
+    .bloc summary::-webkit-details-marker { display:none; }
+    .bloc summary::before { content:'▸ '; color:#3498db; }
+    .bloc[open] summary::before { content:'▾ '; }
+    .bloc p { color:#555; font-size:0.88rem; line-height:1.7; margin:0; padding:0 1.2rem 1.2rem 1.7rem; white-space:pre-wrap; }
     .btn-nav { display:inline-block; background:#3498db; color:white; padding:0.6rem 1.4rem; border-radius:25px; text-decoration:none; margin:0.3rem; font-weight:bold; }
     footer { text-align:center; padding:1.5rem; background:#2c3e50; color:white; margin-top:2rem; }
   </style>
@@ -75,9 +78,9 @@ fetch('reglement.json')
       div.id = 'sec-' + key;
       div.className = 'section' + (premier ? ' active' : '');
 
-      var intro = '<p class="section-intro">' + section.icone + ' ' + section.titre + ' — Textes officiels FFJDA 2025/2026</p>';
+      var intro = '<p class="section-intro">' + section.icone + ' ' + section.titre + ' — Textes officiels FFJDA 2026/2027</p>';
       var blocs = section.contenu.map(function(item) {
-        return '<div class="bloc"><h3>' + item.sous_titre + '</h3><p>' + item.texte + '</p></div>';
+        return '<details class="bloc"><summary>' + item.sous_titre + '</summary><p>' + item.texte + '</p></details>';
       }).join('');
       div.innerHTML = intro + blocs;
       sections.appendChild(div);
