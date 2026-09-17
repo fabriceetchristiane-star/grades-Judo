@@ -3,7 +3,7 @@
     "id": "nage-no-kata",
     "nom": "Nage-no-kata",
     "emoji": "🌀",
-    "desc": "Forme des projections — 15 techniques en 5 séries de 3.\nObligatoire pour les 1er, 2ème, 3ème et 4ème dan.",
+    "desc": "Forme des projections — 15 techniques en 5 séries de 3.\nObligatoire aux 1er et 2ème dan (voie compétition) — optionnel au choix aux 1er, 2ème (voie technique), 3ème et 4ème dan.",
     "grades": {
       "1er-dan": "COMPÉTITION : 3 premières séries dans le rôle de tori + tout ou partie dans le rôle de uke\nTECHNIQUE : Nage-no-kata OU Kodokan-goshin-jitsu en entier au choix du candidat",
       "2eme-dan": "COMPÉTITION : Nage-no-kata en entier dans le rôle de tori\nTECHNIQUE : Nage-no-kata OU Kodokan-goshin-jitsu — doit être différent du kata présenté au 1er dan",
@@ -43,8 +43,9 @@
     "id": "kime-no-kata",
     "nom": "Kime-no-kata",
     "emoji": "⚡",
-    "desc": "Forme des techniques décisives — 20 techniques au total.\nObligatoire au 5ème dan (⚠️ inversion FFJDA 2026/2027, auparavant 4ème dan).",
+    "desc": "Forme des techniques décisives — 20 techniques au total.\nObligatoire au 5ème dan (⚠️ inversion FFJDA 2026/2027, auparavant 4ème dan). Reste une option possible au 4ème dan (kata au choix).",
     "grades": {
+      "4eme-dan": "Optionnel : l'un des katas au choix en complément du Ju-no-kata obligatoire (voir la fiche Ju-no-kata).",
       "5eme-dan": "Kime-no-kata OBLIGATOIRE (rôle tori). ⚠️ Depuis 2026/2027 c'est le kata du 5ème dan (auparavant 4ème dan) — voir la disposition transitoire sur la page Règlement."
     },
     "video": "https://youtu.be/Aa0bQ8NLiOw",
