@@ -81,7 +81,7 @@ fetch('reglement.json')
 
       var intro = '<p class="section-intro">' + section.icone + ' ' + section.titre + ' — Textes officiels FFJDA 2026/2027</p>';
       var blocs = section.contenu.map(function(item) {
-        return '<details class="bloc"><summary>' + item.sous_titre + '</summary><p>' + item.texte + '</p></details>';
+        return '<details class="bloc" name="grp-' + key + '"><summary>' + item.sous_titre + '</summary><p>' + item.texte + '</p></details>';
       }).join('');
       div.innerHTML = intro + blocs;
       sections.appendChild(div);
