@@ -1,0 +1,21 @@
+{
+  "lexiqueTechnique": {
+    "titre": "Lexique Technique — Concepts tactiques & pédagogiques",
+    "source": "Annexe 4 — Textes officiels FFJDA 2026/2027",
+    "termes": [
+      { "terme": "Blocage", "traduction": "Action de défense « au contact » dans laquelle les combattants s'opposent force contre force" },
+      { "terme": "Confusion", "traduction": "Simulation d'attaque ayant pour but de créer une réaction chez l'adversaire et permettant d'exécuter une technique initialement prévue" },
+      { "terme": "Contre-prise", "traduction": "Séquence tactique dans laquelle celui qui fait la dernière action la réalise à partir d'une action déjà engagée par l'autre" },
+      { "terme": "Défense", "traduction": "Séquence tactique qui annihile une attaque de l'adversaire" },
+      { "terme": "Enchaînement ou combinaison", "traduction": "Séquence tactique dans laquelle celui qui a engagé sincèrement la 1re technique utilise la réaction de l'autre pour effectuer une nouvelle technique" },
+      { "terme": "Esquive", "traduction": "Action de défense dans laquelle l'attaqué se soustrait à l'action de l'attaquant par déplacement, en évitant d'opposer les forces" },
+      { "terme": "Kakari-geiko", "traduction": "Exercice d'entraînement où l'un des deux pratiquants joue le rôle de l'attaquant, alors que l'autre cultive l'esquive et la défense" },
+      { "terme": "Kata", "traduction": "Exercices de style du judo. Ils reflètent le degré de connaissance et la maîtrise des exécutants — démonstration des principes de base d'attaque et de défense, résultat de l'expérience des meilleurs maîtres. Le kata est l'une des unités de valeur nécessaires à l'obtention de la ceinture noire ou des dan." },
+      { "terme": "Opportunité", "traduction": "Occasion favorable (offerte ou créée) à l'application d'une technique, à partir du kumi-kata, d'un déplacement, d'un changement de posture, etc." },
+      { "terme": "Randori", "traduction": "Exercice libre d'attaque et de défense où les partenaires s'orientent vers l'attaque en assurant conjointement leur sécurité, sans consigne ni attachement au résultat" },
+      { "terme": "Séquence tactique", "traduction": "Phase d'opposition ou d'étude dans laquelle des actions d'attaque et de défense se succèdent" },
+      { "terme": "Situation de travail", "traduction": "Position respective de tori et de uke qui précède l'application d'une technique" },
+      { "terme": "Yaku soku geiko", "traduction": "Exercice d'entraînement à l'attaque. Les deux partenaires recherchent les opportunités, la vitesse, l'efficacité, en modifiant la convention de l'exercice" }
+    ]
+  }
+}

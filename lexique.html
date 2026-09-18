@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lexique Technique — Guide des Grades Judo</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { font-family:'Segoe UI',sans-serif; background:#f8f9fa; margin:0; padding:0 1rem; }
+    header { background:linear-gradient(135deg,#2c3e50,#3498db); color:white; padding:2rem 1rem; text-align:center; border-radius:0 0 15px 15px; margin-bottom:2rem; }
+    nav { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-top:1.5rem; }
+    nav a { background:rgba(255,255,255,0.2); color:white; padding:0.6rem 1.2rem; border-radius:20px; text-decoration:none; }
+    nav a.nav-active, nav a:hover { background:#e74c3c; }
+    .lexique-container { max-width:900px; margin:0 auto; }
+    .terme-bloc { background:white; border-radius:10px; padding:1.2rem; margin-bottom:1rem; box-shadow:0 2px 10px rgba(0,0,0,0.08); border-left:4px solid #3498db; }
+    .terme-bloc h3 { color:#2c3e50; margin:0 0 0.5rem; }
+    .terme-bloc p { color:#555; margin:0; line-height:1.6; }
+    .retour { display:block; text-align:center; margin:2rem 0; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>📖 Lexique Technique</h1>
+  <p>Concepts tactiques & pédagogiques — FFJDA 2026/2027</p>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="techniques.html">Techniques</a>
+    <a href="katas.html">Katas</a>
+    <a href="reglement.html">Règlement</a>
+    <a href="lexique.html" class="nav-active">Lexique</a>
+  </nav>
+</header>
+
+<main>
+  <div class="lexique-container" id="lexiqueContainer"></div>
+  <a class="retour" href="index.html">🏠 Retour à l'accueil</a>
+</main>
+
+<footer style="text-align:center;margin-top:4rem;padding:2rem;background:#2c3e50;color:white;border-radius:15px 15px 0 0;">
+  <p>© 2026 Guide des Grades Judo — Club Judo Lambersart JAK</p>
+</footer>
+
+<script>
+fetch('lexique.json')
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    var d = data.lexiqueTechnique;
+    var container = document.getElementById('lexiqueContainer');
+    var html = d.termes.map(function(t) {
+      return '<div class="terme-bloc"><h3>' + t.terme + '</h3><p>' + t.traduction + '</p></div>';
+    }).join('');
+    container.innerHTML = html;
+  })
+  .catch(function(e) { console.error('Erreur chargement lexique.json :', e); });
+</script>
+
+</body>
+</html>
