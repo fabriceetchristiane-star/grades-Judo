@@ -140,5 +140,23 @@
         "texte": "Les pratiquants de fédérations multisports/affinitaires/scolaires/universitaires agréées peuvent se présenter avec un carnet de grades spécifique délivré par la Ligue, après 2 ans de pratique minimum et paiement d'un droit de présentation. La date officielle du grade est celle inscrite sur ce carnet."
       }
     ]
+  },
+  "dates": {
+    "titre": "Dates d'Examens & Shiai (UV1 / UV2 / UV3)",
+    "icone": "📅",
+    "contenu": [
+      {
+        "sous_titre": "Où trouver les dates officielles",
+        "texte": "Les dates précises de sessions varient selon les ligues et peuvent être ajustées en cours de saison. Sources officielles à consulter directement :\n📄 <a href=\"https://www.comitenordjudo.fr/medias/files/calendrier-previsionnel-26-27-diffusion.pdf\" target=\"_blank\">Calendrier prévisionnel 2026/2027 — Comité Nord de Judo</a>\n🥋 <a href=\"https://hautsdefrancejudo.ffjudo.com/calendrier-2023-2024\" target=\"_blank\">C.O.R.G. — Passage de grades (Ligue Hauts-de-France)</a>\n🌐 <a href=\"https://www.comitenordjudo.fr\" target=\"_blank\">Site du Comité Nord de Judo</a>\nLes inscriptions se font exclusivement via l'Extranet fédéral, par le club."
+      },
+      {
+        "sous_titre": "Sessions UV1 + UV2 (Kata + Technique) — Comité Nord, saison 2026/2027",
+        "texte": "D'après le calendrier prévisionnel du Comité Nord : dimanche 25 octobre 2026, début décembre 2026 (semaine du 5-6), samedi 23 janvier 2027, samedi 20 mars 2027, et une session en juin 2027. Ce sont des sessions départementales/régionales, distinctes des championnats sportifs. Lieux et dates à confirmer sur le calendrier officiel (lien ci-dessus)."
+      },
+      {
+        "sous_titre": "SHIAI — UV3 Test d'efficacité (1er au 4ème dan), saison 2026/2027",
+        "texte": "D'après le calendrier prévisionnel du Comité Nord : dimanche 1er novembre 2026, début décembre 2026, dimanche 24 janvier 2027, dimanche 21 mars 2027, et début juin 2027. Le Shiai UV3 est un tournoi de type test d'efficacité réservé aux passages de grade — à ne pas confondre avec les compétitions sportives (championnats, tournois), pour lesquelles les judokas compétiteurs sont suivis directement par leur club."
+      }
+    ]
   }
 }
