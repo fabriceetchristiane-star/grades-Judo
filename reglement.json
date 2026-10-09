@@ -57,11 +57,11 @@
       },
       {
         "sous_titre": "UV2 — Technique, par grade",
-        "texte": "1er dan : 6 nage-waza + 4 ne-waza imposés par le jury (annexe 1), 1 méconnaissance tolérée par domaine, 5 min max.\n2ème dan : 1 nage-waza + 1 ne-waza au choix (3-4 min) puis 6 nage-waza + 3 ne-waza tirés au sort (5 min max).\n3ème dan : 3 nage-waza + 2 ne-waza au choix, directions différentes (8 min max) puis 3 nage-waza + 2 ne-waza tirés au sort (5 min max).\n4ème dan : Go-no-sen (contre-prise) + tokui-waza nage-waza (3 min) + tokui-waza ne-waza (2 min).\n5ème dan : judo debout et sol, système d'attaque et de défense personnel, 15 à 20 min ; document écrit à envoyer 1 mois avant à grade@ffjudo.com.\n6ème dan : prestation nage-waza et/ou ne-waza 15-20 min + entretien 10 min max.\n7ème dan : partie technique pédagogique 15-20 min + entretien 10-15 min."
+        "texte": "1er dan : 6 nage-waza + 4 ne-waza imposés par le jury (annexe 1), 1 méconnaissance tolérée par domaine, 5 min max.\n2ème dan : 1 nage-waza + 1 ne-waza au choix (3-4 min) puis 6 nage-waza + 3 ne-waza tirés au sort (5 min max).\n3ème dan : 3 nage-waza (3 min min) + 2 ne-waza (3 min min) au choix, directions différentes (8 min max) puis 3 nage-waza + 2 ne-waza choisis par le jury dans l'annexe 1 (5 min max).\n4ème dan : Go-no-sen (contre-prise) + tokui-waza nage-waza (3 min) + tokui-waza ne-waza (2 min).\n5ème dan : judo debout et sol, système d'attaque et de défense personnel, 15 à 20 min (5 min minimum pour chaque partie) ; document écrit à envoyer 1 mois avant à grade@ffjudo.com.\n6ème dan : prestation nage-waza et/ou ne-waza 15-20 min + entretien 10 min max.\n7ème dan : partie technique pédagogique 15-20 min + entretien 10-15 min."
       },
       {
         "sous_titre": "UV3 — Efficacité (1er au 4ème dan)",
-        "texte": "Option 1 — Efficacité sportive : cumul de 100 points en relation grade-championnat ou en shiai/test d'efficacité sur plusieurs épreuves, OU 5 victoires consécutives (ippon = 10 pts, waza-ari = 7 pts) totalisant 44 points minimum en une seule compétition.\nOption 2 — Efficacité combinée : 20 points en shiai/RGC (dispense à partir de 40 ans) + épreuve technique non fractionnable (uchi-komi, nage-komi, kakari-geiko et/ou yaku-soku-geiko), dont le contenu et la durée augmentent avec le dan."
+        "texte": "Option 1 — Efficacité sportive : cumul de 100 points en relation grade-championnat ou en shiai/test d'efficacité sur plusieurs épreuves, OU 5 victoires consécutives (ippon = 10 pts, waza-ari = 7 pts) totalisant 44 points minimum en une seule compétition.\nOption 2 — Efficacité combinée : 20 points en shiai/RGC (dispense à partir de 40 ans) + épreuve technique non fractionnable (uchi-komi, nage-komi, kakari-geiko et/ou yaku-soku-geiko), dont le contenu augmente avec le dan. 1er dan : uchi-komi en déplacement 1'30 sur 2 techniques (1 sur avancée, 1 sur recul) + 2 exercices kakari-geiko et/ou yaku-soku-geiko de 2'. 2ème dan : uchi-komi 1'30 sur 2 techniques + nage-komi en déplacement + 2 exercices de 2'. 3ème dan : uchi-komi 1' max sur 3 techniques + nage-komi 1' max sur 2 techniques + 2 exercices de 2' max. 4ème dan : acquis techniques en uchi-komi, nage-komi, kakari-geiko et/ou yaku-soku-geiko, 10 min max."
       },
       {
         "sous_titre": "UV4 — Engagement personnel",
@@ -111,7 +111,7 @@
       },
       {
         "sous_titre": "Points de vigilance 2026/2027 à valider avec Marc Antoine",
-        "texte": "Ce résumé est établi à partir des Textes Officiels FFJDA 2026/2027 publiés sur ffjudo.com (Règlement des Grades). Les points suivants méritent une relecture attentive avant mise en ligne définitive : la formulation en 2 options désormais explicite de l'UV3 (efficacité sportive / efficacité combinée) pour tous les dans du 1er au 4ème ; la confirmation du contenu exact de l'Annexe 1 (liste complète des techniques UV2 par dan), non récupérable automatiquement depuis le PDF et à vérifier manuellement ; l'inversion Ju-no-kata / Kime-no-kata au 4ème et 5ème dan à répercuter également dans techniques-uv2.json, katas.json et contenus-grades.json."
+        "texte": "Ce résumé est établi à partir des Textes Officiels FFJDA 2026/2027 publiés sur ffjudo.com (Règlement des Grades). Les points suivants méritent une relecture attentive avant mise en ligne définitive : la formulation en 2 options désormais explicite de l'UV3 (efficacité sportive / efficacité combinée) pour tous les dans du 1er au 4ème ; la confirmation du contenu exact de l'Annexe 1 (liste complète des techniques UV2 par dan), non récupérable automatiquement depuis le PDF et à vérifier manuellement. L'inversion Ju-no-kata / Kime-no-kata au 4ème et 5ème dan est déjà répercutée dans katas.json et contenus-grades.json."
       }
     ]
   },
@@ -125,7 +125,7 @@
       },
       {
         "sous_titre": "Équivalence UV1 Kata — podiums championnats de France",
-        "texte": "Pour le 1er et le 2ème dan, un podium aux championnats de France de kata (Nage-no-kata) vaut équivalence pour l'UV1, sur demande du candidat le jour de l'examen."
+        "texte": "Pour le 1er, le 2ème et le 3ème dan, un podium aux championnats de France de kata vaut équivalence pour l'UV1, sur demande du candidat le jour de l'examen."
       },
       {
         "sous_titre": "Équivalences UV4 — engagement personnel",
