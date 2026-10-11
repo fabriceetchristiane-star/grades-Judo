@@ -43,7 +43,7 @@
     <div class="section-admin">
         <h3>📖 Kata Obligatoire</h3>
         <label for="grade-kata">Détails sur le kata à présenter :</label>
-        <textarea id="grade-kata" rows="6" placeholder="Ex: Nage-no-kata complet (rôle Tori)&#10;Dominante Compétition : 3 premières séries..."></textarea>
+        <textarea id="grade-kata" rows="6" placeholder="Ex: Nage-no-kata, 3 premieres series (role Tori)..."></textarea>
     </div>
 
     <!-- Section Techniques à Présenter -->
@@ -115,7 +115,6 @@
         <button onclick="afficherKata('nage-no-kata')">Nage-no-kata</button>
         <button onclick="afficherKata('katame-no-kata')">Katame-no-kata</button>
         <button onclick="afficherKata('kime-no-kata')">Kime-no-kata</button>
-        <button onclick="afficherKata('goshin-jitsu')">Goshin-jitsu</button>
         <button onclick="afficherKata('ju-no-kata')">Ju-no-kata</button>
         <button onclick="afficherKata('itsutsu-no-kata')">Itsutsu-no-kata</button>
         <button onclick="afficherKata('koshiki-no-kata')">Koshiki-no-kata</button>
@@ -933,7 +932,7 @@ function afficherInfoSauvegarde() {
         if (localStorage.getItem('technique-complete-' + tech)) nbTechniques++;
     });
     
-    ['nage-no-kata', 'katame-no-kata', 'kime-no-kata', 'goshin-jitsu', 'ju-no-kata', 'itsutsu-no-kata', 'koshiki-no-kata', 'gonosen'].forEach(kata => {
+    ['nage-no-kata', 'katame-no-kata', 'kime-no-kata', 'ju-no-kata', 'itsutsu-no-kata', 'koshiki-no-kata', 'gonosen'].forEach(kata => {
         if (localStorage.getItem('kata-' + kata)) nbKatas++;
     });
     
